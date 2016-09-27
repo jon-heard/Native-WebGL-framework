@@ -1,0 +1,9 @@
+get triangle to have colors
+get triangle to spin
+try escape in webpage
+
+try emcc with object files
+
+find minimal lib access for each target
+
+get emcc working in make
