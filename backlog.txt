@@ -1,5 +1,3 @@
-try and minimize makefile
-
 get shader scene working
 get multiple objects drawn
 setup different color for each object

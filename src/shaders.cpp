@@ -3,7 +3,6 @@
 
 #include "shaders.h"
 #include <GL/glew.h>
-#include <GLFW/glfw3.h>
 #include "errorHandling.h"
 
 const GLchar* SHADER_BASE_VERTEX =
