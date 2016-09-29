@@ -55,12 +55,12 @@ int main()
     glViewport(0, 0, WIN_WIDTH, WIN_HEIGHT);
 
     GLfloat vertices[] = {
-         0.0f, -1.0f,   1, 0, 0,  // top, white
-         1.0f,  0.0f,   0, 1, 0,  // Right, green
-        -1.0f,  0.0f,   0, 0, 1,  // left, blue
-         1.0f,  0.0f,   0, 1, 0,  // Right, green
-        -1.0f,  0.0f,   0, 0, 1,  // left, blue
-         0.0f,  1.0f,   1, 0, 1   // bottom, magenta
+         500,    0,   1, 0, 0,  // top, red
+        1000,  500,   0, 1, 0,  // Right, green
+           0,  500,   0, 0, 1,  // left, blue
+        1000,  500,   0, 1, 0,  // Right, green
+           0,  500,   0, 0, 1,  // left, blue
+         500, 1000,   1, 0, 1   // bottom, magenta
     };
 	
     GLuint VBO;

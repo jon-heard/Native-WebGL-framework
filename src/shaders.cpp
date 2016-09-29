@@ -73,7 +73,7 @@ void shaders_init()
     glDeleteShader(fragmentShader);
 	
 	shaders_sceneLayout = glGetUniformLocation(shaders_prog_base, "layout");
-	shaders_setSceneLayout(0, 0, 1, 1);
+	shaders_setSceneLayout(0, 0, 1000, 1000);
 }
 
 void shaders_useBase()
@@ -84,10 +84,10 @@ void shaders_useBase()
 void shaders_setSceneLayout(float left, float top, float width, float height)
 {
 	float sceneLayoutMatrix[16] = {
-			1, 0, 0, 0,
-			0, 1, 0, 0,
+			2/width, 0, 0, 0,
+			0, -2/height, 0, 0,
 			0, 0, 1, 0,
-			0, 0, 0, 1};
+			-1-left, 1+top, 0, 1};
 	glUseProgram(shaders_prog_base);
 	glUniformMatrix4fv(shaders_sceneLayout, 1, false, sceneLayoutMatrix);
 }
