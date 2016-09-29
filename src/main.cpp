@@ -1,6 +1,7 @@
 
 #define GLEW_STATIC
 
+#include <iostream>
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
@@ -10,7 +11,12 @@
 #include "errorHandling.h"
 #include "shaders.h"
 
+using namespace std;
+
 const GLuint WIN_WIDTH = 800, WIN_HEIGHT = 600;
+
+// http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
+#define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
 void handleKeys(
 		GLFWwindow* window, int key, int scancode, int action, int mode);
@@ -28,10 +34,6 @@ int main()
 	{
 		handleErrors(0, "Unable to initialize GLFW");
 	}
-    // Set all the required options for GLFW
-    //glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    //glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
     // Create a GLFWwindow object that we can use for GLFW's functions
@@ -53,10 +55,14 @@ int main()
     glViewport(0, 0, WIN_WIDTH, WIN_HEIGHT);
 
     GLfloat vertices[] = {
-        -0.5f, -0.5f, 0.0f, // Left  
-         0.5f, -0.5f, 0.0f, // Right 
-         0.0f,  0.5f, 0.0f  // Top   
+         0.0f, -1.0f,   1, 0, 0,  // top, white
+         1.0f,  0.0f,   0, 1, 0,  // Right, green
+        -1.0f,  0.0f,   0, 0, 1,  // left, blue
+         1.0f,  0.0f,   0, 1, 0,  // Right, green
+        -1.0f,  0.0f,   0, 0, 1,  // left, blue
+         0.0f,  1.0f,   1, 0, 1   // bottom, magenta
     };
+	
     GLuint VBO;
     glGenVertexArrays(1, &VAO);
     glGenBuffers(1, &VBO);
@@ -64,10 +70,16 @@ int main()
 
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
+	
+	int attribute_position = shaders_getAttributeIndex_position();	
     glVertexAttribPointer(
-			0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(GLfloat), (GLvoid*)0);
-    glEnableVertexAttribArray(0);
+			attribute_position, 2, GL_FLOAT, GL_FALSE, 20, BUFFER_OFFSET(0));
+    glEnableVertexAttribArray(attribute_position);
+
+	int attribute_color = shaders_getAttributeIndex_color();
+    glVertexAttribPointer(
+			attribute_color, 3, GL_FLOAT, GL_FALSE, 20, BUFFER_OFFSET(8));
+	glEnableVertexAttribArray(attribute_color);
 
     glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -97,6 +109,8 @@ void handleKeys(GLFWwindow* window, int key, int scancode, int action, int mode)
         glfwSetWindowShouldClose(window, GL_TRUE);
 }
 
+float rotationPhase = 0;
+
 void renderFrame()
 {
 	glfwPollEvents();
@@ -104,9 +118,11 @@ void renderFrame()
 	glClearColor(0.2f, 0.3f, 0.5f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	//glRotatef(rotationPhase, 0, 1, 0);
+	rotationPhase += 1.0f;
 	shaders_useBase();
 	glBindVertexArray(VAO);
-	glDrawArrays(GL_TRIANGLES, 0, 3);
+	glDrawArrays(GL_TRIANGLES, 0, 6);
 	glBindVertexArray(0);
 
 	glfwSwapBuffers(window);
