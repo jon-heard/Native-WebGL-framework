@@ -1,7 +1,9 @@
 
 #define GLEW_STATIC
+#define _USE_MATH_DEFINES
 
 #include <iostream>
+#include <math.h>
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
@@ -13,7 +15,8 @@
 
 using namespace std;
 
-const GLuint WIN_WIDTH = 800, WIN_HEIGHT = 600;
+const GLuint WIN_WIDTH = 500, WIN_HEIGHT = 500;
+const int CIRCLE_RESOLUTION = 100;
 
 // http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
@@ -22,68 +25,57 @@ void handleKeys(
 		GLFWwindow* window, int key, int scancode, int action, int mode);
 void renderFrame();
 
-GLuint VAO;
+GLuint VBO;
 GLFWwindow* window;
 
 int main()
 {
-    GLint result;
-
     // Init GLFW
     if(!glfwInit())
 	{
 		handleErrors(0, "Unable to initialize GLFW");
 	}
-    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
 
-    // Create a GLFWwindow object that we can use for GLFW's functions
+    // Create window (and setup for ogl)
+    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
     window = glfwCreateWindow(
 			WIN_WIDTH, WIN_HEIGHT, "C++ to WebGL Prototype", NULL, NULL);
 	if(!window)
 	{
 		handleErrors(0, "Unable to create GLFW window");
 	}
-		
     glfwMakeContextCurrent(window);
+    glViewport(0, 0, WIN_WIDTH, WIN_HEIGHT);
 
-    // Set the required callback functions
+	// Load shader system
+	shaders_init();
+
+    // Setup callbacks
 	glfwSetErrorCallback(handleErrors);
     glfwSetKeyCallback(window, handleKeys);
 
-	shaders_init();
-	
-    glViewport(0, 0, WIN_WIDTH, WIN_HEIGHT);
+	// Setup data for solid circle
+    GLfloat solidCircle[(CIRCLE_RESOLUTION+1) * 2];
+	solidCircle[0] = 0;
+	solidCircle[1] = 0;
+	const double phaseDistance = 2*M_PI/(CIRCLE_RESOLUTION-1);
+	for(int i = 0; i < CIRCLE_RESOLUTION; i++)
+	{
+		solidCircle[i*2+2] = sin(i*phaseDistance) * 100;
+		solidCircle[i*2+3] = cos(i*phaseDistance) * 100;
+	}
 
-    GLfloat vertices[] = {
-         500,    0,   1, 0, 0,  // top, red
-        1000,  500,   0, 1, 0,  // Right, green
-           0,  500,   0, 0, 1,  // left, blue
-        1000,  500,   0, 1, 0,  // Right, green
-           0,  500,   0, 0, 1,  // left, blue
-         500, 1000,   1, 0, 1   // bottom, magenta
-    };
-	
-    GLuint VBO;
-    glGenVertexArrays(1, &VAO);
+	// Setup solid circle buffer
     glGenBuffers(1, &VBO);
-    glBindVertexArray(VAO);
-
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-	
-	int attribute_position = shaders_getAttributeIndex_position();	
+    glBufferData(
+			GL_ARRAY_BUFFER, sizeof(solidCircle), solidCircle, GL_STATIC_DRAW);
+	/// Position attribute setup
+	int attribute_position = shaders_getAttributeIndex_vertexPosition();	
     glVertexAttribPointer(
-			attribute_position, 2, GL_FLOAT, GL_FALSE, 20, BUFFER_OFFSET(0));
+			attribute_position, 2, GL_FLOAT, GL_FALSE, 8, BUFFER_OFFSET(0));
     glEnableVertexAttribArray(attribute_position);
-
-	int attribute_color = shaders_getAttributeIndex_color();
-    glVertexAttribPointer(
-			attribute_color, 3, GL_FLOAT, GL_FALSE, 20, BUFFER_OFFSET(8));
-	glEnableVertexAttribArray(attribute_color);
-
     glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-    glBindVertexArray(0);
 
     // Game loop
 	#ifdef EMSCRIPTEN
@@ -95,16 +87,15 @@ int main()
 		}
 	#endif
 
-    // Properly de-allocate all resources once they've outlived their purpose
-    glDeleteVertexArrays(1, &VAO);
+	// Cleanup
     glDeleteBuffers(1, &VBO);
-    // Terminate GLFW, clearing any resources allocated by GLFW.
     glfwTerminate();
     return 0;
 }
 
 void handleKeys(GLFWwindow* window, int key, int scancode, int action, int mode)
 {
+	// Escape key quits
     if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
         glfwSetWindowShouldClose(window, GL_TRUE);
 }
@@ -117,13 +108,28 @@ void renderFrame()
 
 	glClearColor(0.2f, 0.3f, 0.5f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
+	
+	float x = sin(rotationPhase) * 250;
+	float y = cos(rotationPhase) * 250;
+	
+	/// Draw scene
+	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
-	//glRotatef(rotationPhase, 0, 1, 0);
-	rotationPhase += 1.0f;
+	shaders_setObjectPosition(x + 500, y + 500);
+	shaders_setObjectScale(1);
+	shaders_setObjectColor(.75f, .5f, 0);
 	shaders_useBase();
-	glBindVertexArray(VAO);
-	glDrawArrays(GL_TRIANGLES, 0, 6);
-	glBindVertexArray(0);
+	glDrawArrays(GL_TRIANGLE_FAN, 0, CIRCLE_RESOLUTION+1);
+
+	shaders_setObjectPosition(-x + 500, -y + 500);
+	shaders_setObjectScale(.65f);
+	shaders_setObjectColor(0, .5f, .75f);
+	shaders_useBase();
+	glDrawArrays(GL_TRIANGLE_FAN, 0, CIRCLE_RESOLUTION+1);
+
+	glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 	glfwSwapBuffers(window);
+	
+	rotationPhase += .05f;
 }

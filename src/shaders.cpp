@@ -6,27 +6,29 @@
 #include "errorHandling.h"
 
 const GLchar* SHADER_BASE_VERTEX =
-	"uniform mat4 layout;\n"
-	"attribute vec2 position;\n"
-	"attribute vec3 color;\n"
-	"varying vec3 fragColor;\n"
+	"uniform mat4 sceneTransform;\n"
+	"uniform vec2 objectPosition;\n"
+	"uniform float objectScale;\n"
+	"attribute vec2 vertexPosition;\n"
 	"void main()\n"
 	"{\n"
 	"	gl_Position =\n"
-	"			layout *\n"
-	"			vec4(position, 0.0, 1.0);\n"
-	"	fragColor = color;\n"
+	"			sceneTransform *\n"
+	"			vec4((objectPosition+vertexPosition)*objectScale, 0.0, 1.0);\n"
 	"}\n\0";
 const GLchar* SHADER_BASE_FRAGMENT =
 	"precision highp float;\n"
-	"varying vec3 fragColor;\n"
+	"uniform vec3 objectColor;\n"
 	"void main()\n"
 	"{\n"
-	"	gl_FragColor = vec4(fragColor, 1.0);\n"
+	"	gl_FragColor = vec4(objectColor, 1.0);\n"
 	"}\n\0";
 
 GLuint shaders_prog_base;
-GLuint shaders_sceneLayout;
+GLuint shaders_uniform_sceneTransform;
+GLuint shaders_uniform_objectPosition;
+GLuint shaders_uniform_objectScale;
+GLuint shaders_uniform_objectColor;
 
 void shaders_init()
 {
@@ -72,13 +74,44 @@ void shaders_init()
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 	
-	shaders_sceneLayout = glGetUniformLocation(shaders_prog_base, "layout");
+	shaders_uniform_sceneTransform =
+			glGetUniformLocation(shaders_prog_base, "sceneTransform");
+	shaders_uniform_objectPosition =
+			glGetUniformLocation(shaders_prog_base, "objectPosition");
+	shaders_uniform_objectScale =
+			glGetUniformLocation(shaders_prog_base, "objectScale");
+	shaders_uniform_objectColor =
+			glGetUniformLocation(shaders_prog_base, "objectColor");
 	shaders_setSceneLayout(0, 0, 1000, 1000);
+	shaders_setObjectPosition(500, 500);
+	shaders_setObjectScale(1);
+	shaders_setObjectColor(1, 1, 1);
 }
 
 void shaders_useBase()
 {
 	glUseProgram(shaders_prog_base);
+}
+
+void shaders_setObjectPosition(float x, float y)
+{
+	glUseProgram(shaders_prog_base);
+	glUniform2f(shaders_uniform_objectPosition, x, y);
+	glUseProgram(0);
+}
+
+void shaders_setObjectScale(float scale)
+{
+	glUseProgram(shaders_prog_base);
+	glUniform1f(shaders_uniform_objectScale, scale);
+	glUseProgram(0);
+}
+
+void shaders_setObjectColor(float red, float green, float blue)
+{
+	glUseProgram(shaders_prog_base);
+	glUniform3f(shaders_uniform_objectColor, red, green, blue);
+	glUseProgram(0);
 }
 
 void shaders_setSceneLayout(float left, float top, float width, float height)
@@ -89,15 +122,13 @@ void shaders_setSceneLayout(float left, float top, float width, float height)
 			0, 0, 1, 0,
 			-1-left, 1+top, 0, 1};
 	glUseProgram(shaders_prog_base);
-	glUniformMatrix4fv(shaders_sceneLayout, 1, false, sceneLayoutMatrix);
+	glUniformMatrix4fv(
+			shaders_uniform_sceneTransform, 1, false, sceneLayoutMatrix);
+	glUseProgram(0);
 }
 
-GLuint shaders_getAttributeIndex_position()
+GLuint shaders_getAttributeIndex_vertexPosition()
 {
-	return glGetAttribLocation(shaders_prog_base, "position");
+	return glGetAttribLocation(shaders_prog_base, "vertexPosition");
 }
 
-GLuint shaders_getAttributeIndex_color()
-{
-	return glGetAttribLocation(shaders_prog_base, "color");
-}
