@@ -1,8 +1,3 @@
-get multiple objects drawn
-setup different color for each object
-
+get input working (have small circle at mouse's last down)
 try emcc with object files
-
-find minimal lib access for each target
-
 get emcc working in make
