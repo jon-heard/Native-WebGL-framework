@@ -1,3 +1,3 @@
-get input working (have small circle at mouse's last down)
-try emcc with object files
 get emcc working in make
+try emcc with object files
+setup framework for Charles' work

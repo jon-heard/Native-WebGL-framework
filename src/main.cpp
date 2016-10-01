@@ -21,12 +21,13 @@ const int CIRCLE_RESOLUTION = 100;
 // http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-void handleKeys(
-		GLFWwindow* window, int key, int scancode, int action, int mode);
+void handleMousePosition(GLFWwindow* window, double xpos, double ypos);
+void handleMouseClick(GLFWwindow* window, int button, int action, int mods);
 void renderFrame();
 
 GLuint VBO;
 GLFWwindow* window;
+int mouseX = 0, mouseY = 0, mouseDown = 0;
 
 int main()
 {
@@ -49,10 +50,13 @@ int main()
 
 	// Load shader system
 	shaders_init();
+	shaders_setSceneLayout(-2000, -2000, 2000, 2000);
+	//shaders_setSceneLayout(-1000, -1000, 2000, 2000);
 
     // Setup callbacks
 	glfwSetErrorCallback(handleErrors);
-    glfwSetKeyCallback(window, handleKeys);
+    glfwSetCursorPosCallback(window, handleMousePosition);
+	glfwSetMouseButtonCallback(window, handleMouseClick);
 
 	// Setup data for solid circle
     GLfloat solidCircle[(CIRCLE_RESOLUTION+1) * 2];
@@ -93,43 +97,60 @@ int main()
     return 0;
 }
 
-void handleKeys(GLFWwindow* window, int key, int scancode, int action, int mode)
+void handleMousePosition(GLFWwindow* window, double xpos, double ypos)
 {
-	// Escape key quits
-    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, GL_TRUE);
+	mouseX = xpos*2000/WIN_WIDTH-1000;
+	mouseY = ypos*2000/WIN_HEIGHT-1000;
 }
+void handleMouseClick(GLFWwindow* window, int button, int action, int mods)
+{
+	mouseDown = (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS);
+}
+
 
 float rotationPhase = 0;
 
 void renderFrame()
 {
+	glfwSwapBuffers(window);
+
 	glfwPollEvents();
 
 	glClearColor(0.2f, 0.3f, 0.5f, 1.0f);
 	glClear(GL_COLOR_BUFFER_BIT);
 	
-	float x = sin(rotationPhase) * 250;
-	float y = cos(rotationPhase) * 250;
-	
 	/// Draw scene
 	glBindBuffer(GL_ARRAY_BUFFER, VBO);
 
-	shaders_setObjectPosition(x + 500, y + 500);
+		float x = sin(rotationPhase) * 250;
+	float y = cos(rotationPhase) * 250;
+	
+	shaders_setObjectPosition(sin(rotationPhase) * 250, cos(rotationPhase) * 250);
 	shaders_setObjectScale(1);
 	shaders_setObjectColor(.75f, .5f, 0);
 	shaders_useBase();
 	glDrawArrays(GL_TRIANGLE_FAN, 0, CIRCLE_RESOLUTION+1);
 
-	shaders_setObjectPosition(-x + 500, -y + 500);
+	shaders_setObjectPosition(sin(rotationPhase+1) * 250, cos(rotationPhase+1) * 250);
 	shaders_setObjectScale(.65f);
 	shaders_setObjectColor(0, .5f, .75f);
 	shaders_useBase();
 	glDrawArrays(GL_TRIANGLE_FAN, 0, CIRCLE_RESOLUTION+1);
+	
+	shaders_setObjectPosition(mouseX, mouseY);
+	shaders_setObjectScale(.25f);
+	if(mouseDown)
+	{
+		shaders_setObjectColor(1, 1, 0);
+	}
+	else
+	{
+		shaders_setObjectColor(0, 0, 0);
+	}
+	shaders_useBase();
+	glDrawArrays(GL_TRIANGLE_FAN, 0, CIRCLE_RESOLUTION+1);
 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-	glfwSwapBuffers(window);
 	
 	rotationPhase += .05f;
 }

@@ -14,7 +14,7 @@ const GLchar* SHADER_BASE_VERTEX =
 	"{\n"
 	"	gl_Position =\n"
 	"			sceneTransform *\n"
-	"			vec4((objectPosition+vertexPosition)*objectScale, 0.0, 1.0);\n"
+	"			vec4(vertexPosition*objectScale+objectPosition, 0.0, 1.0);\n"
 	"}\n\0";
 const GLchar* SHADER_BASE_FRAGMENT =
 	"precision highp float;\n"
@@ -114,13 +114,13 @@ void shaders_setObjectColor(float red, float green, float blue)
 	glUseProgram(0);
 }
 
-void shaders_setSceneLayout(float left, float top, float width, float height)
+void shaders_setSceneLayout(float left, float top, float right, float bottom)
 {
 	float sceneLayoutMatrix[16] = {
-			2/width, 0, 0, 0,
-			0, -2/height, 0, 0,
+			2/right, 0, 0, 0,
+			0, -2/bottom, 0, 0,
 			0, 0, 1, 0,
-			-1-left, 1+top, 0, 1};
+			-1-left/right, 1+top/bottom, 0, 1};
 	glUseProgram(shaders_prog_base);
 	glUniformMatrix4fv(
 			shaders_uniform_sceneTransform, 1, false, sceneLayoutMatrix);
