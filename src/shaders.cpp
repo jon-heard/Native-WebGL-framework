@@ -117,10 +117,10 @@ void shaders_setObjectColor(float red, float green, float blue)
 void shaders_setSceneLayout(float left, float top, float right, float bottom)
 {
 	float sceneLayoutMatrix[16] = {
-			2/right, 0, 0, 0,
-			0, -2/bottom, 0, 0,
+			2/(right-left), 0, 0, 0,
+			0, -2/(bottom-top), 0, 0,
 			0, 0, 1, 0,
-			-1-left/right, 1+top/bottom, 0, 1};
+			-1-left/(right-left)*2, 1+top/(bottom-top)*2, 0, 1};
 	glUseProgram(shaders_prog_base);
 	glUniformMatrix4fv(
 			shaders_uniform_sceneTransform, 1, false, sceneLayoutMatrix);
@@ -131,4 +131,3 @@ GLuint shaders_getAttributeIndex_vertexPosition()
 {
 	return glGetAttribLocation(shaders_prog_base, "vertexPosition");
 }
-

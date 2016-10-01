@@ -1,2 +1,0 @@
-try emcc with object files
-setup framework for Charles' work
