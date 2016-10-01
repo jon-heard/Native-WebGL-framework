@@ -1,3 +1,2 @@
-get emcc working in make
 try emcc with object files
 setup framework for Charles' work

@@ -21,7 +21,7 @@ obj/errorHandling.o: src/errorHandling.cpp
 web: bin/app.js
 
 bin/app.js: src/main.cpp src/shaders.cpp src/errorHandling.cpp
-	emcc src/main.cpp src/shaders.cpp src/errorHandling.cpp -o bin/app.js -s USE_GLFW=3
+	call emcc src/main.cpp src/shaders.cpp src/errorHandling.cpp -o bin/app.js -s USE_GLFW=3
 
 
 
