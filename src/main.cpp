@@ -13,29 +13,29 @@ void cleanup();
 
 int main()
 {
-	platform_run(init, frameLogic, cleanup);
+	platform::run(init, frameLogic, cleanup);
 }
 
 void init()
 {
-	platform_setTitle("Base app");
-	platform_setBackgroundColor(0, 0, 0);
+	platform::setTitle("Base app");
+	platform::setBackgroundColor(0, 0, 0);
 }
 
 float rotationPhase = 0;
 void frameLogic()
 {
-	platform_drawCircle(false, 4, 0, 0, 1000);
-	platform_drawCircle(false, 0, 0, 0, 500);
-	platform_drawCircle(
+	platform::drawCircle(false, 4, 0, 0, 1000);
+	platform::drawCircle(false, 0, 0, 0, 500);
+	platform::drawCircle(
 			false, 1, sin(rotationPhase) * 375, cos(rotationPhase) * 375, 100);
 	int color = 3;
-	if(platform_isMouseDown())
+	if(platform::isMouseDown())
 	{
 		color = 2;
 	}
-	platform_drawCircle(
-			true, color, platform_getMouseX(), platform_getMouseY(), 25);
+	platform::drawCircle(
+			true, color, platform::getMouseX(), platform::getMouseY(), 25);
 	rotationPhase += .025f;
 }
 
