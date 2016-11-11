@@ -5,13 +5,13 @@ all: pc web
 pc: bin/app.exe
 
 bin/app.exe: obj/pc/main.o obj/pc/platform.o obj/pc/shaders.o obj/pc/errorHandling.o
-	g++ obj/pc/main.o obj/pc/platform.o obj/pc/shaders.o obj/pc/errorHandling.o -o bin/app.exe -L libs/glfw/lib -L libs/glew/lib -lglew32s -lglfw3 -lopengl32 -lgdi32 -static-libgcc -static-libstdc++ -static
+	g++ obj/pc/main.o obj/pc/platform.o obj/pc/shaders.o obj/pc/errorHandling.o -o bin/app.exe -L libs/glfw/lib -L libs/glew/lib -L libs/soil/lib -lglew32s -lglfw3 -lsoil -lopengl32 -lgdi32 -static-libgcc -static-libstdc++ -static
 
 obj/pc/main.o: src/main.cpp
 	g++ -c src/main.cpp -o obj/pc/main.o
 
 obj/pc/platform.o: src/platform.cpp
-	g++ -c src/platform.cpp -o obj/pc/platform.o -I libs/glfw/include -I libs/glew/include
+	g++ -c src/platform.cpp -o obj/pc/platform.o -I libs/glfw/include -I libs/glew/include -I libs/soil/include
 
 obj/pc/shaders.o: src/shaders.cpp
 	g++ -c src/shaders.cpp -o obj/pc/shaders.o -I libs/glew/include

@@ -5,30 +5,73 @@
 #include <GL/glew.h>
 #include "errorHandling.h"
 
-const GLchar* SHADER_BASE_VERTEX =
+#include <iostream>
+using namespace std;
+
+const GLchar* SHADER_VERTEX_BASE =
 	"uniform mat4 sceneTransform;\n"
 	"uniform vec2 objectPosition;\n"
-	"uniform float objectScale;\n"
+	"uniform vec2 objectScale;\n"
 	"attribute vec2 vertexPosition;\n"
+	"varying vec2 UVs;\n"
 	"void main()\n"
 	"{\n"
+	"	UVs = vertexPosition;\n"
 	"	gl_Position =\n"
 	"			sceneTransform *\n"
 	"			vec4(vertexPosition*objectScale+objectPosition, 0.0, 1.0);\n"
 	"}\n\0";
-const GLchar* SHADER_BASE_FRAGMENT =
-	"precision highp float;\n"
+
+const GLchar* SHADER_FRAGMENT_COLOR =
+	"varying vec2 UVs;\n"
 	"uniform vec3 objectColor;\n"
 	"void main()\n"
 	"{\n"
 	"	gl_FragColor = vec4(objectColor, 1.0);\n"
 	"}\n\0";
 
-GLuint shaders_prog_base;
-GLuint shaders_uniform_sceneTransform;
-GLuint shaders_uniform_objectPosition;
-GLuint shaders_uniform_objectScale;
-GLuint shaders_uniform_objectColor;
+const GLchar* SHADER_FRAGMENT_TEXTURE =
+	"varying vec2 UVs;\n"
+	"uniform sampler2D mainTex;\n"
+	"void main()\n"
+	"{\n"
+	"	gl_FragColor = texture2D(mainTex, UVs);\n"
+	"}\n\0";
+	
+const GLchar* SHADER_FRAGMENT_BLUR =
+	"varying vec2 UVs;\n"
+	"uniform sampler2D mainTex;\n"
+	"uniform float blurAmount;\n"
+	"void main()\n"
+	"{\n"
+	"	gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);\n"
+	"	float blurExtent = 5.0*blurAmount;"
+	"	for(float y = -blurExtent; y < blurExtent; y += blurAmount)\n"
+	"	{\n"
+	"		for(float x = -blurExtent; x < blurExtent; x += blurAmount)\n"
+	"		{\n"
+	"			gl_FragColor += texture2D(mainTex, UVs + vec2(x, y));"
+	"		}\n"
+	"	}\n"
+	"	gl_FragColor /= 100.0;\n"
+	"}\n\0";
+
+GLuint shaders_color;
+GLuint shaders_color_uniform_sceneTransform;
+GLuint shaders_color_uniform_objectPosition;
+GLuint shaders_color_uniform_objectScale;
+GLuint shaders_color_uniform_objectColor;
+GLuint shaders_texture;
+GLuint shaders_texture_uniform_sceneTransform;
+GLuint shaders_texture_uniform_objectPosition;
+GLuint shaders_texture_uniform_objectScale;
+GLuint shaders_texture_uniform_mainTex;
+GLuint shaders_blur;
+GLuint shaders_blur_uniform_sceneTransform;
+GLuint shaders_blur_uniform_objectPosition;
+GLuint shaders_blur_uniform_objectScale;
+GLuint shaders_blur_uniform_mainTex;
+GLuint shaders_blur_uniform_blurAmount;
 
 void shaders_init()
 {
@@ -38,80 +81,133 @@ void shaders_init()
     result = glewInit();
 	if(result != GLEW_OK)
 	{
-		handleErrors(result, (const char*)glewGetErrorString(result));
+		handleErrors(result, "glewInit:", (const char*)glewGetErrorString(result));
 	}
 	
     GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
-    glShaderSource(vertexShader, 1, &SHADER_BASE_VERTEX, NULL);
+    glShaderSource(vertexShader, 1, &SHADER_VERTEX_BASE, NULL);
     glCompileShader(vertexShader);
     glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &result);
-    if (!result)
+    //if (!result)
     {
 		GLchar infoLog[512];
 		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-		handleErrors(0, infoLog);
+		cout << "vert: " << infoLog << endl;
+		//handleErrors(0, "vertex shader:", infoLog);
     }
-    GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
-    glShaderSource(fragmentShader, 1, &SHADER_BASE_FRAGMENT, NULL);
-    glCompileShader(fragmentShader);
-    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &result);
-    if (!result)
+
+    GLuint colorShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(colorShader, 1, &SHADER_FRAGMENT_COLOR, NULL);
+    glCompileShader(colorShader);
+    glGetShaderiv(colorShader, GL_COMPILE_STATUS, &result);
+    //if (!result)
     {
 		GLchar infoLog[512];
-		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-		handleErrors(0, infoLog);
+		glGetShaderInfoLog(colorShader, 512, NULL, infoLog);
+		cout << "color: " << infoLog << endl;
+		//handleErrors(0, "color shader:", infoLog);
     }
-    shaders_prog_base = glCreateProgram();
-    glAttachShader(shaders_prog_base, vertexShader);
-    glAttachShader(shaders_prog_base, fragmentShader);
-    glLinkProgram(shaders_prog_base);
-    glGetProgramiv(shaders_prog_base, GL_LINK_STATUS, &result);
-    if (!result) {
+
+	GLuint textureShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(textureShader, 1, &SHADER_FRAGMENT_TEXTURE, NULL);
+    glCompileShader(textureShader);
+    glGetShaderiv(textureShader, GL_COMPILE_STATUS, &result);
+    //if (!result)
+    {
 		GLchar infoLog[512];
-		glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
-		handleErrors(0, infoLog);
+		glGetShaderInfoLog(textureShader, 512, NULL, infoLog);
+		cout << "texture: " << infoLog << endl;
+		//handleErrors(0, "texture shader:", infoLog);
     }
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
 	
-	shaders_uniform_sceneTransform =
-			glGetUniformLocation(shaders_prog_base, "sceneTransform");
-	shaders_uniform_objectPosition =
-			glGetUniformLocation(shaders_prog_base, "objectPosition");
-	shaders_uniform_objectScale =
-			glGetUniformLocation(shaders_prog_base, "objectScale");
-	shaders_uniform_objectColor =
-			glGetUniformLocation(shaders_prog_base, "objectColor");
-	shaders_setSceneLayout(0, 0, 1000, 1000);
-	shaders_setObjectPosition(500, 500);
-	shaders_setObjectScale(1);
-	shaders_setObjectColor(1, 1, 1);
-}
+	GLuint blurShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(blurShader, 1, &SHADER_FRAGMENT_BLUR, NULL);
+    glCompileShader(blurShader);
+    glGetShaderiv(blurShader, GL_COMPILE_STATUS, &result);
+    //if (!result)
+    {
+		GLchar infoLog[512];
+		glGetShaderInfoLog(blurShader, 512, NULL, infoLog);
+		cout << "blur: " << infoLog << endl;
+		//handleErrors(0, "texture shader:", infoLog);
+    }
+	
+    shaders_color = glCreateProgram();
+    glAttachShader(shaders_color, vertexShader);
+    glAttachShader(shaders_color, colorShader);
+    glLinkProgram(shaders_color);
+    glGetProgramiv(shaders_color, GL_LINK_STATUS, &result);
+    //if (!result)
+	{
+		GLchar infoLog[512];
+		glGetShaderInfoLog(shaders_color, 512, NULL, infoLog);
+		cout << "color program: " << infoLog << endl;
+		//handleErrors(0, "color shader program:", infoLog);
+    }
+	
+    shaders_texture = glCreateProgram();
+    glAttachShader(shaders_texture, vertexShader);
+    glAttachShader(shaders_texture, textureShader);
+    glLinkProgram(shaders_texture);
+    glGetProgramiv(shaders_texture, GL_LINK_STATUS, &result);
+    //if (!result)
+	{
+		GLchar infoLog[512];
+		glGetShaderInfoLog(shaders_texture, 512, NULL, infoLog);
+		cout << "texture program: " << infoLog << endl;
+		//handleErrors(0, "color texture program:", infoLog);
+    }
 
-void shaders_useBase()
-{
-	glUseProgram(shaders_prog_base);
-}
+	shaders_blur = glCreateProgram();
+    glAttachShader(shaders_blur, vertexShader);
+    glAttachShader(shaders_blur, blurShader);
+    glLinkProgram(shaders_blur);
+    glGetProgramiv(shaders_blur, GL_LINK_STATUS, &result);
+    //if (!result)
+	{
+		GLchar infoLog[512];
+		glGetShaderInfoLog(shaders_blur, 512, NULL, infoLog);
+		cout << "blur program: " << infoLog << endl;
+		//handleErrors(0, "texture shader program:", infoLog);
+    }
 
-void shaders_setObjectPosition(float x, float y)
-{
-	glUseProgram(shaders_prog_base);
-	glUniform2f(shaders_uniform_objectPosition, x, y);
-	glUseProgram(0);
-}
+    glDeleteShader(vertexShader);
+    glDeleteShader(colorShader);
+	//glDeleteShader(textureShader);
+	glDeleteShader(blurShader);
 
-void shaders_setObjectScale(float scale)
-{
-	glUseProgram(shaders_prog_base);
-	glUniform1f(shaders_uniform_objectScale, scale);
-	glUseProgram(0);
-}
+	cout << "color: " << shaders_color << endl;
+	cout << "texture: " << shaders_texture << endl;
+	cout << "blur: " << shaders_blur << endl;
 
-void shaders_setObjectColor(float red, float green, float blue)
-{
-	glUseProgram(shaders_prog_base);
-	glUniform3f(shaders_uniform_objectColor, red, green, blue);
-	glUseProgram(0);
+	shaders_color_uniform_sceneTransform =
+			glGetUniformLocation(shaders_color, "sceneTransform");
+	shaders_color_uniform_objectPosition =
+			glGetUniformLocation(shaders_color, "objectPosition");
+	shaders_color_uniform_objectScale =
+			glGetUniformLocation(shaders_color, "objectScale");
+	shaders_color_uniform_objectColor =
+			glGetUniformLocation(shaders_color, "objectColor");
+
+	shaders_texture_uniform_sceneTransform =
+			glGetUniformLocation(shaders_texture, "sceneTransform");
+	shaders_texture_uniform_objectPosition =
+			glGetUniformLocation(shaders_texture, "objectPosition");
+	shaders_texture_uniform_objectScale =
+			glGetUniformLocation(shaders_texture, "objectScale");
+	shaders_texture_uniform_mainTex =
+			glGetUniformLocation(shaders_texture, "mainTex");
+
+	shaders_blur_uniform_sceneTransform =
+			glGetUniformLocation(shaders_blur, "sceneTransform");
+	shaders_blur_uniform_objectPosition =
+			glGetUniformLocation(shaders_blur, "objectPosition");
+	shaders_blur_uniform_objectScale =
+			glGetUniformLocation(shaders_blur, "objectScale");
+	shaders_blur_uniform_mainTex =
+			glGetUniformLocation(shaders_blur, "mainTex");
+	shaders_blur_uniform_blurAmount =
+			glGetUniformLocation(shaders_blur, "blurAmount");
 }
 
 void shaders_setSceneLayout(float left, float top, float right, float bottom)
@@ -121,13 +217,49 @@ void shaders_setSceneLayout(float left, float top, float right, float bottom)
 			0, -2/(bottom-top), 0, 0,
 			0, 0, 1, 0,
 			-1-left/(right-left)*2, 1+top/(bottom-top)*2, 0, 1};
-	glUseProgram(shaders_prog_base);
+
+	glUseProgram(shaders_color);
 	glUniformMatrix4fv(
-			shaders_uniform_sceneTransform, 1, false, sceneLayoutMatrix);
+			shaders_color_uniform_sceneTransform, 1, false, sceneLayoutMatrix);
+
+	glUseProgram(shaders_texture);
+	glUniformMatrix4fv(
+			shaders_color_uniform_sceneTransform, 1, false, sceneLayoutMatrix);
+
+	glUseProgram(shaders_blur);
+	glUniformMatrix4fv(
+			shaders_blur_uniform_sceneTransform, 1, false, sceneLayoutMatrix);
+
 	glUseProgram(0);
 }
 
 GLuint shaders_getAttributeIndex_vertexPosition()
 {
-	return glGetAttribLocation(shaders_prog_base, "vertexPosition");
+	return glGetAttribLocation(shaders_color, "vertexPosition");
+}
+
+void shaders_useColor(float xPos, float yPos, float xScale, float yScale, float red, float green, float blue)
+{
+	glUseProgram(shaders_color);
+	glUniform2f(shaders_color_uniform_objectPosition, xPos, yPos);
+	glUniform2f(shaders_color_uniform_objectScale, xScale, yScale);
+	glUniform3f(shaders_color_uniform_objectColor, red, green, blue);
+}
+
+void shaders_useTexture(float xPos, float yPos, float xScale, float yScale, int textureId)
+{
+	glUseProgram(shaders_texture);
+	glUniform2f(shaders_texture_uniform_objectPosition, xPos, yPos);
+	glUniform2f(shaders_texture_uniform_objectScale, xScale, yScale);
+	glUniform1f(shaders_texture_uniform_mainTex, textureId);
+}
+
+
+void shaders_useBlur(float xPos, float yPos, float xScale, float yScale, int textureId, float blurAmount)
+{
+	glUseProgram(shaders_blur);
+	glUniform2f(shaders_blur_uniform_objectPosition, xPos, yPos);
+	glUniform2f(shaders_blur_uniform_objectScale, xScale, yScale);
+	glUniform1f(shaders_blur_uniform_mainTex, textureId);
+	glUniform1f(shaders_blur_uniform_blurAmount, blurAmount);
 }

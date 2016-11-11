@@ -9,7 +9,17 @@ namespace platform
 	void  setBackgroundColor(float red, float green, float blue);
 
 	void  drawCircle(
-			bool diskOrCircle, int colorIndex, float x, float y, float radius);
+			float x, float y, float radius, int colorIndex, bool diskOrCircle);
+
+	int   loadImage(const char* filename);
+	void  drawImage(
+			float x, float y, float sizeX, float sizeY, const char* filename);
+	void  drawImage(
+			float x, float y, float sizeX, float sizeY, int textureId);
+
+	void cacheDraws();
+	void flushDrawCache();
+	void flushDrawCacheWithBlur();
 
 	bool  isMouseDown();
 	float getMouseX();
