@@ -8,11 +8,14 @@
 #include <GLFW/glfw3.h>
 #include <SOIL.h>
 #include <map>
+#include <sstream>
 #ifdef EMSCRIPTEN
 	#include <emscripten/emscripten.h>
 #endif
 #include "errorHandling.h"
 #include "shaders.h"
+
+#include <iostream>
 
 using namespace std;
 
@@ -33,10 +36,10 @@ const Color COLORS[] = {
 	{.5f, .5f, .5f}		// gray
 };
 map<const char*, int> images;
-GLuint drawCacheBuffer1_frameBuffer;
-GLuint drawCacheBuffer2_frameBuffer;
-GLuint drawCacheBuffer1_texture;
-GLuint drawCacheBuffer2_texture;
+GLuint drawCacheBuffer1_frameBuffer = 0;
+GLuint drawCacheBuffer2_frameBuffer = 0;
+GLuint drawCacheBuffer1_texture = 0;
+GLuint drawCacheBuffer2_texture = 0;
 
 // http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
@@ -81,6 +84,8 @@ namespace platform
 		platform::setBackgroundColor(.25f, .25f, .25f);
 		glLineWidth(LINE_WIDTH);
 		glEnable(GL_TEXTURE_2D);
+		glEnable(GL_BLEND);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 		// Load shader system
 		shaders_init();
@@ -120,27 +125,24 @@ namespace platform
 
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 		}
-		
-		GLuint drawCacheBuffer1_frameBuffer;
-		GLuint drawCacheBuffer2_frameBuffer;
-		glGenFramebuffers(1, &drawCacheBuffer1_frameBuffer);
-		glBindFramebuffer(GL_FRAMEBUFFER, drawCacheBuffer1_frameBuffer);
+
 		glGenTextures(1, &drawCacheBuffer1_texture);
 		glBindTexture(GL_TEXTURE_2D, drawCacheBuffer1_texture);
-		glTexImage2D(GL_TEXTURE_2D, 0,GL_RGB, WIN_WIDTH, WIN_HEIGHT, 0, GL_RGB, GL_UNSIGNED_BYTE, 0);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, WIN_WIDTH, WIN_HEIGHT, 0, GL_RGBA, GL_INT, 0);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		GLuint drawCacheBuffer1_depthBuffer;
-		glGenRenderbuffers(1, &drawCacheBuffer1_depthBuffer);
-		glBindRenderbuffer(GL_RENDERBUFFER, drawCacheBuffer1_depthBuffer);
-		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, WIN_WIDTH, WIN_HEIGHT);
-		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, drawCacheBuffer1_depthBuffer);
-		glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, drawCacheBuffer1_frameBuffer, 0);
-		GLenum DrawBuffers[1] = {GL_COLOR_ATTACHMENT0};
-		glDrawBuffers(1, DrawBuffers);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glBindTexture(GL_TEXTURE_2D, 0);
+
+		glGenFramebuffers(1, &drawCacheBuffer1_frameBuffer);
+		glBindFramebuffer(GL_FRAMEBUFFER, drawCacheBuffer1_frameBuffer);
+		glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, drawCacheBuffer1_texture, 0);
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		
 		if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 			return;
-
+		
 		main_init();
 	
 	    // Game loop
@@ -172,7 +174,7 @@ namespace platform
 	void drawCircle(float x, float y, float radius, int colorIndex, bool diskOrCircle)
 	{
 		Color c = COLORS[colorIndex];
-		shaders_useColor(x, y, radius, radius, c.red, c.green, c.blue);
+		shaders_useColor(x, y, radius, radius, c.red, c.green, c.blue, 0);
 
 		glBindBuffer(GL_ARRAY_BUFFER, circleBuffer);
 		
@@ -187,21 +189,24 @@ namespace platform
 	
 	int loadImage(const char* filename)
 	{
-		return SOIL_load_OGL_texture(filename, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_DDS_LOAD_DIRECT);
+		int id = SOIL_load_OGL_texture(filename, SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_DDS_LOAD_DIRECT);
+		images[filename] = id;
 	}
 	
-	void drawImage(float x, float y, float sizeX, float sizeY, const char* filename)
+	int drawImage(float x, float y, float sizeX, float sizeY, const char* filename, float rotation)
 	{
 		if(images.find(filename) == images.end())
 		{
 			loadImage(filename);
 		}
-		drawImage(x, y, sizeX, sizeY, images[filename]);
+		int imageId = images[filename];
+		drawImage(x, y, sizeX, sizeY, imageId, rotation);
+		return imageId;
 	}
 
-	void drawImage(float x, float y, float sizeX, float sizeY, int textureId)
+	int drawImage(float x, float y, float sizeX, float sizeY, int imageId, float rotation)
 	{
-		shaders_useTexture(x, y, sizeX, sizeY, textureId);
+		shaders_useTexture(x, y, sizeX, sizeY, imageId, rotation);
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
@@ -212,23 +217,29 @@ namespace platform
 		glDrawArrays(GL_TRIANGLES, 0, 12);
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		
+		return imageId;
 	}
 
 	void cacheDraws()
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, drawCacheBuffer1_frameBuffer);
-		glViewport(0,0,WIN_WIDTH,WIN_HEIGHT);
+		glViewport(0, 0, WIN_WIDTH, WIN_HEIGHT);
+		glClearColor(0, 0, 0, 0);
+		glClear(GL_COLOR_BUFFER_BIT);
 	}
 
 	void flushDrawCache()
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER,0);
-		drawImage(LEFT, TOP, RIGHT, BOTTOM, drawCacheBuffer1_texture);
+		drawImage(LEFT, TOP, RIGHT-LEFT, BOTTOM-TOP, drawCacheBuffer1_texture);
 	}
 
 	void flushDrawCacheWithBlur()
 	{
-		shaders_useBlur(LEFT, TOP, RIGHT-LEFT, BOTTOM-TOP, drawCacheBuffer1_texture, .01f);
+		glBindFramebuffer(GL_FRAMEBUFFER,0);
+		
+		shaders_useBlur(LEFT, TOP, RIGHT-LEFT, BOTTOM-TOP, drawCacheBuffer1_texture, .003f);
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 

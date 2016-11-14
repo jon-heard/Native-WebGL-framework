@@ -25,8 +25,8 @@ void init()
 float rotationPhase = 0;
 void frameLogic()
 {
-	platform::drawCircle(0, 0, 1000, 4, false);
 	platform::cacheDraws();
+	platform::drawCircle(0, 0, 1000, 4, false);
 	platform::drawCircle(0, 0, 500, 0, false);
 	platform::drawCircle(
 			sin(rotationPhase) * 375, cos(rotationPhase) * 375, 100, 1, false);
@@ -39,8 +39,9 @@ void frameLogic()
 	platform::drawCircle(
 			platform::getMouseX(), platform::getMouseY(), 25, color, true);
 	rotationPhase += .025f;
-
-	platform::drawImage(0, 0, 1000, 1000, "flag.png");
+	
+	//platform::drawImage(-500,-500,500,500, "cap.png", rotationPhase*4);
+	//platform::drawImage(0,0,500,500, "flag.png", rotationPhase*4);
 }
 
 void cleanup()

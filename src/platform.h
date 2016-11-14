@@ -3,19 +3,19 @@
 
 namespace platform
 {
-	void  run(void (*init)(), void (*frameLogic)(), void (*cleanup)());
+	void run(void (*init)(), void (*frameLogic)(), void (*cleanup)());
 
-	void  setTitle(const char* title);
-	void  setBackgroundColor(float red, float green, float blue);
+	void setTitle(const char* title);
+	void setBackgroundColor(float red, float green, float blue);
 
-	void  drawCircle(
+	void drawCircle(
 			float x, float y, float radius, int colorIndex, bool diskOrCircle);
 
-	int   loadImage(const char* filename);
-	void  drawImage(
-			float x, float y, float sizeX, float sizeY, const char* filename);
-	void  drawImage(
-			float x, float y, float sizeX, float sizeY, int textureId);
+	int  loadImage(const char* filename);
+	int  drawImage(
+			float x, float y, float sizeX, float sizeY, const char* filename, float rotation = 0);
+	int  drawImage(
+			float x, float y, float sizeX, float sizeY, int textureId, float rotation = 0);
 
 	void cacheDraws();
 	void flushDrawCache();
