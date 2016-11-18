@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Native-WebGL-framework/src/DrawPrimitives.cpp&apos; to &apos;draw.cpp&apos;" description="Rename resource &apos;DrawPrimitives.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/DrawPrimitives.cpp" name="draw.cpp" stamp="1479462012513" updateReferences="true"/>
+</session>
