@@ -51,7 +51,7 @@ void frameLogic()
 			platform::getMouseX(), platform::getMouseY(), 25, color, true);
 	
 	platform::drawImage(-500,-500,500,500, "media/cap.png", rotationPhase*4);
-	//platform::drawImage(0,0,500,500, "flag.png", rotationPhase*4);
+	platform::drawImage(500,500,500,500, "media/flag.png", rotationPhase*4);
 }
 
 void cleanup()

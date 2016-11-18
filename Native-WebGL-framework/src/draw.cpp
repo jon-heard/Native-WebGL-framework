@@ -10,7 +10,7 @@
 #include <GLFW/glfw3.h>
 #include <SOIL.h>
 #include "shaders.h"
-#include "OGLFT.h"
+#include "../libs/oglft/OGLFT.h"
 
 using namespace std;
 
@@ -34,6 +34,7 @@ namespace platform
 	};
 
 	int attribute_position = 0;
+	int attribute_uvs = 0;
 
 	GLuint circleBuffer = 0;
 	GLuint rectangleBuffer = 0;
@@ -43,6 +44,7 @@ namespace platform
 	void draw_init()
 	{
 		attribute_position = shaders_getAttributeIndex_vertexPosition();
+		attribute_uvs = shaders_getAttributeIndex_vertexTextureCoordinate();
 
 		// Text rendering setup
 		monochrome = new OGLFT::Monochrome("media/times.ttf", 12);
@@ -57,23 +59,26 @@ namespace platform
 				circleData[i*2] = sin(i*phaseDistance);
 				circleData[i*2+1] = cos(i*phaseDistance);
 			}
-
 			glGenBuffers(1, &circleBuffer);
 			glBindBuffer(GL_ARRAY_BUFFER, circleBuffer);
 			glBufferData(
 					GL_ARRAY_BUFFER, sizeof(circleData), circleData, GL_STATIC_DRAW);
-
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 		}
 		// Setup data for rectangles
 		{
-			GLfloat rectangleData[] = { -.5f,-.5f, -.5f,.5f, .5f,.5f, .5f,-.5f, -.5f,-.5f };
-
+			GLfloat rectangleData[] =
+			{
+				-.5f,-.5f, 0,0,
+				-.5f,.5f, 0,1,
+				.5f,.5f, 1,1,
+				.5f,-.5f, 1,0,
+				-.5f,-.5f, 0,0
+			};
 			glGenBuffers(1, &rectangleBuffer);
 			glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 			glBufferData(
 					GL_ARRAY_BUFFER, sizeof(rectangleData), rectangleData, GL_STATIC_DRAW);
-
 			glBindBuffer(GL_ARRAY_BUFFER, 0);
 		}
 	}
@@ -108,7 +113,7 @@ namespace platform
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
 		glVertexAttribPointer(
-				attribute_position, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
+				attribute_position, 2, GL_FLOAT, GL_FALSE, 16, BUFFER_OFFSET(0));
 		glEnableVertexAttribArray(attribute_position);
 
 		glDrawArrays(filled ? GL_TRIANGLE_FAN : GL_LINE_STRIP, 0, 5);
@@ -148,8 +153,11 @@ namespace platform
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
 		glVertexAttribPointer(
-				attribute_position, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
+				attribute_position, 2, GL_FLOAT, GL_FALSE, 16, BUFFER_OFFSET(0));
+		glVertexAttribPointer(
+				attribute_uvs, 2, GL_FLOAT, GL_FALSE, 16, BUFFER_OFFSET(8));
 		glEnableVertexAttribArray(attribute_position);
+		glEnableVertexAttribArray(attribute_uvs);
 
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 5);
 

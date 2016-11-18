@@ -16,11 +16,12 @@ const GLchar* SHADER_VERTEX_BASE =
 	"uniform vec2 objectPosition;\n"
 	"uniform vec2 objectScale;\n"
 	"attribute vec2 vertexPosition;\n"
+	"attribute vec2 vertexTextureCoordinate;\n"
 	"varying vec2 UVs;\n"
 	"void main()\n"
 	"{\n"
 	//"	rotationTransform = mat4(1.0);\n"
-	"	UVs = vertexPosition;\n"
+	"	UVs = vertexTextureCoordinate;\n"
 	"	gl_Position =\n"
 	"			sceneTransform *\n"
 	//"			rotationTransform *\n"
@@ -41,7 +42,6 @@ const GLchar* SHADER_FRAGMENT_TEXTURE =
 	"void main()\n"
 	"{\n"
 	"	gl_FragColor = texture2D(mainTex, UVs);\n"
-	//"	gl_FragColor = vec4(1,1,0,1);\n"
 	"}\n\0";
 	
 const GLchar* SHADER_FRAGMENT_BLUR =
@@ -240,6 +240,11 @@ GLuint shaders_getAttributeIndex_vertexPosition()
 {
 	return glGetAttribLocation(shaders_color, "vertexPosition");
 }
+GLuint shaders_getAttributeIndex_vertexTextureCoordinate()
+{
+	cout << glGetAttribLocation(shaders_texture, "vertexTextureCoordinate") << endl;
+	return glGetAttribLocation(shaders_texture, "vertexTextureCoordinate");
+}
 
 void shaders_useColor(float xPos, float yPos, float xScale, float yScale, float red, float green, float blue, float rotation)
 {
@@ -260,12 +265,12 @@ void shaders_useColor(float xPos, float yPos, float xScale, float yScale, float 
 		rotationMatrix[1] = rotationMatrix[4] = sin(radians);
 		rotationMatrix[1] *= -1;
 	}
-	cout
-		<< rotationMatrix[ 0] << " " << rotationMatrix[1]  << " " << rotationMatrix[2] << " " << rotationMatrix[3] << endl
-		<< rotationMatrix[ 4] << " " << rotationMatrix[5]  << " " << rotationMatrix[6] << " " << rotationMatrix[7] << endl
-		<< rotationMatrix[ 8] << " " << rotationMatrix[9]  << " " << rotationMatrix[10] << " " << rotationMatrix[11] << endl
-		<< rotationMatrix[12] << " " << rotationMatrix[13] << " " << rotationMatrix[14] << " " << rotationMatrix[15] << endl
-		<< endl;
+//	cout
+//		<< rotationMatrix[ 0] << " " << rotationMatrix[1]  << " " << rotationMatrix[2] << " " << rotationMatrix[3] << endl
+//		<< rotationMatrix[ 4] << " " << rotationMatrix[5]  << " " << rotationMatrix[6] << " " << rotationMatrix[7] << endl
+//		<< rotationMatrix[ 8] << " " << rotationMatrix[9]  << " " << rotationMatrix[10] << " " << rotationMatrix[11] << endl
+//		<< rotationMatrix[12] << " " << rotationMatrix[13] << " " << rotationMatrix[14] << " " << rotationMatrix[15] << endl
+//		<< endl;
 	glUniformMatrix4fv(
 			shaders_color_uniform_rotationTransform, 1, false, rotationMatrix);
 }
