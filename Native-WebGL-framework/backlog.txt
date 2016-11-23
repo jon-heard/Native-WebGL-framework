@@ -1,0 +1,8 @@
+finish texture shader integration (in draw.cpp, remove shaders from drawImage)
+remove all instances of shaders.cpp and shaders.h (making sure you don't break anything)
+setup web version to work with latest
+adjust DrawCache to allow using a Shader object
+setup to work with android
+--- end of platform specific work ---
+create slider
+create glow effect

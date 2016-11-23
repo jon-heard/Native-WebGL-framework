@@ -2,14 +2,16 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 #include <iostream>
-#include "errorHandling.h"
-#include "platform.h"
+#include "platform/platform.h"
+#include "platform/DrawCache.h"
 
 using namespace std;
 
 void init();
 void frameLogic();
 void cleanup();
+
+platform::DrawCache* drawCache = NULL;
 
 int main()
 {
@@ -20,12 +22,14 @@ void init()
 {
 	platform::setTitle("Base app");
 	platform::setBackgroundColor(.25f, .25f, .25f);
+	platform::setTextSize(20);
+	drawCache = new platform::DrawCache();
 }
 
 float rotationPhase = 0;
 void frameLogic()
 {
-//	platform::cacheDraws();
+	drawCache->start();
 
 	platform::drawCircle(0, 0, 1000, 4, false);
 	platform::drawCircle(0, 0, 500, 0, false);
@@ -37,24 +41,26 @@ void frameLogic()
 	platform::drawText(-200,0,5,"hello world!");
 
 	platform::drawCircle(
-			sin(rotationPhase) * 375, cos(rotationPhase) * 375, 100, 1, false);
+			sin(-rotationPhase) * 375, cos(-rotationPhase) * 375, 100, 1, false);
 	rotationPhase += .025f;
 
-//	platform::flushDrawCacheWithBlur();
+	drawCache->stop();
+	drawCache->flush();
 
 	int color = 3;
 	if(platform::isMouseDown())
 	{
 		color = 2;
 	}
+	//cout << platform::getMouseX() << ", " << platform::getMouseY() << endl;
 	platform::drawCircle(
-			platform::getMouseX(), platform::getMouseY(), 25, color, true);
+			platform::getMouseX(), platform::getMouseY(), 50, color, true);
 	
-	platform::drawImage(-500,-500,500,500, "media/cap.png", rotationPhase*4);
+	platform::drawImage(-500,-500,500,500, "media/colorTest.png", rotationPhase*4);
 	platform::drawImage(500,500,500,500, "media/flag.png", rotationPhase*4);
 }
 
 void cleanup()
 {
-
+	delete drawCache;
 }
