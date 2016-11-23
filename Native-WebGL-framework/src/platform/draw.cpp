@@ -15,6 +15,9 @@
 
 using namespace std;
 
+// http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
+#define BUFFER_OFFSET(i) ((char *)NULL + (i))
+
 namespace platform
 {
 	typedef struct
@@ -32,9 +35,6 @@ namespace platform
 		{0,0,0}
 	};
 
-	int attribute_position = 0;
-	int attribute_uvs = 0;
-
 	GLuint circleBuffer = 0;
 	GLuint rectangleBuffer = 0;
 	map<const char*, int> images;
@@ -45,9 +45,6 @@ namespace platform
 
 	void draw_init()
 	{
-		attribute_position = shaders_getAttributeIndex_vertexPosition();
-		attribute_uvs = shaders_getAttributeIndex_vertexTextureCoordinate();
-
 		// Text rendering setup
 		monochrome = new OGLFT::Monochrome("media/times.ttf", 12, 100);
 		glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
@@ -121,9 +118,11 @@ namespace platform
 
 		glBindBuffer(GL_ARRAY_BUFFER, circleBuffer);
 
+		int vertexPosition = Shader::getParameterId("vertexPosition");
 		glVertexAttribPointer(
-				attribute_position, 2, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(0));
-		glEnableVertexAttribArray(attribute_position);
+				vertexPosition, 2, GL_FLOAT,
+				GL_FALSE, 0, BUFFER_OFFSET(0));
+		glEnableVertexAttribArray(vertexPosition);
 
 		glDrawArrays(
 				filled ? GL_TRIANGLE_FAN : GL_LINE_STRIP,
@@ -144,10 +143,11 @@ namespace platform
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
+		int vertexPosition = Shader::getParameterId("vertexPosition");
 		glVertexAttribPointer(
-				attribute_position, 2, GL_FLOAT, GL_FALSE,
-				16, BUFFER_OFFSET(0));
-		glEnableVertexAttribArray(attribute_position);
+				vertexPosition, 2, GL_FLOAT,
+				GL_FALSE, 16, BUFFER_OFFSET(0));
+		glEnableVertexAttribArray(vertexPosition);
 
 		glDrawArrays(filled ? GL_TRIANGLE_FAN : GL_LINE_STRIP, 0, 5);
 
@@ -200,14 +200,17 @@ namespace platform
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
+		int vertexPosition = Shader::getParameterId("vertexPosition");
 		glVertexAttribPointer(
-				attribute_position, 2, GL_FLOAT,
+				vertexPosition, 2, GL_FLOAT,
 				GL_FALSE, 16, BUFFER_OFFSET(0));
+		glEnableVertexAttribArray(vertexPosition);
+
+		int vertexTexCoords = Shader::getParameterId("vertexTexCoords");
 		glVertexAttribPointer(
-				attribute_uvs, 2, GL_FLOAT,
+				vertexTexCoords, 2, GL_FLOAT,
 				GL_FALSE, 16, BUFFER_OFFSET(8));
-		glEnableVertexAttribArray(attribute_position);
-		glEnableVertexAttribArray(attribute_uvs);
+		glEnableVertexAttribArray(vertexTexCoords);
 
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 5);
 

@@ -1,18 +1,15 @@
 #ifndef PLATFORM_H
 #define PLATFORM_H
 
-// http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
-#define BUFFER_OFFSET(i) ((char *)NULL + (i))
-
 namespace platform
 {
+	// Application settings
 	const int CIRCLE_RESOLUTION = 50;
 	const unsigned int WIN_WIDTH = 500, WIN_HEIGHT = 500;
 	const int LEFT = -1000, RIGHT = 1000, TOP = -1000, BOTTOM = 1000;
 
-	void run(void (*init)(), void (*frameLogic)(), void (*cleanup)());
-
 	// Environment
+	void run(void (*init)(), void (*frameLogic)(), void (*cleanup)());
 	void setTitle(const char* title);
 	void setBackgroundColor(float red, float green, float blue);
 
