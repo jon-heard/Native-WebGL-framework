@@ -47,19 +47,5 @@ namespace platform
 	void DrawCache::flush()
 	{
 		drawImage(0, 0, RIGHT-LEFT, BOTTOM-TOP, texture);
-
-		//		glBindFramebuffer(GL_FRAMEBUFFER,0);
-		//
-		//		shaders_useBlur(LEFT, TOP, RIGHT-LEFT, BOTTOM-TOP, texture, .003f);
-		//
-		//		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
-		//
-		//		glVertexAttribPointer(
-		//				attribute_position, 2, GL_FLOAT, GL_FALSE, 8, BUFFER_OFFSET(0));
-		//		glEnableVertexAttribArray(attribute_position);
-		//
-		//		glDrawArrays(GL_TRIANGLES, 0, 12);
-		//
-		//		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 }

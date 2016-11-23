@@ -1,3 +1,5 @@
+// Just included in platform.cpp for init and shutdown.  Most functions are
+// referenced in platform.h
 
 #ifndef INPUT_H_
 #define INPUT_H_

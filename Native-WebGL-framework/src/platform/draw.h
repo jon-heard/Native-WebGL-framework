@@ -1,4 +1,6 @@
 
+// Just included in platform.cpp for init and shutdown.  Most functions are
+// referenced in platform.h
 #ifndef DRAW_H_
 #define DRAW_H_
 

@@ -41,7 +41,9 @@ namespace platform
 	    int result = glewInit();
 		if(result != GLEW_OK)
 		{
-			handleErrors(result, "glewInit:", (const char*)glewGetErrorString(result));
+			handleErrors(
+					result, "glewInit:",
+					(const char*)glewGetErrorString(result));
 		}
 		return true;
 	}

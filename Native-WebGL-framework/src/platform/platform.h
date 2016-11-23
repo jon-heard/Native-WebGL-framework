@@ -18,12 +18,21 @@ namespace platform
 
 	// Draw
 	void setTextSize(float size);
-	void drawText(float x, float y, int colorIndex, const char* toDraw, float rotation = 0);
-	void drawCircle(float x, float y, float radius, int colorIndex, bool filled);
-	void drawRectangle(float x, float y, float xSize, float ySize, int colorIndex, bool filled, float rotation = 0);
+	void drawText(
+			float x, float y, int colorIndex,
+			const char* toDraw, float rotation = 0);
+	void drawCircle(
+			float x, float y, float radius, int colorIndex, bool filled);
+	void drawRectangle(
+			float x, float y, float xSize, float ySize,
+			int colorIndex, bool filled, float rotation = 0);
 	int  loadImage(const char* filename);
-	int  drawImage(float x, float y, float sizeX, float sizeY, const char* filename, float rotation = 0);
-	int  drawImage(float x, float y, float sizeX, float sizeY, int textureId, float rotation = 0);
+	int  drawImage(
+			float x, float y, float sizeX, float sizeY,
+			const char* filename, float rotation = 0);
+	int  drawImage(
+			float x, float y, float sizeX, float sizeY,
+			int textureId, float rotation = 0);
 
 	// Input
 	bool  isMouseDown();

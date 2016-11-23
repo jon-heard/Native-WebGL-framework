@@ -41,7 +41,9 @@ void frameLogic()
 	platform::drawText(-200,0,5,"hello world!");
 
 	platform::drawCircle(
-			sin(-rotationPhase) * 375, cos(-rotationPhase) * 375, 100, 1, false);
+			sin(-rotationPhase) * 375,
+			cos(-rotationPhase) * 375,
+			100, 1, false);
 	rotationPhase += .025f;
 
 	drawCache->stop();
@@ -56,7 +58,9 @@ void frameLogic()
 	platform::drawCircle(
 			platform::getMouseX(), platform::getMouseY(), 50, color, true);
 	
-	platform::drawImage(-500,-500,500,500, "media/colorTest.png", rotationPhase*4);
+	platform::drawImage(
+			-500,-500,500,500,
+			"media/colorTest.png", rotationPhase*4);
 	platform::drawImage(500,500,500,500, "media/flag.png", rotationPhase*4);
 }
 
