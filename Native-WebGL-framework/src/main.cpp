@@ -22,7 +22,7 @@ void init()
 {
 	platform::setTitle("Base app");
 	platform::setBackgroundColor(.25f, .25f, .25f);
-	platform::setTextSize(20);
+	platform::setTextSize(16);
 	drawCache = new platform::DrawCache();
 }
 
@@ -38,7 +38,7 @@ void frameLogic()
 	platform::drawRectangle(-375, 0, 100, 100, 1, false);
 	platform::drawRectangle(0, 375, 100, 100, 1, false);
 	platform::drawRectangle(0, -375, 100, 100, 1, false);
-	platform::drawText(-200,0,5,"hello world!");
+	platform::drawText(-225,0,5,"hello world!");
 
 	platform::drawCircle(
 			sin(-rotationPhase) * 375,

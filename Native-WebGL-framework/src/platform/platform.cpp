@@ -12,7 +12,6 @@
 	#include <emscripten/emscripten.h>
 #endif
 #include "errorHandling.h"
-#include "shaders.h"
 #include "draw.h"
 #include "input.h"
 #include "Shader.h"
@@ -56,7 +55,6 @@ namespace platform
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 		// Load systems and callbacks
-		shaders_init(LEFT, TOP, RIGHT, BOTTOM);
 		Shader::setSceneLayout(LEFT, TOP, RIGHT, BOTTOM);
 		draw_init();
 		input_init(window);

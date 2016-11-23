@@ -9,7 +9,7 @@
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
 #include <SOIL.h>
-#include "shaders.h"
+#include "errorHandling.h"
 #include "Shader.h"
 #include "../../libs/oglft/OGLFT.h"
 
@@ -45,6 +45,14 @@ namespace platform
 
 	void draw_init()
 	{
+		int result = glewInit();
+		if(result != GLEW_OK)
+		{
+			handleErrors(
+					result, "glewInit:",
+					(const char*)glewGetErrorString(result));
+		}
+
 		// Text rendering setup
 		monochrome = new OGLFT::Monochrome("media/times.ttf", 12, 100);
 		glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
