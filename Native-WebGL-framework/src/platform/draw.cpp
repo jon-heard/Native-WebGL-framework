@@ -8,10 +8,10 @@
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
-#include <SOIL.h>
+#include "../../libs/soil/SOIL.h"
 #include "errorHandling.h"
 #include "Shader.h"
-#include "../../libs/oglft/OGLFT.h"
+//#include "../../libs/oglft/OGLFT.h"
 
 using namespace std;
 
@@ -38,7 +38,7 @@ namespace platform
 	GLuint circleBuffer = 0;
 	GLuint rectangleBuffer = 0;
 	map<const char*, int> images;
-	OGLFT::Monochrome* monochrome;
+//	OGLFT::Monochrome* monochrome;
 	Shader* colorShader = NULL;
 	Shader* textureShader = NULL;
 	Shader* blurShader = NULL;
@@ -54,8 +54,8 @@ namespace platform
 		}
 
 		// Text rendering setup
-		monochrome = new OGLFT::Monochrome("media/times.ttf", 12, 100);
-		glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
+//		monochrome = new OGLFT::Monochrome("media/times.ttf", 12, 100);
+//		glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
 
 		// Setup data for circles
 		{
@@ -105,7 +105,7 @@ namespace platform
 	{
 		glDeleteBuffers(1, &circleBuffer);
 		glDeleteBuffers(1, &rectangleBuffer);
-		delete monochrome;
+//		delete monochrome;
 		delete colorShader;
 		delete textureShader;
 		delete blurShader;
@@ -113,7 +113,7 @@ namespace platform
 
 	void setTextSize(float size)
 	{
-		monochrome->setPointSize(size);
+//		monochrome->setPointSize(size);
 	}
 
 	void drawCircle(float x, float y, float radius, int colorIndex, bool filled)
@@ -166,13 +166,13 @@ namespace platform
 			float x, float y, int colorIndex,
 			const char* toDraw, float rotation)
 	{
-		Color c = COLORS[colorIndex];
-		Shader::useShader("media/frag_color.txt");
-		Shader::setParameter_vec2("objectPosition", x, y);
-		Shader::setParameter_vec2("objectScale", 1, 1);
-		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
-
-		monochrome->draw(0, 0, toDraw);
+//		Color c = COLORS[colorIndex];
+//		Shader::useShader("media/frag_color.txt");
+//		Shader::setParameter_vec2("objectPosition", x, y);
+//		Shader::setParameter_vec2("objectScale", 1, 1);
+//		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+//
+//		monochrome->draw(0, 0, toDraw);
 	}
 
 	int loadImage(const char* filename)

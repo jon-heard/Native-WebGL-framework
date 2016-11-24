@@ -27,7 +27,6 @@
 								<option id="gnu.cpp.compiler.option.include.paths.1965883516" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libs/glew/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libs/glfw/include}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libs/soil/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libs/freetype/include}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1739164958" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
@@ -46,7 +45,6 @@
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.647087063" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.359159218" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug">
 								<option id="gnu.cpp.link.option.paths.548157302" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libs/soil/lib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libs/freetype/lib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libs/glfw/lib}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/libs/glew/lib}&quot;"/>
@@ -55,7 +53,6 @@
 									<listOptionValue builtIn="false" value="freetype"/>
 									<listOptionValue builtIn="false" value="glew32s"/>
 									<listOptionValue builtIn="false" value="glfw3"/>
-									<listOptionValue builtIn="false" value="soil"/>
 									<listOptionValue builtIn="false" value="opengl32"/>
 									<listOptionValue builtIn="false" value="gdi32"/>
 									<listOptionValue builtIn="false" value="glu32"/>
@@ -67,18 +64,18 @@
 							</tool>
 						</toolChain>
 					</folderInfo>
-					<folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.502001972.1719489198" name="/" resourcePath="libs/oglft">
-						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.debug.738852490" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.debug" unusedChildren="">
-							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.606920041" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.1718756146"/>
-							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.1088583354" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base.1816813046"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1522899615" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.422091286"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1798942462" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1519662149"/>
-							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.725835997" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.647087063"/>
-							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.1941901687" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.359159218"/>
+					<folderInfo id="cdt.managedbuild.config.gnu.mingw.exe.debug.502001972.843996859" name="/" resourcePath="libs/soil">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.mingw.exe.debug.2061735939" name="MinGW GCC" superClass="cdt.managedbuild.toolchain.gnu.mingw.exe.debug" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.598143109" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.mingw.exe.debug.1718756146"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.mingw.base.1308924577" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.mingw.base.1816813046"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.1720565146" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.mingw.exe.debug.422091286"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.599541445" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.mingw.exe.debug.1519662149"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.399506913" name="MinGW C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.mingw.exe.debug.647087063"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.1706314879" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.359159218"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
-						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="libs/oglft"/>
+						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="libs/soil"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
 					</sourceEntries>
 				</configuration>

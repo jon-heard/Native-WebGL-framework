@@ -39,9 +39,9 @@ namespace platform
 		static void setSceneLayout(
 				float left, float top, float right, float bottom);
 	private:
-		unsigned int programId = 0;
-		bool ready = false;
-		std::map<std::string, std::pair<unsigned int, unsigned int>> parameters;
+		unsigned int programId;
+		bool ready;
+		std::map<std::string,std::pair<unsigned int,unsigned int> > parameters;
 
 		static bool inited;
 		static std::map<std::string, Shader*> shaderCollection;

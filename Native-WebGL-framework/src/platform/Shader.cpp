@@ -56,6 +56,9 @@ namespace platform
 			Shader::Shader_Init();
 		}
 
+		programId = 0;
+		ready = false;
+
 		GLint result;
 
 		// Load fragment shader source file
@@ -174,7 +177,7 @@ namespace platform
 		{
 			return -1;
 		}
-		map<string, std::pair<unsigned int, unsigned int>>* params =
+		map<string, std::pair<unsigned int, unsigned int> >* params =
 				&currentShader->parameters;
 
 		if(params->find(name) == params->end())
@@ -190,7 +193,7 @@ namespace platform
 		{
 			return -1;
 		}
-		map<string, std::pair<unsigned int, unsigned int>>* params =
+		map<string, std::pair<unsigned int, unsigned int> >* params =
 				&currentShader->parameters;
 
 		if(params->find(name) == params->end())

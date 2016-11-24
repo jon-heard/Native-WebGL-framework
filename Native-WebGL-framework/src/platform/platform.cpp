@@ -6,7 +6,6 @@
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
-#include <SOIL.h>
 #include <sstream>
 #ifdef EMSCRIPTEN
 	#include <emscripten/emscripten.h>
@@ -65,7 +64,7 @@ namespace platform
 
 	    // Game loop
 		#ifdef EMSCRIPTEN
-			emscripten_set_main_loop(renderFrame, 0, 1);
+			emscripten_set_main_loop(platformFrameLogic, 0, 1);
 		#else
 		    while (!glfwWindowShouldClose(window))
 			{
