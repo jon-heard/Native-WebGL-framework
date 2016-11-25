@@ -19,8 +19,8 @@ namespace platform
 		Shader* getShader();
 		void setShader(Shader* value);
 	private:
-		unsigned int buffer;
-		unsigned int texture;
+		unsigned int bufferId;
+		unsigned int textureId;
 	};
 }
 

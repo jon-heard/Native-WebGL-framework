@@ -95,7 +95,6 @@ namespace platform
 		glClear(GL_COLOR_BUFFER_BIT);
 		
 		main_frameLogic();
-	
 		glfwSwapBuffers(window);
 	}
 }

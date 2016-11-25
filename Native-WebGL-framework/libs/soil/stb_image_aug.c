@@ -86,7 +86,6 @@
   #endif
 #endif
 
-#define NULL 0
 
 // implementation:
 typedef unsigned char uint8;

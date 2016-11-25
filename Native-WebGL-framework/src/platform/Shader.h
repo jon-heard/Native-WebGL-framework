@@ -13,6 +13,21 @@
 
 namespace platform
 {
+	class ShaderParamInfo
+	{
+	public:
+		unsigned int id;
+		unsigned int type;
+		bool isUniform;
+		ShaderParamInfo() { id = type = isUniform = -1; }
+		ShaderParamInfo(unsigned int id, unsigned int type, bool isUniform)
+		{
+			this->id = id;
+			this->type = type;
+			this->isUniform = isUniform;
+		}
+	};
+
 	class Shader
 	{
 	public:
@@ -23,8 +38,8 @@ namespace platform
 
 		static bool useShader(const char* name);
 
-		static int getParameterId(const char* name);
-		static int getParameterType(const char* name);
+		static const platform::ShaderParamInfo*
+			getParameterInfo(const char* name);
 
 		static bool setParameter_float(const char* name, float value1);
 		static bool setParameter_vec2(const char* name,
@@ -41,7 +56,7 @@ namespace platform
 	private:
 		unsigned int programId;
 		bool ready;
-		std::map<std::string,std::pair<unsigned int,unsigned int> > parameters;
+		std::map<std::string, ShaderParamInfo> parameters;
 
 		static bool inited;
 		static std::map<std::string, Shader*> shaderCollection;

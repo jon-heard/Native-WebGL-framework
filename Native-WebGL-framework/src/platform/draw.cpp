@@ -8,10 +8,10 @@
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
-#include "../../libs/soil/SOIL.h"
+#include <SOIL.h>
+//#include <OGLFT.h>
 #include "errorHandling.h"
 #include "Shader.h"
-//#include "../../libs/oglft/OGLFT.h"
 
 using namespace std;
 
@@ -78,11 +78,11 @@ namespace platform
 		{
 			GLfloat rectangleData[] =
 			{
-				-.5f,-.5f, 0,1,
-				-.5f,.5f, 0,0,
-				.5f,.5f, 1,0,
-				.5f,-.5f, 1,1,
-				-.5f,-.5f, 0,1
+				-.5f, -.5f,		0,1,
+				-.5f, .5f,		0,0,
+				.5f, .5f,		1,0,
+				.5f, -.5f,		1,1,
+				-.5f, -.5f,		0,1
 			};
 			glGenBuffers(1, &rectangleBuffer);
 			glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
@@ -126,7 +126,7 @@ namespace platform
 
 		glBindBuffer(GL_ARRAY_BUFFER, circleBuffer);
 
-		int vertexPosition = Shader::getParameterId("vertexPosition");
+		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
 		glVertexAttribPointer(
 				vertexPosition, 2, GL_FLOAT,
 				GL_FALSE, 0, BUFFER_OFFSET(0));
@@ -151,7 +151,7 @@ namespace platform
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
-		int vertexPosition = Shader::getParameterId("vertexPosition");
+		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
 		glVertexAttribPointer(
 				vertexPosition, 2, GL_FLOAT,
 				GL_FALSE, 16, BUFFER_OFFSET(0));
@@ -182,6 +182,7 @@ namespace platform
 				SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
 		images[filename] = result;
 		return result;
+		return 0;
 	}
 
 	int drawImage(
@@ -202,28 +203,34 @@ namespace platform
 			int imageId, float rotation)
 	{
 		Shader::useShader("media/frag_texture.txt");
+		//Shader::useShader("media/frag_color.txt");
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", sizeX, sizeY);
 		Shader::setParameter_Texture1("mainTex", imageId);
+		//Shader::setParameter_vec3("objectColor", 1, 0, 1);
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
-		int vertexPosition = Shader::getParameterId("vertexPosition");
+		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
 		glVertexAttribPointer(
 				vertexPosition, 2, GL_FLOAT,
 				GL_FALSE, 16, BUFFER_OFFSET(0));
 		glEnableVertexAttribArray(vertexPosition);
 
-		int vertexTexCoords = Shader::getParameterId("vertexTexCoords");
+		int vertexTexCoord = Shader::getParameterInfo("vertexTexCoord")->id;
 		glVertexAttribPointer(
-				vertexTexCoords, 2, GL_FLOAT,
-				GL_FALSE, 16, BUFFER_OFFSET(8));
-		glEnableVertexAttribArray(vertexTexCoords);
+				vertexTexCoord, 2, GL_FLOAT,
+				GL_FALSE, 16, BUFFER_OFFSET(0));
+		glEnableVertexAttribArray(vertexTexCoord);
 
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 5);
+
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, 0);
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 		return imageId;
+		return 0;
 	}
 }
