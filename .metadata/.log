@@ -396,3 +396,347 @@ java.io.IOException: Cannot run program "rm": Launching failed
 	at org.eclipse.ui.internal.ide.dialogs.CleanDialog$1.runInWorkspace(CleanDialog.java:152)
 	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SESSION 2016-11-25 17:03:47.315 -----------------------------------------------
+eclipse.buildId=4.6.1.M20160907-1200
+java.version=1.8.0_101
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-11-25 17:03:56.382
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.egit.ui 2 0 2016-11-25 17:04:06.886
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\crobi'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.476
+!MESSAGE Removing part descriptor with the 'org.eclipse.ant.ui.views.AntView' id and the 'Ant' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.500
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.debug.ui.DisplayView' id and the 'Display' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.515
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.junit.ResultView' id and the 'JUnit' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.529
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.ui.PackageExplorer' id and the 'Package Explorer' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.557
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.ui.TypeHierarchy' id and the 'Type Hierarchy' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.647
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.ui.ProjectsView' id and the 'Projects' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.659
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.ui.PackagesView' id and the 'Packages' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.672
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.ui.TypesView' id and the 'Types' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.692
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.ui.MembersView' id and the 'Members' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.705
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.callhierarchy.view' id and the 'Call Hierarchy' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.723
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.ui.SourceView' id and the 'Declaration' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.e4.ui.workbench 2 0 2016-11-25 17:04:34.737
+!MESSAGE Removing part descriptor with the 'org.eclipse.jdt.ui.JavadocView' id and the 'Javadoc' description. Points to the invalid 'bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView' class.
+
+!ENTRY org.eclipse.cdt.launch 4 104 2016-11-25 17:04:47.124
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug\Native-WebGL-framework.exe not found
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.verifyProgramPath(AbstractCLaunchDelegate2.java:681)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.checkBinaryDetails(LocalRunLaunchDelegate.java:266)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.runLocalApplication(LocalRunLaunchDelegate.java:88)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.launch(LocalRunLaunchDelegate.java:76)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.cdt.launch 4 104 2016-11-25 17:04:47.159
+!MESSAGE C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug\Native-WebGL-framework.exe not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug\Native-WebGL-framework.exe not found
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.verifyProgramPath(AbstractCLaunchDelegate2.java:681)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.checkBinaryDetails(LocalRunLaunchDelegate.java:266)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.runLocalApplication(LocalRunLaunchDelegate.java:88)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.launch(LocalRunLaunchDelegate.java:76)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2016-11-25 17:05:03.403
+!MESSAGE Internal Error
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.EvalBinary.getValue(EvalBinary.java:148)
+	at org.eclipse.cdt.internal.core.dom.parser.Value.create(Value.java:441)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.isConstant(ControlFlowGraphBuilder.java:584)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.addOutgoing(ControlFlowGraphBuilder.java:563)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createWhile(ControlFlowGraphBuilder.java:477)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:166)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:153)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.build(ControlFlowGraphBuilder.java:87)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.CxxControlFlowGraph.build(CxxControlFlowGraph.java:33)
+	at org.eclipse.cdt.codan.core.cxx.model.CxxModelsCache.getControlFlowGraph(CxxModelsCache.java:89)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.endsWithNoExitNode(ReturnChecker.java:234)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.processFunction(ReturnChecker.java:170)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker$1.visit(AbstractAstFunctionChecker.java:34)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:187)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:265)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker.processAst(AbstractAstFunctionChecker.java:26)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractIndexAstChecker.processModel(AbstractIndexAstChecker.java:117)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:91)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.runInEditor(CodanRunner.java:46)
+	at org.eclipse.cdt.codan.internal.core.CodanBuilder.processResource(CodanBuilder.java:126)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.CxxCodanReconciler.reconciledAst(CxxCodanReconciler.java:37)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3096)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.initialReconcile(CReconcilingStrategy.java:122)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.initialReconcile(CompositeReconcilingStrategy.java:117)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.initialReconcile(CCompositeReconcilingStrategy.java:108)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.initialProcess(MonoReconciler.java:95)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.initialProcess(CReconciler.java:338)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:174)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2016-11-25 17:05:31.103
+!MESSAGE Internal Error
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.EvalBinary.getValue(EvalBinary.java:148)
+	at org.eclipse.cdt.internal.core.dom.parser.Value.create(Value.java:441)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.isConstant(ControlFlowGraphBuilder.java:584)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.addOutgoing(ControlFlowGraphBuilder.java:563)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createWhile(ControlFlowGraphBuilder.java:477)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:166)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:153)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.build(ControlFlowGraphBuilder.java:87)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.CxxControlFlowGraph.build(CxxControlFlowGraph.java:33)
+	at org.eclipse.cdt.codan.core.cxx.model.CxxModelsCache.getControlFlowGraph(CxxModelsCache.java:89)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.endsWithNoExitNode(ReturnChecker.java:234)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.processFunction(ReturnChecker.java:170)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker$1.visit(AbstractAstFunctionChecker.java:34)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:187)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:265)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker.processAst(AbstractAstFunctionChecker.java:26)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractIndexAstChecker.processModel(AbstractIndexAstChecker.java:117)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:91)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.runInEditor(CodanRunner.java:46)
+	at org.eclipse.cdt.codan.internal.core.CodanBuilder.processResource(CodanBuilder.java:126)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.CxxCodanReconciler.reconciledAst(CxxCodanReconciler.java:37)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3096)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:73)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2016-11-25 17:05:33.503
+!MESSAGE Internal Error
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.EvalBinary.getValue(EvalBinary.java:148)
+	at org.eclipse.cdt.internal.core.dom.parser.Value.create(Value.java:441)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.isConstant(ControlFlowGraphBuilder.java:584)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.addOutgoing(ControlFlowGraphBuilder.java:563)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createWhile(ControlFlowGraphBuilder.java:477)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:166)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:153)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.build(ControlFlowGraphBuilder.java:87)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.CxxControlFlowGraph.build(CxxControlFlowGraph.java:33)
+	at org.eclipse.cdt.codan.core.cxx.model.CxxModelsCache.getControlFlowGraph(CxxModelsCache.java:89)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.endsWithNoExitNode(ReturnChecker.java:234)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.processFunction(ReturnChecker.java:170)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker$1.visit(AbstractAstFunctionChecker.java:34)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:187)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:265)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker.processAst(AbstractAstFunctionChecker.java:26)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractIndexAstChecker.processModel(AbstractIndexAstChecker.java:117)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:91)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.runInEditor(CodanRunner.java:46)
+	at org.eclipse.cdt.codan.internal.core.CodanBuilder.processResource(CodanBuilder.java:126)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.CxxCodanReconciler.reconciledAst(CxxCodanReconciler.java:37)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3096)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:73)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2016-11-25 17:06:19.796
+!MESSAGE Internal Error
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.EvalBinary.getValue(EvalBinary.java:148)
+	at org.eclipse.cdt.internal.core.dom.parser.Value.create(Value.java:441)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.isConstant(ControlFlowGraphBuilder.java:584)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.addOutgoing(ControlFlowGraphBuilder.java:563)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createWhile(ControlFlowGraphBuilder.java:477)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:166)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:153)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.build(ControlFlowGraphBuilder.java:87)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.CxxControlFlowGraph.build(CxxControlFlowGraph.java:33)
+	at org.eclipse.cdt.codan.core.cxx.model.CxxModelsCache.getControlFlowGraph(CxxModelsCache.java:89)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.endsWithNoExitNode(ReturnChecker.java:234)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.processFunction(ReturnChecker.java:170)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker$1.visit(AbstractAstFunctionChecker.java:34)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:187)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:265)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker.processAst(AbstractAstFunctionChecker.java:26)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractIndexAstChecker.processModel(AbstractIndexAstChecker.java:117)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:91)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.runInEditor(CodanRunner.java:46)
+	at org.eclipse.cdt.codan.internal.core.CodanBuilder.processResource(CodanBuilder.java:126)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.CxxCodanReconciler.reconciledAst(CxxCodanReconciler.java:37)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3096)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:73)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2016-11-25 17:06:39.913
+!MESSAGE Internal Error
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.EvalBinary.getValue(EvalBinary.java:148)
+	at org.eclipse.cdt.internal.core.dom.parser.Value.create(Value.java:441)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.isConstant(ControlFlowGraphBuilder.java:584)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.addOutgoing(ControlFlowGraphBuilder.java:563)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createWhile(ControlFlowGraphBuilder.java:477)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:166)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:153)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.build(ControlFlowGraphBuilder.java:87)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.CxxControlFlowGraph.build(CxxControlFlowGraph.java:33)
+	at org.eclipse.cdt.codan.core.cxx.model.CxxModelsCache.getControlFlowGraph(CxxModelsCache.java:89)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.endsWithNoExitNode(ReturnChecker.java:234)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.processFunction(ReturnChecker.java:170)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker$1.visit(AbstractAstFunctionChecker.java:34)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:187)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:265)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker.processAst(AbstractAstFunctionChecker.java:26)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractIndexAstChecker.processModel(AbstractIndexAstChecker.java:117)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:91)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.runInEditor(CodanRunner.java:46)
+	at org.eclipse.cdt.codan.internal.core.CodanBuilder.processResource(CodanBuilder.java:126)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.CxxCodanReconciler.reconciledAst(CxxCodanReconciler.java:37)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3096)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:73)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
+
+!ENTRY org.eclipse.cdt.launch 4 104 2016-11-25 17:07:50.150
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug\Native-WebGL-framework.exe not found
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.verifyProgramPath(AbstractCLaunchDelegate2.java:681)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.checkBinaryDetails(LocalRunLaunchDelegate.java:266)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.runLocalApplication(LocalRunLaunchDelegate.java:88)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.launch(LocalRunLaunchDelegate.java:76)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.cdt.launch 4 104 2016-11-25 17:07:50.150
+!MESSAGE C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug\Native-WebGL-framework.exe not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug\Native-WebGL-framework.exe not found
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.verifyProgramPath(AbstractCLaunchDelegate2.java:681)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.checkBinaryDetails(LocalRunLaunchDelegate.java:266)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.runLocalApplication(LocalRunLaunchDelegate.java:88)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.launch(LocalRunLaunchDelegate.java:76)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.cdt.launch 4 104 2016-11-25 17:14:36.678
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug\Native-WebGL-framework.exe not found
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.verifyProgramPath(AbstractCLaunchDelegate2.java:681)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.checkBinaryDetails(LocalRunLaunchDelegate.java:266)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.runLocalApplication(LocalRunLaunchDelegate.java:88)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.launch(LocalRunLaunchDelegate.java:76)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.cdt.launch 4 104 2016-11-25 17:14:36.678
+!MESSAGE C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug\Native-WebGL-framework.exe not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug\Native-WebGL-framework.exe not found
+	at org.eclipse.cdt.launch.AbstractCLaunchDelegate2.verifyProgramPath(AbstractCLaunchDelegate2.java:681)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.checkBinaryDetails(LocalRunLaunchDelegate.java:266)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.runLocalApplication(LocalRunLaunchDelegate.java:88)
+	at org.eclipse.cdt.launch.internal.LocalRunLaunchDelegate.launch(LocalRunLaunchDelegate.java:76)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:885)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:739)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1039)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1256)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.cdt.codan.core 4 1 2016-11-25 17:18:41.197
+!MESSAGE Internal Error
+!STACK 0
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.semantics.EvalBinary.getValue(EvalBinary.java:148)
+	at org.eclipse.cdt.internal.core.dom.parser.Value.create(Value.java:441)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.isConstant(ControlFlowGraphBuilder.java:584)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.addOutgoing(ControlFlowGraphBuilder.java:563)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createWhile(ControlFlowGraphBuilder.java:477)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:166)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.createSubGraph(ControlFlowGraphBuilder.java:153)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.ControlFlowGraphBuilder.build(ControlFlowGraphBuilder.java:87)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.cfg.CxxControlFlowGraph.build(CxxControlFlowGraph.java:33)
+	at org.eclipse.cdt.codan.core.cxx.model.CxxModelsCache.getControlFlowGraph(CxxModelsCache.java:89)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.endsWithNoExitNode(ReturnChecker.java:234)
+	at org.eclipse.cdt.codan.internal.checkers.ReturnChecker.processFunction(ReturnChecker.java:170)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker$1.visit(AbstractAstFunctionChecker.java:34)
+	at org.eclipse.cdt.internal.core.dom.parser.cpp.CPPASTFunctionDefinition.accept(CPPASTFunctionDefinition.java:187)
+	at org.eclipse.cdt.internal.core.dom.parser.ASTTranslationUnit.accept(ASTTranslationUnit.java:265)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractAstFunctionChecker.processAst(AbstractAstFunctionChecker.java:26)
+	at org.eclipse.cdt.codan.core.cxx.model.AbstractIndexAstChecker.processModel(AbstractIndexAstChecker.java:117)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.processResource(CodanRunner.java:91)
+	at org.eclipse.cdt.codan.internal.core.CodanRunner.runInEditor(CodanRunner.java:46)
+	at org.eclipse.cdt.codan.internal.core.CodanBuilder.processResource(CodanBuilder.java:126)
+	at org.eclipse.cdt.codan.core.cxx.internal.model.CxxCodanReconciler.reconciledAst(CxxCodanReconciler.java:37)
+	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
+	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3096)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
+	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
+	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:73)
+	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:349)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)

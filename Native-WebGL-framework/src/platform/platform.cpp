@@ -89,6 +89,10 @@ namespace platform
 		glClearColor(red, green, blue, 1);
 	}
 
+   unsigned long getTime(){
+      return (unsigned long)(1000*glfwGetTime());
+   }
+
 	void platformFrameLogic()
 	{
 		glfwPollEvents();

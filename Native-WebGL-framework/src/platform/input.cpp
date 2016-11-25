@@ -32,6 +32,27 @@ namespace platform
 		return mouseY;
 	}
 
+   bool hasClicked = false;
+   bool isMouseClicked()
+   {
+      if(!mouseDown)
+      {
+         hasClicked = false;
+         return false;
+      }
+      else
+      {
+         if(hasClicked)
+         {
+            return false;
+         }
+         else
+         {
+            hasClicked = true;
+            return true;
+         }
+      }
+   }
 
 	void handleMousePosition(GLFWwindow* window, double xpos, double ypos)
 	{

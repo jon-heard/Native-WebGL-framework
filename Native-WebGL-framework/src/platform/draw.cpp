@@ -116,13 +116,14 @@ namespace platform
 //		monochrome->setPointSize(size);
 	}
 
-	void drawCircle(float x, float y, float radius, int colorIndex, bool filled)
+	void drawCircle(float x, float y, float radius, int colorIndex, bool filled, float opacity)
 	{
 		Color c = COLORS[colorIndex];
 		Shader::useShader("media/frag_color.txt");
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", radius, radius);
 		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+		Shader::setParameter_float("objectOpacity", opacity);
 
 		glBindBuffer(GL_ARRAY_BUFFER, circleBuffer);
 
@@ -141,13 +142,14 @@ namespace platform
 
 	void drawRectangle(
 			float x, float y, float sizeX, float sizeY,
-			int colorIndex, bool filled, float rotation)
+			int colorIndex, bool filled, float opacity, float rotation)
 	{
 		Color c = COLORS[colorIndex];
 		Shader::useShader("media/frag_color.txt");
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", sizeX, sizeY);
 		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+		Shader::setParameter_float("objectOpacity", opacity);
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
@@ -164,13 +166,14 @@ namespace platform
 
 	void drawText(
 			float x, float y, int colorIndex,
-			const char* toDraw, float rotation)
+			const char* toDraw, float opacity, float rotation)
 	{
 //		Color c = COLORS[colorIndex];
 //		Shader::useShader("media/frag_color.txt");
 //		Shader::setParameter_vec2("objectPosition", x, y);
 //		Shader::setParameter_vec2("objectScale", 1, 1);
 //		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+//		Shader::setParameter_float("objectOpacity", opacity);
 //
 //		monochrome->draw(0, 0, toDraw);
 	}
@@ -187,27 +190,26 @@ namespace platform
 
 	int drawImage(
 			float x, float y, float sizeX, float sizeY,
-			const char* filename, float rotation)
+			const char* filename, float opacity, float rotation)
 	{
 		if(images.find(filename) == images.end())
 		{
 			loadImage(filename);
 		}
 		int imageId = images[filename];
-		drawImage(x, y, sizeX, sizeY, imageId, rotation);
+		drawImage(x, y, sizeX, sizeY, imageId, opacity, rotation);
 		return imageId;
 	}
 
 	int drawImage(
 			float x, float y, float sizeX, float sizeY,
-			int imageId, float rotation)
+			int imageId, float opacity, float rotation)
 	{
 		Shader::useShader("media/frag_texture.txt");
-		//Shader::useShader("media/frag_color.txt");
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", sizeX, sizeY);
 		Shader::setParameter_Texture1("mainTex", imageId);
-		//Shader::setParameter_vec3("objectColor", 1, 0, 1);
+		Shader::setParameter_float("objectOpacity", opacity);
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
@@ -220,17 +222,17 @@ namespace platform
 		int vertexTexCoord = Shader::getParameterInfo("vertexTexCoord")->id;
 		glVertexAttribPointer(
 				vertexTexCoord, 2, GL_FLOAT,
-				GL_FALSE, 16, BUFFER_OFFSET(0));
+				GL_FALSE, 16, BUFFER_OFFSET(8));
 		glEnableVertexAttribArray(vertexTexCoord);
 
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 5);
 
+		glDisableVertexAttribArray(vertexPosition);
+		glDisableVertexAttribArray(vertexTexCoord);
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, 0);
-
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 		return imageId;
-		return 0;
 	}
 }

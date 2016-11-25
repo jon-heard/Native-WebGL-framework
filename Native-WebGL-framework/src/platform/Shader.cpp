@@ -154,7 +154,7 @@ Shader::~Shader()
 		Shader* curVal = (*itr).second;
 		if (curVal == this)
 		{
-		   itr = shaderCollection.erase(itr);
+		   shaderCollection.erase(itr);
 		   break;
 		}
 		++itr;

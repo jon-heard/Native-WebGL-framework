@@ -1,7 +1,1 @@
-15:39:42 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
-Info: Internal Builder is used for build
-g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
-g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\oglft\\OGLFT.o" "src\\draw.o" "src\\errorHandling.o" "src\\main.o" "src\\platform.o" "src\\shaders.o" -lfreetype -lglew32s -lglfw3 -lsoil -lopengl32 -lgdi32 -lglu32 
-
-15:39:43 Build Finished (took 762ms)
-
+Info: Nothing to build for Native-WebGL-framework

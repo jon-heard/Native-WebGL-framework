@@ -46,6 +46,6 @@ namespace platform
 
 	void DrawCache::flush()
 	{
-		drawImage(0, 0, RIGHT-LEFT, BOTTOM-TOP, textureId);
+		drawImage(0, 0, RIGHT-LEFT, BOTTOM-TOP, textureId, 1.0f, 0.0f);
 	}
 }

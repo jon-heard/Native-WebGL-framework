@@ -6783,3 +6783,630 @@ g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil
 Info: Internal Builder is used for build
 g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
 g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\oglft\\OGLFT.o" "src\\draw.o" "src\\errorHandling.o" "src\\main.o" "src\\platform.o" "src\\shaders.o" -lfreetype -lglew32s -lglfw3 -lsoil -lopengl32 -lgdi32 -lglu32 
+17:04:37 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\input.o" "..\\src\\platform\\input.cpp" 
+gcc "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\stb_image_aug.o" "..\\libs\\soil\\stb_image_aug.c" 
+..\libs\soil\stb_image_aug.c: In function 'parse_png_file':
+..\libs\soil\stb_image_aug.c:2341:28: warning: variable 'invalid_chunk' set but not used [-Wunused-but-set-variable]
+                static char invalid_chunk[] = "XXXX chunk not known";
+                            ^
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+gcc "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_DXT.o" "..\\libs\\soil\\image_DXT.c" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\errorHandling.o" "..\\src\\platform\\errorHandling.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\Shader.o" "..\\src\\platform\\Shader.cpp" 
+..\src\platform\Shader.cpp: In destructor 'virtual platform::Shader::~Shader()':
+..\src\platform\Shader.cpp:157:10: error: no match for 'operator=' (operand types are 'std::map<std::basic_string<char>, platform::Shader*>::iterator {aka std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >}' and 'void')
+      itr = shaderCollection.erase(itr);
+          ^
+..\src\platform\Shader.cpp:157:10: note: candidate is:
+In file included from c:\mingw\lib\gcc\mingw32\4.9.3\include\c++\map:60:0,
+                 from ..\src\platform\Shader.h:11,
+                 from ..\src\platform\Shader.cpp:2:
+c:\mingw\lib\gcc\mingw32\4.9.3\include\c++\bits\stl_tree.h:172:12: note: std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >& std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >::operator=(const std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >&)
+     struct _Rb_tree_iterator
+            ^
+c:\mingw\lib\gcc\mingw32\4.9.3\include\c++\bits\stl_tree.h:172:12: note:   no known conversion for argument 1 from 'void' to 'const std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >&'
+17:04:54 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\Shader.o" "..\\src\\platform\\Shader.cpp" 
+..\src\platform\Shader.cpp: In destructor 'virtual platform::Shader::~Shader()':
+..\src\platform\Shader.cpp:157:10: error: no match for 'operator=' (operand types are 'std::map<std::basic_string<char>, platform::Shader*>::iterator {aka std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >}' and 'void')
+      itr = shaderCollection.erase(itr);
+          ^
+..\src\platform\Shader.cpp:157:10: note: candidate is:
+In file included from c:\mingw\lib\gcc\mingw32\4.9.3\include\c++\map:60:0,
+                 from ..\src\platform\Shader.h:11,
+                 from ..\src\platform\Shader.cpp:2:
+c:\mingw\lib\gcc\mingw32\4.9.3\include\c++\bits\stl_tree.h:172:12: note: std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >& std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >::operator=(const std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >&)
+     struct _Rb_tree_iterator
+            ^
+c:\mingw\lib\gcc\mingw32\4.9.3\include\c++\bits\stl_tree.h:172:12: note:   no known conversion for argument 1 from 'void' to 'const std::_Rb_tree_iterator<std::pair<const std::basic_string<char>, platform::Shader*> >&'
+17:05:32 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_helper.o" "..\\libs\\soil\\image_helper.c" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\Shader.o" "..\\src\\platform\\Shader.cpp" 
+gcc "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\SOIL.o" "..\\libs\\soil\\SOIL.c" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\OGLFT.o" "..\\src\\OGLFT.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\OGLFT.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+src\OGLFT.o: In function `ZN5OGLFT7LibraryC2Ev':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:55: undefined reference to `FT_Init_FreeType'
+src\OGLFT.o: In function `ZN5OGLFT7LibraryD2Ev':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:65: undefined reference to `FT_Done_FreeType'
+src\OGLFT.o: In function `ZN5OGLFT4FaceC2EPKcfj':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:88: undefined reference to `FT_New_Face'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:98: undefined reference to `FT_Select_Charmap'
+src\OGLFT.o: In function `ZN5OGLFT4FaceC2EP11FT_FaceRec_fj':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:115: undefined reference to `FT_Select_Charmap'
+src\OGLFT.o: In function `ZN5OGLFT4FaceD2Ev':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:167: undefined reference to `FT_Done_Face'
+src\OGLFT.o: In function `ZN5OGLFT4Face16addAuxiliaryFaceEPKc':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:176: undefined reference to `FT_New_Face'
+src\OGLFT.o: In function `ZN5OGLFT4Face17setStringRotationEf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:373: undefined reference to `FT_Vector_Unit'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:381: undefined reference to `FT_Set_Transform'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:385: undefined reference to `FT_Set_Transform'
+src\OGLFT.o: In function `ZN5OGLFT4Face29setCharacterRotationReferenceEh':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:397: undefined reference to `FT_Get_Char_Index'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:404: undefined reference to `FT_Load_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT4Face10measureRawEPKc':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:449: undefined reference to `FT_Get_Char_Index'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:456: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:460: undefined reference to `FT_Get_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:464: undefined reference to `FT_Glyph_Get_CBox'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:466: undefined reference to `FT_Done_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT4Face15measure_nominalEPKc':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:552: undefined reference to `FT_Set_Transform'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:567: undefined reference to `FT_Vector_Unit'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:575: undefined reference to `FT_Set_Transform'
+src\OGLFT.o: In function `ZN5OGLFT4Face7compileEh':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:805: undefined reference to `FT_Get_Char_Index'
+src\OGLFT.o: In function `ZN5OGLFT4Face4drawEh':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:913: undefined reference to `FT_Get_Char_Index'
+src\OGLFT.o: In function `ZN5OGLFT6Raster7measureEh':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1386: undefined reference to `FT_Get_Char_Index'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1394: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1399: undefined reference to `FT_Get_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1404: undefined reference to `FT_Glyph_Get_CBox'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1406: undefined reference to `FT_Done_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT6Raster11setCharSizeEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1540: undefined reference to `FT_Set_Char_Size'
+src\OGLFT.o: In function `ZN5OGLFT6Raster17setRotationOffsetEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1552: undefined reference to `FT_Load_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT10Monochrome11renderGlyphEP11FT_FaceRec_j':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1609: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1617: undefined reference to `FT_Get_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1622: undefined reference to `FT_Glyph_Copy'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1624: undefined reference to `FT_Done_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1646: undefined reference to `FT_Vector_Unit'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1662: undefined reference to `FT_Vector_Rotate'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1670: undefined reference to `FT_Glyph_Transform'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1673: undefined reference to `FT_Glyph_To_Bitmap'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1676: undefined reference to `FT_Done_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1695: undefined reference to `FT_Done_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT9Grayscale11renderGlyphEP11FT_FaceRec_j':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1731: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1739: undefined reference to `FT_Get_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1743: undefined reference to `FT_Glyph_Copy'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1745: undefined reference to `FT_Done_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1753: undefined reference to `FT_Vector_Unit'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1769: undefined reference to `FT_Vector_Rotate'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1777: undefined reference to `FT_Glyph_Transform'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1780: undefined reference to `FT_Glyph_To_Bitmap'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1783: undefined reference to `FT_Done_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1826: undefined reference to `FT_Done_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT11Translucent11renderGlyphEP11FT_FaceRec_j':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1871: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1879: undefined reference to `FT_Get_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1883: undefined reference to `FT_Glyph_Copy'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1885: undefined reference to `FT_Done_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1893: undefined reference to `FT_Vector_Unit'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1909: undefined reference to `FT_Vector_Rotate'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1917: undefined reference to `FT_Glyph_Transform'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1920: undefined reference to `FT_Glyph_To_Bitmap'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1923: undefined reference to `FT_Done_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:1967: undefined reference to `FT_Done_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT9Polygonal11setCharSizeEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2118: undefined reference to `FT_Set_Char_Size'
+src\OGLFT.o: In function `ZN5OGLFT9Polygonal17setRotationOffsetEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2130: undefined reference to `FT_Load_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT9Polygonal7measureEh':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2161: undefined reference to `FT_Get_Char_Index'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2169: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2174: undefined reference to `FT_Get_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2179: undefined reference to `FT_Glyph_Get_CBox'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2181: undefined reference to `FT_Done_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT7Outline11renderGlyphEP11FT_FaceRec_j':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2283: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2290: undefined reference to `FT_Get_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2327: undefined reference to `FT_Outline_Decompose'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2329: undefined reference to `FT_Done_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT6Filled11renderGlyphEP11FT_FaceRec_j':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2559: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2566: undefined reference to `FT_Get_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2617: undefined reference to `FT_Outline_Decompose'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:2619: undefined reference to `FT_Done_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT7Texture11setCharSizeEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3311: undefined reference to `FT_Set_Char_Size'
+src\OGLFT.o: In function `ZN5OGLFT7Texture17setRotationOffsetEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3324: undefined reference to `FT_Load_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT7Texture7measureEh':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3340: undefined reference to `FT_Get_Char_Index'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3348: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3353: undefined reference to `FT_Get_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3358: undefined reference to `FT_Glyph_Get_CBox'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3360: undefined reference to `FT_Done_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT7Texture11renderGlyphEP11FT_FaceRec_j':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3430: undefined reference to `FT_Load_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT17MonochromeTexture11bindTextureEP11FT_FaceRec_j':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3602: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3607: undefined reference to `FT_Render_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT16GrayscaleTexture11bindTextureEP11FT_FaceRec_j':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3705: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3710: undefined reference to `FT_Render_Glyph'
+src\OGLFT.o: In function `ZN5OGLFT18TranslucentTexture11bindTextureEP11FT_FaceRec_j':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3810: undefined reference to `FT_Load_Glyph'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/OGLFT.cpp:3815: undefined reference to `FT_Render_Glyph'
+src\platform\DrawCache.o: In function `ZN8platform9DrawCacheC2Ev':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:24: undefined reference to `__glewGenFramebuffers'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:25: undefined reference to `__glewBindFramebuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:26: undefined reference to `__glewFramebufferTexture'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:27: undefined reference to `__glewBindFramebuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:29: undefined reference to `__glewCheckFramebufferStatus'
+src\platform\DrawCache.o: In function `ZN8platform9DrawCache5startEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:37: undefined reference to `__glewBindFramebuffer'
+src\platform\DrawCache.o: In function `ZN8platform9DrawCache4stopEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:44: undefined reference to `__glewBindFramebuffer'
+src\platform\Shader.o: In function `ZN8platform6Shader11Shader_InitEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:39: undefined reference to `glewExperimental'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:40: undefined reference to `glewInit@0'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:45: undefined reference to `glewGetErrorString@4'
+src\platform\Shader.o: In function `ZN8platform6ShaderC2EPKc':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:70: undefined reference to `__glewCreateShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:71: undefined reference to `__glewShaderSource'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:72: undefined reference to `__glewCompileShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:73: undefined reference to `__glewGetShaderiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:77: undefined reference to `__glewGetShaderInfoLog'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:82: undefined reference to `__glewCreateShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:83: undefined reference to `__glewShaderSource'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:84: undefined reference to `__glewCompileShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:85: undefined reference to `__glewGetShaderiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:89: undefined reference to `__glewGetShaderInfoLog'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:94: undefined reference to `__glewCreateProgram'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:95: undefined reference to `__glewAttachShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:96: undefined reference to `__glewAttachShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:97: undefined reference to `__glewLinkProgram'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:98: undefined reference to `__glewGetProgramiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:102: undefined reference to `__glewGetShaderInfoLog'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:106: undefined reference to `__glewDeleteShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:107: undefined reference to `__glewDeleteShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:117: undefined reference to `__glewGetProgramiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:121: undefined reference to `__glewGetActiveUniform'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:122: undefined reference to `__glewGetUniformLocation'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:125: undefined reference to `__glewGetProgramiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:129: undefined reference to `__glewGetActiveAttrib'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:130: undefined reference to `__glewGetAttribLocation'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:140: undefined reference to `__glewUseProgram'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:143: undefined reference to `__glewUniformMatrix4fv'
+src\platform\Shader.o: In function `ZN8platform6ShaderD2Ev':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:150: undefined reference to `__glewDeleteProgram'
+src\platform\Shader.o: In function `ZN8platform6Shader9useShaderEPKc':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:171: undefined reference to `__glewUseProgram'
+src\platform\Shader.o: In function `ZN8platform6Shader18setParameter_floatEPKcf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:198: undefined reference to `__glewUniform1f'
+src\platform\Shader.o: In function `ZN8platform6Shader17setParameter_vec2EPKcff':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:208: undefined reference to `__glewUniform2f'
+src\platform\Shader.o: In function `ZN8platform6Shader17setParameter_vec3EPKcfff':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:219: undefined reference to `__glewUniform3f'
+src\platform\Shader.o: In function `ZN8platform6Shader17setParameter_vec4EPKcffff':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:230: undefined reference to `__glewUniform4f'
+src\platform\Shader.o: In function `ZN8platform6Shader17setParameter_mat4EPKcPf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:240: undefined reference to `__glewUniformMatrix4fv'
+src\platform\Shader.o: In function `ZN8platform6Shader21setParameter_Texture1EPKci':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:250: undefined reference to `__glewActiveTexture'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:252: undefined reference to `__glewUniform1i'
+src\platform\Shader.o: In function `ZN8platform6Shader14setSceneLayoutEffff':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:275: undefined reference to `__glewUseProgram'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:278: undefined reference to `__glewUniformMatrix4fv'
+src\platform\draw.o: In function `ZN8platform9draw_initEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:48: undefined reference to `glewInit@0'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:53: undefined reference to `glewGetErrorString@4'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:69: undefined reference to `__glewGenBuffers'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:70: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:73: undefined reference to `__glewBufferData'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:74: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:87: undefined reference to `__glewGenBuffers'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:88: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:91: undefined reference to `__glewBufferData'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:92: undefined reference to `__glewBindBuffer'
+src\platform\draw.o: In function `ZN8platform13draw_shutdownEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:106: undefined reference to `__glewDeleteBuffers'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:107: undefined reference to `__glewDeleteBuffers'
+src\platform\draw.o: In function `ZN8platform10drawCircleEfffib':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:127: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:132: undefined reference to `__glewVertexAttribPointer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:133: undefined reference to `__glewEnableVertexAttribArray'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:139: undefined reference to `__glewBindBuffer'
+src\platform\draw.o: In function `ZN8platform13drawRectangleEffffibf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:152: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:157: undefined reference to `__glewVertexAttribPointer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:158: undefined reference to `__glewEnableVertexAttribArray'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:162: undefined reference to `__glewBindBuffer'
+src\platform\draw.o: In function `ZN8platform9drawImageEffffif':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:212: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:217: undefined reference to `__glewVertexAttribPointer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:218: undefined reference to `__glewEnableVertexAttribArray'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:223: undefined reference to `__glewVertexAttribPointer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:224: undefined reference to `__glewEnableVertexAttribArray'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:228: undefined reference to `__glewActiveTexture'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:231: undefined reference to `__glewBindBuffer'
+src\platform\input.o: In function `ZN8platform10input_initEP10GLFWwindow':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/input.cpp:14: undefined reference to `glfwSetCursorPosCallback'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/input.cpp:15: undefined reference to `glfwSetMouseButtonCallback'
+src\platform\platform.o: In function `ZN8platform3runEPFvvES1_S1_':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:38: undefined reference to `glfwInit'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:42: undefined reference to `glfwWindowHint'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:44: undefined reference to `glfwCreateWindow'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:49: undefined reference to `glfwMakeContextCurrent'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:60: undefined reference to `glfwSetErrorCallback'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:69: undefined reference to `glfwWindowShouldClose'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:78: undefined reference to `glfwTerminate'
+src\platform\platform.o: In function `ZN8platform8setTitleEPKc':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:84: undefined reference to `glfwSetWindowTitle'
+src\platform\platform.o: In function `ZN8platform18platformFrameLogicEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:94: undefined reference to `glfwPollEvents'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:98: undefined reference to `glfwSwapBuffers'
+collect2.exe: error: ld returned 1 exit status
+17:07:26 **** Clean-only build of configuration Debug for project Native-WebGL-framework ****
+rm -rf src/platform/errorHandling.o src/platform/errorHandling.d src/main.d src/platform/input.d src/platform/input.o src/platform/draw.o src/platform/draw.d libs/soil/stb_image_aug.d src/platform/platform.o src/platform/platform.d src/platform/Shader.o libs/soil/image_DXT.o Native-WebGL-framework.exe src/main.o src/platform/Shader.d src/platform/DrawCache.d libs/soil/stb_image_aug.o libs/soil/image_DXT.d src/platform/DrawCache.o libs/soil/image_helper.o libs/soil/image_helper.d libs/soil/SOIL.d libs/soil/SOIL.o 
+17:07:43 **** Rebuild of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+gcc "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\stb_image_aug.o" "..\\libs\\soil\\stb_image_aug.c" 
+..\libs\soil\stb_image_aug.c: In function 'parse_png_file':
+..\libs\soil\stb_image_aug.c:2341:28: warning: variable 'invalid_chunk' set but not used [-Wunused-but-set-variable]
+                static char invalid_chunk[] = "XXXX chunk not known";
+                            ^
+gcc "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_helper.o" "..\\libs\\soil\\image_helper.c" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\input.o" "..\\src\\platform\\input.cpp" 
+gcc "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_DXT.o" "..\\libs\\soil\\image_DXT.c" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\errorHandling.o" "..\\src\\platform\\errorHandling.cpp" 
+gcc "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\SOIL.o" "..\\libs\\soil\\SOIL.c" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\Shader.o" "..\\src\\platform\\Shader.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+src\platform\DrawCache.o: In function `ZN8platform9DrawCacheC2Ev':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:24: undefined reference to `__glewGenFramebuffers'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:25: undefined reference to `__glewBindFramebuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:26: undefined reference to `__glewFramebufferTexture'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:27: undefined reference to `__glewBindFramebuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:29: undefined reference to `__glewCheckFramebufferStatus'
+src\platform\DrawCache.o: In function `ZN8platform9DrawCache5startEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:37: undefined reference to `__glewBindFramebuffer'
+src\platform\DrawCache.o: In function `ZN8platform9DrawCache4stopEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:44: undefined reference to `__glewBindFramebuffer'
+src\platform\Shader.o: In function `ZN8platform6Shader11Shader_InitEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:39: undefined reference to `glewExperimental'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:40: undefined reference to `glewInit@0'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:45: undefined reference to `glewGetErrorString@4'
+src\platform\Shader.o: In function `ZN8platform6ShaderC2EPKc':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:70: undefined reference to `__glewCreateShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:71: undefined reference to `__glewShaderSource'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:72: undefined reference to `__glewCompileShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:73: undefined reference to `__glewGetShaderiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:77: undefined reference to `__glewGetShaderInfoLog'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:82: undefined reference to `__glewCreateShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:83: undefined reference to `__glewShaderSource'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:84: undefined reference to `__glewCompileShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:85: undefined reference to `__glewGetShaderiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:89: undefined reference to `__glewGetShaderInfoLog'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:94: undefined reference to `__glewCreateProgram'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:95: undefined reference to `__glewAttachShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:96: undefined reference to `__glewAttachShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:97: undefined reference to `__glewLinkProgram'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:98: undefined reference to `__glewGetProgramiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:102: undefined reference to `__glewGetShaderInfoLog'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:106: undefined reference to `__glewDeleteShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:107: undefined reference to `__glewDeleteShader'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:117: undefined reference to `__glewGetProgramiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:121: undefined reference to `__glewGetActiveUniform'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:122: undefined reference to `__glewGetUniformLocation'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:125: undefined reference to `__glewGetProgramiv'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:129: undefined reference to `__glewGetActiveAttrib'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:130: undefined reference to `__glewGetAttribLocation'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:140: undefined reference to `__glewUseProgram'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:143: undefined reference to `__glewUniformMatrix4fv'
+src\platform\Shader.o: In function `ZN8platform6ShaderD2Ev':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:150: undefined reference to `__glewDeleteProgram'
+src\platform\Shader.o: In function `ZN8platform6Shader9useShaderEPKc':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:171: undefined reference to `__glewUseProgram'
+src\platform\Shader.o: In function `ZN8platform6Shader18setParameter_floatEPKcf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:198: undefined reference to `__glewUniform1f'
+src\platform\Shader.o: In function `ZN8platform6Shader17setParameter_vec2EPKcff':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:208: undefined reference to `__glewUniform2f'
+src\platform\Shader.o: In function `ZN8platform6Shader17setParameter_vec3EPKcfff':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:219: undefined reference to `__glewUniform3f'
+src\platform\Shader.o: In function `ZN8platform6Shader17setParameter_vec4EPKcffff':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:230: undefined reference to `__glewUniform4f'
+src\platform\Shader.o: In function `ZN8platform6Shader17setParameter_mat4EPKcPf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:240: undefined reference to `__glewUniformMatrix4fv'
+src\platform\Shader.o: In function `ZN8platform6Shader21setParameter_Texture1EPKci':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:250: undefined reference to `__glewActiveTexture'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:252: undefined reference to `__glewUniform1i'
+src\platform\Shader.o: In function `ZN8platform6Shader14setSceneLayoutEffff':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:275: undefined reference to `__glewUseProgram'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/Shader.cpp:278: undefined reference to `__glewUniformMatrix4fv'
+src\platform\draw.o: In function `ZN8platform9draw_initEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:48: undefined reference to `glewInit@0'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:53: undefined reference to `glewGetErrorString@4'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:69: undefined reference to `__glewGenBuffers'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:70: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:73: undefined reference to `__glewBufferData'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:74: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:87: undefined reference to `__glewGenBuffers'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:88: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:91: undefined reference to `__glewBufferData'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:92: undefined reference to `__glewBindBuffer'
+src\platform\draw.o: In function `ZN8platform13draw_shutdownEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:106: undefined reference to `__glewDeleteBuffers'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:107: undefined reference to `__glewDeleteBuffers'
+src\platform\draw.o: In function `ZN8platform10drawCircleEfffib':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:127: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:132: undefined reference to `__glewVertexAttribPointer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:133: undefined reference to `__glewEnableVertexAttribArray'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:139: undefined reference to `__glewBindBuffer'
+src\platform\draw.o: In function `ZN8platform13drawRectangleEffffibf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:152: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:157: undefined reference to `__glewVertexAttribPointer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:158: undefined reference to `__glewEnableVertexAttribArray'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:162: undefined reference to `__glewBindBuffer'
+src\platform\draw.o: In function `ZN8platform9drawImageEffffif':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:212: undefined reference to `__glewBindBuffer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:217: undefined reference to `__glewVertexAttribPointer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:218: undefined reference to `__glewEnableVertexAttribArray'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:223: undefined reference to `__glewVertexAttribPointer'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:224: undefined reference to `__glewEnableVertexAttribArray'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:228: undefined reference to `__glewActiveTexture'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:231: undefined reference to `__glewBindBuffer'
+src\platform\input.o: In function `ZN8platform10input_initEP10GLFWwindow':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/input.cpp:14: undefined reference to `glfwSetCursorPosCallback'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/input.cpp:15: undefined reference to `glfwSetMouseButtonCallback'
+src\platform\platform.o: In function `ZN8platform3runEPFvvES1_S1_':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:38: undefined reference to `glfwInit'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:42: undefined reference to `glfwWindowHint'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:44: undefined reference to `glfwCreateWindow'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:49: undefined reference to `glfwMakeContextCurrent'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:60: undefined reference to `glfwSetErrorCallback'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:69: undefined reference to `glfwWindowShouldClose'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:78: undefined reference to `glfwTerminate'
+src\platform\platform.o: In function `ZN8platform8setTitleEPKc':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:84: undefined reference to `glfwSetWindowTitle'
+src\platform\platform.o: In function `ZN8platform18platformFrameLogicEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:94: undefined reference to `glfwPollEvents'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/platform.cpp:98: undefined reference to `glfwSwapBuffers'
+collect2.exe: error: ld returned 1 exit status
+17:08:58 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:09:22 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:09:50 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:10:05 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:10:23 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:12:22 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\input.o" "..\\src\\platform\\input.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+src\main.o: In function `Z10frameLogicv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/main.cpp:63: undefined reference to `platform::drawImage(float, float, float, float, char const*, float, float)'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/main.cpp:64: undefined reference to `platform::drawImage(float, float, float, float, char const*, float, float)'
+src\platform\DrawCache.o: In function `ZN8platform9DrawCache5flushEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:49: undefined reference to `platform::drawImage(float, float, float, float, int, float, float)'
+src\platform\draw.o: In function `ZN8platform9drawImageEffffPKcf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:197: undefined reference to `platform::drawImage(float, float, float, float, int, float, float)'
+collect2.exe: error: ld returned 1 exit status
+17:14:02 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+src\main.o: In function `Z10frameLogicv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/main.cpp:63: undefined reference to `platform::drawImage(float, float, float, float, char const*, float, float)'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/main.cpp:64: undefined reference to `platform::drawImage(float, float, float, float, char const*, float, float)'
+src\platform\DrawCache.o: In function `ZN8platform9DrawCache5flushEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:49: undefined reference to `platform::drawImage(float, float, float, float, int, float, float)'
+src\platform\draw.o: In function `ZN8platform9drawImageEffffPKcf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:197: undefined reference to `platform::drawImage(float, float, float, float, int, float, float)'
+collect2.exe: error: ld returned 1 exit status
+17:14:35 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+..\src\main.cpp: In function 'void frameLogic()':
+..\src\main.cpp:64:82: error: no matching function for call to 'drawImage(int, int, int, int, const char [15], float, double, double)'
+  platform::drawImage(500,500,500,500, "media/flag.png", rotationPhase*4, 1.0, 0.0);
+                                                                                  ^
+..\src\main.cpp:64:82: note: candidates are:
+In file included from ..\src\main.cpp:5:0:
+..\src\platform/platform.h:27:7: note: int platform::drawImage(float, float, float, float, const char*, float, float)
+  int  drawImage(
+       ^
+..\src\platform/platform.h:27:7: note:   candidate expects 7 arguments, 8 provided
+..\src\platform/platform.h:30:7: note: int platform::drawImage(float, float, float, float, int, float, float)
+  int  drawImage(
+       ^
+..\src\platform/platform.h:30:7: note:   candidate expects 7 arguments, 8 provided
+17:14:46 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+..\src\main.cpp: In function 'void frameLogic()':
+..\src\main.cpp:64:84: error: no matching function for call to 'drawImage(int, int, int, int, const char [15], float, float, float)'
+  platform::drawImage(500,500,500,500, "media/flag.png", rotationPhase*4, 1.0f, 0.0f);
+                                                                                    ^
+..\src\main.cpp:64:84: note: candidates are:
+In file included from ..\src\main.cpp:5:0:
+..\src\platform/platform.h:27:7: note: int platform::drawImage(float, float, float, float, const char*, float, float)
+  int  drawImage(
+       ^
+..\src\platform/platform.h:27:7: note:   candidate expects 7 arguments, 8 provided
+..\src\platform/platform.h:30:7: note: int platform::drawImage(float, float, float, float, int, float, float)
+  int  drawImage(
+       ^
+..\src\platform/platform.h:30:7: note:   candidate expects 7 arguments, 8 provided
+17:15:08 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+src\main.o: In function `Z10frameLogicv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/main.cpp:63: undefined reference to `platform::drawImage(float, float, float, float, char const*, float, float)'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/main.cpp:64: undefined reference to `platform::drawImage(float, float, float, float, char const*, float, float)'
+src\platform\DrawCache.o: In function `ZN8platform9DrawCache5flushEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:49: undefined reference to `platform::drawImage(float, float, float, float, int, float, float)'
+src\platform\draw.o: In function `ZN8platform9drawImageEffffPKcf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:197: undefined reference to `platform::drawImage(float, float, float, float, int, float, float)'
+collect2.exe: error: ld returned 1 exit status
+17:15:18 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+src\main.o: In function `Z10frameLogicv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/main.cpp:63: undefined reference to `platform::drawImage(float, float, float, float, char const*, float, float)'
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/main.cpp:64: undefined reference to `platform::drawImage(float, float, float, float, char const*, float, float)'
+src\platform\DrawCache.o: In function `ZN8platform9DrawCache5flushEv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/DrawCache.cpp:49: undefined reference to `platform::drawImage(float, float, float, float, int, float, float)'
+src\platform\draw.o: In function `ZN8platform9drawImageEffffPKcf':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/platform/draw.cpp:197: undefined reference to `platform::drawImage(float, float, float, float, int, float, float)'
+collect2.exe: error: ld returned 1 exit status
+17:16:26 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:19:41 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+src\main.o: In function `Z10frameLogicv':
+C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework\Debug/../src/main.cpp:41: undefined reference to `platform::drawText(float, float, int, char const*, float)'
+collect2.exe: error: ld returned 1 exit status
+17:20:14 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\input.o" "..\\src\\platform\\input.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+17:30:03 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:30:53 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:31:10 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:31:20 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:31:34 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:32:04 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:32:17 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:32:38 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+17:34:19 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+17:43:01 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-IC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LC:\\Users\\crobi\\Cpp_Projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Warning: corrupt .drectve at end of def file
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
