@@ -7410,3 +7410,584 @@ Warning: corrupt .drectve at end of def file
 Info: Nothing to build for Native-WebGL-framework
 Info: Nothing to build for Native-WebGL-framework
 Info: Nothing to build for Native-WebGL-framework
+01:26:17 **** Rebuild of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\SOIL.o" "..\\libs\\soil\\SOIL.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\input.o" "..\\src\\platform\\input.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_DXT.o" "..\\libs\\soil\\image_DXT.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_helper.o" "..\\libs\\soil\\image_helper.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\stb_image_aug.o" "..\\libs\\soil\\stb_image_aug.c" 
+..\libs\soil\stb_image_aug.c:85:0: warning: "__forceinline" redefined
+   #define __forceinline
+ 
+In file included from C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/crtdefs.h:10:0,
+                 from C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/stdio.h:9,
+                 from ..\libs\soil\stb_image_aug.h:158,
+                 from ..\libs\soil\stb_image_aug.c:66:
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/_mingw.h:259:0: note: this is the location of the previous definition
+ #define __forceinline extern __inline__ __attribute__((__always_inline__,__gnu_inline__))
+ 
+..\libs\soil\stb_image_aug.c: In function 'convert_format':
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:493:10: note: in expansion of macro 'CASE'
+          CASE(1,2) dest[0]=src[0], dest[1]=255; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:493:49: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(1,2) dest[0]=src[0], dest[1]=255; break;
+                                                 ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:494:10: note: in expansion of macro 'CASE'
+          CASE(1,3) dest[0]=dest[1]=dest[2]=src[0]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:494:52: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(1,3) dest[0]=dest[1]=dest[2]=src[0]; break;
+                                                    ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:495:10: note: in expansion of macro 'CASE'
+          CASE(1,4) dest[0]=dest[1]=dest[2]=src[0], dest[3]=255; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:495:65: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(1,4) dest[0]=dest[1]=dest[2]=src[0], dest[3]=255; break;
+                                                                 ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:496:10: note: in expansion of macro 'CASE'
+          CASE(2,1) dest[0]=src[0]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:496:36: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(2,1) dest[0]=src[0]; break;
+                                    ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:497:10: note: in expansion of macro 'CASE'
+          CASE(2,3) dest[0]=dest[1]=dest[2]=src[0]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:497:52: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(2,3) dest[0]=dest[1]=dest[2]=src[0]; break;
+                                                    ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:498:10: note: in expansion of macro 'CASE'
+          CASE(2,4) dest[0]=dest[1]=dest[2]=src[0], dest[3]=src[1]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:498:68: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(2,4) dest[0]=dest[1]=dest[2]=src[0], dest[3]=src[1]; break;
+                                                                    ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:499:10: note: in expansion of macro 'CASE'
+          CASE(3,4) dest[0]=src[0],dest[1]=src[1],dest[2]=src[2],dest[3]=255; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:499:78: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(3,4) dest[0]=src[0],dest[1]=src[1],dest[2]=src[2],dest[3]=255; break;
+                                                                              ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:500:10: note: in expansion of macro 'CASE'
+          CASE(3,1) dest[0]=compute_y(src[0],src[1],src[2]); break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:500:61: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(3,1) dest[0]=compute_y(src[0],src[1],src[2]); break;
+                                                             ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:501:10: note: in expansion of macro 'CASE'
+          CASE(3,2) dest[0]=compute_y(src[0],src[1],src[2]), dest[1] = 255; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:501:76: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(3,2) dest[0]=compute_y(src[0],src[1],src[2]), dest[1] = 255; break;
+                                                                            ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:502:10: note: in expansion of macro 'CASE'
+          CASE(4,1) dest[0]=compute_y(src[0],src[1],src[2]); break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:502:61: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(4,1) dest[0]=compute_y(src[0],src[1],src[2]); break;
+                                                             ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:503:10: note: in expansion of macro 'CASE'
+          CASE(4,2) dest[0]=compute_y(src[0],src[1],src[2]), dest[1] = src[3]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:503:79: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(4,2) dest[0]=compute_y(src[0],src[1],src[2]), dest[1] = src[3]; break;
+                                                                               ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:504:10: note: in expansion of macro 'CASE'
+          CASE(4,3) dest[0]=src[0],dest[1]=src[1],dest[2]=src[2]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:504:66: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(4,3) dest[0]=src[0],dest[1]=src[1],dest[2]=src[2]; break;
+                                                                  ^~~~~
+..\libs\soil\stb_image_aug.c: In function 'create_png_image':
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2119:13: note: in expansion of macro 'CASE'
+             CASE(F_none)  cur[k] = raw[k]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2119:44: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_none)  cur[k] = raw[k]; break;
+                                            ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2120:13: note: in expansion of macro 'CASE'
+             CASE(F_sub)   cur[k] = raw[k] + cur[k-img_n]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2120:59: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_sub)   cur[k] = raw[k] + cur[k-img_n]; break;
+                                                           ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2121:13: note: in expansion of macro 'CASE'
+             CASE(F_up)    cur[k] = raw[k] + prior[k]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2121:55: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_up)    cur[k] = raw[k] + prior[k]; break;
+                                                       ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2122:13: note: in expansion of macro 'CASE'
+             CASE(F_avg)   cur[k] = raw[k] + ((prior[k] + cur[k-img_n])>>1); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2122:77: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_avg)   cur[k] = raw[k] + ((prior[k] + cur[k-img_n])>>1); break;
+                                                                             ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2123:13: note: in expansion of macro 'CASE'
+             CASE(F_paeth)  cur[k] = (uint8) (raw[k] + paeth(cur[k-img_n],prior[k],prior[k-img_n])); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2123:101: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_paeth)  cur[k] = (uint8) (raw[k] + paeth(cur[k-img_n],prior[k],prior[k-img_n])); break;
+                                                                                                     ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2124:13: note: in expansion of macro 'CASE'
+             CASE(F_avg_first)    cur[k] = raw[k] + (cur[k-img_n] >> 1); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2124:73: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_avg_first)    cur[k] = raw[k] + (cur[k-img_n] >> 1); break;
+                                                                         ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2125:13: note: in expansion of macro 'CASE'
+             CASE(F_paeth_first)  cur[k] = (uint8) (raw[k] + paeth(cur[k-img_n],0,0)); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2125:87: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_paeth_first)  cur[k] = (uint8) (raw[k] + paeth(cur[k-img_n],0,0)); break;
+                                                                                       ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2135:13: note: in expansion of macro 'CASE'
+             CASE(F_none)  cur[k] = raw[k]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2135:44: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_none)  cur[k] = raw[k]; break;
+                                            ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2136:13: note: in expansion of macro 'CASE'
+             CASE(F_sub)   cur[k] = raw[k] + cur[k-out_n]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2136:59: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_sub)   cur[k] = raw[k] + cur[k-out_n]; break;
+                                                           ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2137:13: note: in expansion of macro 'CASE'
+             CASE(F_up)    cur[k] = raw[k] + prior[k]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2137:55: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_up)    cur[k] = raw[k] + prior[k]; break;
+                                                       ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2138:13: note: in expansion of macro 'CASE'
+             CASE(F_avg)   cur[k] = raw[k] + ((prior[k] + cur[k-out_n])>>1); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2138:77: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_avg)   cur[k] = raw[k] + ((prior[k] + cur[k-out_n])>>1); break;
+                                                                             ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2139:13: note: in expansion of macro 'CASE'
+             CASE(F_paeth)  cur[k] = (uint8) (raw[k] + paeth(cur[k-out_n],prior[k],prior[k-out_n])); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2139:101: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_paeth)  cur[k] = (uint8) (raw[k] + paeth(cur[k-out_n],prior[k],prior[k-out_n])); break;
+                                                                                                     ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2140:13: note: in expansion of macro 'CASE'
+             CASE(F_avg_first)    cur[k] = raw[k] + (cur[k-out_n] >> 1); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2140:73: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_avg_first)    cur[k] = raw[k] + (cur[k-out_n] >> 1); break;
+                                                                         ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2141:13: note: in expansion of macro 'CASE'
+             CASE(F_paeth_first)  cur[k] = (uint8) (raw[k] + paeth(cur[k-out_n],0,0)); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2141:87: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_paeth_first)  cur[k] = (uint8) (raw[k] + paeth(cur[k-out_n],0,0)); break;
+                                                                                       ^~~~~
+..\libs\soil\stb_image_aug.c: In function 'parse_png_file':
+..\libs\soil\stb_image_aug.c:2341:28: warning: variable 'invalid_chunk' set but not used [-Wunused-but-set-variable]
+                static char invalid_chunk[] = "XXXX chunk not known";
+                            ^~~~~~~~~~~~~
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\Shader.o" "..\\src\\platform\\Shader.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\errorHandling.o" "..\\src\\platform\\errorHandling.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\freetype\lib/libfreetype.a when searching for -lfreetype
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\freetype\lib\libfreetype.a when searching for -lfreetype
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\freetype\lib/libfreetype.a when searching for -lfreetype
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lfreetype
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lglew32s
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\glfw\lib/libglfw3.a when searching for -lglfw3
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\glfw\lib\libglfw3.a when searching for -lglfw3
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\glfw\lib/libglfw3.a when searching for -lglfw3
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lglfw3
+collect2.exe: error: ld returned 1 exit status
+01:32:38 **** Clean-only build of configuration Debug for project Native-WebGL-framework ****
+rm -rf src/platform/DrawCache.o src/platform/DrawCache.d src/main.o src/main.d src/platform/input.d src/platform/input.o src/platform/draw.d libs/soil/image_helper.o src/platform/draw.o libs/soil/image_helper.d libs/soil/stb_image_aug.o src/platform/errorHandling.o libs/soil/stb_image_aug.d src/platform/errorHandling.d libs/soil/image_DXT.o src/platform/Shader.o src/platform/Shader.d Native-WebGL-framework.exe libs/soil/image_DXT.d libs/soil/SOIL.o src/platform/platform.o libs/soil/SOIL.d src/platform/platform.d 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Program Files\mingw-w64\x86_64-6.1.0-posix-seh-rt_v5-rev0\mingw64\bin;\bin;\usr\bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/lib/amd64;C:\Windows\SYSTEM32;C:\Windows;C:\Windows\SYSTEM32\WBEM;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES (X86)\GTKSHARP\2.12\BIN;C:\PROGRAM FILES\GIT\CMD;C:\PROGRAM FILES (X86)\WINDOWS KITS\8.1\WINDOWS PERFORMANCE TOOLKIT\;C:\PYTHON34;C:\PROGRAM FILES (X86)\CMAKE\BIN;C:\PROGRAM FILES (X86)\VAGRANT\BIN;;E:\Program Files\WIDCOMM\Bluetooth Software\;E:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Skype\Phone\;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Modules\TShell\TShell\;C:\Program Files\mingw-w64\x86_64-6.1.0-posix-seh-rt_v5-rev0\mingw64\bin;C:\Program Files\Java\jdk1.8.0_51\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\Eclipse\eclipse]
+
+01:32:38 **** Clean-only build of configuration Debug for project Native-WebGL-framework ****
+01:32:40 **** Rebuild of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\SOIL.o" "..\\libs\\soil\\SOIL.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\errorHandling.o" "..\\src\\platform\\errorHandling.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_helper.o" "..\\libs\\soil\\image_helper.c" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_DXT.o" "..\\libs\\soil\\image_DXT.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\input.o" "..\\src\\platform\\input.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\stb_image_aug.o" "..\\libs\\soil\\stb_image_aug.c" 
+..\libs\soil\stb_image_aug.c:85:0: warning: "__forceinline" redefined
+   #define __forceinline
+ 
+In file included from C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/crtdefs.h:10:0,
+                 from C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/stdio.h:9,
+                 from ..\libs\soil\stb_image_aug.h:158,
+                 from ..\libs\soil\stb_image_aug.c:66:
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/x86_64-w64-mingw32/include/_mingw.h:259:0: note: this is the location of the previous definition
+ #define __forceinline extern __inline__ __attribute__((__always_inline__,__gnu_inline__))
+ 
+..\libs\soil\stb_image_aug.c: In function 'convert_format':
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:493:10: note: in expansion of macro 'CASE'
+          CASE(1,2) dest[0]=src[0], dest[1]=255; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:493:49: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(1,2) dest[0]=src[0], dest[1]=255; break;
+                                                 ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:494:10: note: in expansion of macro 'CASE'
+          CASE(1,3) dest[0]=dest[1]=dest[2]=src[0]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:494:52: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(1,3) dest[0]=dest[1]=dest[2]=src[0]; break;
+                                                    ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:495:10: note: in expansion of macro 'CASE'
+          CASE(1,4) dest[0]=dest[1]=dest[2]=src[0], dest[3]=255; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:495:65: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(1,4) dest[0]=dest[1]=dest[2]=src[0], dest[3]=255; break;
+                                                                 ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:496:10: note: in expansion of macro 'CASE'
+          CASE(2,1) dest[0]=src[0]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:496:36: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(2,1) dest[0]=src[0]; break;
+                                    ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:497:10: note: in expansion of macro 'CASE'
+          CASE(2,3) dest[0]=dest[1]=dest[2]=src[0]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:497:52: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(2,3) dest[0]=dest[1]=dest[2]=src[0]; break;
+                                                    ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:498:10: note: in expansion of macro 'CASE'
+          CASE(2,4) dest[0]=dest[1]=dest[2]=src[0], dest[3]=src[1]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:498:68: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(2,4) dest[0]=dest[1]=dest[2]=src[0], dest[3]=src[1]; break;
+                                                                    ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:499:10: note: in expansion of macro 'CASE'
+          CASE(3,4) dest[0]=src[0],dest[1]=src[1],dest[2]=src[2],dest[3]=255; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:499:78: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(3,4) dest[0]=src[0],dest[1]=src[1],dest[2]=src[2],dest[3]=255; break;
+                                                                              ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:500:10: note: in expansion of macro 'CASE'
+          CASE(3,1) dest[0]=compute_y(src[0],src[1],src[2]); break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:500:61: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(3,1) dest[0]=compute_y(src[0],src[1],src[2]); break;
+                                                             ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:501:10: note: in expansion of macro 'CASE'
+          CASE(3,2) dest[0]=compute_y(src[0],src[1],src[2]), dest[1] = 255; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:501:76: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(3,2) dest[0]=compute_y(src[0],src[1],src[2]), dest[1] = 255; break;
+                                                                            ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:502:10: note: in expansion of macro 'CASE'
+          CASE(4,1) dest[0]=compute_y(src[0],src[1],src[2]); break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:502:61: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(4,1) dest[0]=compute_y(src[0],src[1],src[2]); break;
+                                                             ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:503:10: note: in expansion of macro 'CASE'
+          CASE(4,2) dest[0]=compute_y(src[0],src[1],src[2]), dest[1] = src[3]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:503:79: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(4,2) dest[0]=compute_y(src[0],src[1],src[2]), dest[1] = src[3]; break;
+                                                                               ^~~~~
+..\libs\soil\stb_image_aug.c:489:44: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+       #define CASE(a,b)   case COMBO(a,b): for(i=x-1; i >= 0; --i, src += a, dest += b)
+                                            ^
+..\libs\soil\stb_image_aug.c:504:10: note: in expansion of macro 'CASE'
+          CASE(4,3) dest[0]=src[0],dest[1]=src[1],dest[2]=src[2]; break;
+          ^~~~
+..\libs\soil\stb_image_aug.c:504:66: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+          CASE(4,3) dest[0]=src[0],dest[1]=src[1],dest[2]=src[2]; break;
+                                                                  ^~~~~
+..\libs\soil\stb_image_aug.c: In function 'create_png_image':
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2119:13: note: in expansion of macro 'CASE'
+             CASE(F_none)  cur[k] = raw[k]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2119:44: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_none)  cur[k] = raw[k]; break;
+                                            ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2120:13: note: in expansion of macro 'CASE'
+             CASE(F_sub)   cur[k] = raw[k] + cur[k-img_n]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2120:59: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_sub)   cur[k] = raw[k] + cur[k-img_n]; break;
+                                                           ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2121:13: note: in expansion of macro 'CASE'
+             CASE(F_up)    cur[k] = raw[k] + prior[k]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2121:55: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_up)    cur[k] = raw[k] + prior[k]; break;
+                                                       ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2122:13: note: in expansion of macro 'CASE'
+             CASE(F_avg)   cur[k] = raw[k] + ((prior[k] + cur[k-img_n])>>1); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2122:77: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_avg)   cur[k] = raw[k] + ((prior[k] + cur[k-img_n])>>1); break;
+                                                                             ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2123:13: note: in expansion of macro 'CASE'
+             CASE(F_paeth)  cur[k] = (uint8) (raw[k] + paeth(cur[k-img_n],prior[k],prior[k-img_n])); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2123:101: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_paeth)  cur[k] = (uint8) (raw[k] + paeth(cur[k-img_n],prior[k],prior[k-img_n])); break;
+                                                                                                     ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2124:13: note: in expansion of macro 'CASE'
+             CASE(F_avg_first)    cur[k] = raw[k] + (cur[k-img_n] >> 1); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2124:73: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_avg_first)    cur[k] = raw[k] + (cur[k-img_n] >> 1); break;
+                                                                         ^~~~~
+..\libs\soil\stb_image_aug.c:2117:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2125:13: note: in expansion of macro 'CASE'
+             CASE(F_paeth_first)  cur[k] = (uint8) (raw[k] + paeth(cur[k-img_n],0,0)); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2125:87: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_paeth_first)  cur[k] = (uint8) (raw[k] + paeth(cur[k-img_n],0,0)); break;
+                                                                                       ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2135:13: note: in expansion of macro 'CASE'
+             CASE(F_none)  cur[k] = raw[k]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2135:44: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_none)  cur[k] = raw[k]; break;
+                                            ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2136:13: note: in expansion of macro 'CASE'
+             CASE(F_sub)   cur[k] = raw[k] + cur[k-out_n]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2136:59: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_sub)   cur[k] = raw[k] + cur[k-out_n]; break;
+                                                           ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2137:13: note: in expansion of macro 'CASE'
+             CASE(F_up)    cur[k] = raw[k] + prior[k]; break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2137:55: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_up)    cur[k] = raw[k] + prior[k]; break;
+                                                       ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2138:13: note: in expansion of macro 'CASE'
+             CASE(F_avg)   cur[k] = raw[k] + ((prior[k] + cur[k-out_n])>>1); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2138:77: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_avg)   cur[k] = raw[k] + ((prior[k] + cur[k-out_n])>>1); break;
+                                                                             ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2139:13: note: in expansion of macro 'CASE'
+             CASE(F_paeth)  cur[k] = (uint8) (raw[k] + paeth(cur[k-out_n],prior[k],prior[k-out_n])); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2139:101: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_paeth)  cur[k] = (uint8) (raw[k] + paeth(cur[k-out_n],prior[k],prior[k-out_n])); break;
+                                                                                                     ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2140:13: note: in expansion of macro 'CASE'
+             CASE(F_avg_first)    cur[k] = raw[k] + (cur[k-out_n] >> 1); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2140:73: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_avg_first)    cur[k] = raw[k] + (cur[k-out_n] >> 1); break;
+                                                                         ^~~~~
+..\libs\soil\stb_image_aug.c:2133:20: warning: this 'for' clause does not guard... [-Wmisleading-indentation]
+                    for (k=0; k < img_n; ++k)
+                    ^
+..\libs\soil\stb_image_aug.c:2141:13: note: in expansion of macro 'CASE'
+             CASE(F_paeth_first)  cur[k] = (uint8) (raw[k] + paeth(cur[k-out_n],0,0)); break;
+             ^~~~
+..\libs\soil\stb_image_aug.c:2141:87: note: ...this statement, but the latter is misleadingly indented as if it is guarded by the 'for'
+             CASE(F_paeth_first)  cur[k] = (uint8) (raw[k] + paeth(cur[k-out_n],0,0)); break;
+                                                                                       ^~~~~
+..\libs\soil\stb_image_aug.c: In function 'parse_png_file':
+..\libs\soil\stb_image_aug.c:2341:28: warning: variable 'invalid_chunk' set but not used [-Wunused-but-set-variable]
+                static char invalid_chunk[] = "XXXX chunk not known";
+                            ^~~~~~~~~~~~~
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\Shader.o" "..\\src\\platform\\Shader.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\freetype\lib/libfreetype.a when searching for -lfreetype
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\freetype\lib\libfreetype.a when searching for -lfreetype
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\freetype\lib/libfreetype.a when searching for -lfreetype
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lfreetype
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\glfw\lib/libglfw3.a when searching for -lglfw3
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\glfw\lib\libglfw3.a when searching for -lglfw3
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: skipping incompatible D:\_projects\Native-WebGL-framework\Native-WebGL-framework\libs\glfw\lib/libglfw3.a when searching for -lglfw3
+C:/Program Files/mingw-w64/x86_64-6.1.0-posix-seh-rt_v5-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/6.1.0/../../../../x86_64-w64-mingw32/bin/ld.exe: cannot find -lglfw3
+collect2.exe: error: ld returned 1 exit status
+01:33:49 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+01:35:55 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Info: Nothing to build for Native-WebGL-framework
+01:36:57 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+01:37:13 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework
+03:52:26 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+04:02:09 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\oglft" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 

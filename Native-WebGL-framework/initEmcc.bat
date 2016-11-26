@@ -1,4 +1,5 @@
-cd C:\Program Files\Emscripten
+cd E:\Program Files (x86)\emscripten
 e:
 call emsdk_env
-cd C:\Users\crobi\Cpp_Projects\Native-WebGL-framework\Native-WebGL-framework
+cd D:\_projects\Native-WebGL-framework\Native-WebGL-framework
+d:

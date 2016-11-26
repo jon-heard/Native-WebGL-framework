@@ -31,19 +31,19 @@ void frameLogic()
 {
 //	drawCache->start();
 
-	platform::drawCircle(0, 0, 1000, 3, false);
-	platform::drawCircle(0, 0, 500, 0, false);
-	platform::drawRectangle(0, 0, 500, 500, 0, true);
-	platform::drawRectangle(375, 0, 100, 100, 1, false);
-	platform::drawRectangle(-375, 0, 100, 100, 1, true);
-	platform::drawRectangle(0, 375, 100, 100, 1, false);
-	platform::drawRectangle(0, -375, 100, 100, 1, true, .5f);
+	platform::drawCircle(0, 0, 300, 3, false);
+	platform::drawCircle(0, 0, 150, 0, false);
+	platform::drawRectangle(0, 0, 150, 150, 0, true);
+	platform::drawRectangle(100, 0, 30, 50, 1, false);
+	platform::drawRectangle(-100, 0, 30, 50, 1, true);
+	platform::drawRectangle(0, 100, 50, 30, 1, false);
+	platform::drawRectangle(0, -100, 50, 30, 1, true, .5f);
 	platform::drawText(-225,0,5,"hello world!");
 
 	platform::drawCircle(
-			sin(-rotationPhase) * 375,
-			cos(-rotationPhase) * 375,
-			100, 1, false);
+			sin(-rotationPhase) * 100,
+			cos(-rotationPhase) * 100,
+			30, 1, false);
 	rotationPhase += .025f;
 
 
@@ -59,9 +59,9 @@ void frameLogic()
 	platform::drawCircle(
 			platform::getMouseX(), platform::getMouseY(), 50, color, true);
 	platform::drawImage(
-			-500,-500,500,500,
+			-150,-150,150,150,
 			"media/colorTest.png");
-	platform::drawImage(500,500,500,500, "media/flag.png");
+	platform::drawImage(150,150,150,150, "media/flag.png");
 }
 
 void cleanup()
