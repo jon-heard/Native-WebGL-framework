@@ -22,14 +22,14 @@ void init()
 {
 	platform::setTitle("Base app");
 	platform::setBackgroundColor(.25f, .25f, .25f);
-	platform::setTextSize(16);
-//	drawCache = new platform::DrawCache();
+	platform::setTextSize(20);
+	drawCache = new platform::DrawCache();
 }
 
 float rotationPhase = 0;
 void frameLogic()
 {
-//	drawCache->start();
+	drawCache->start();
 
 	platform::drawCircle(0, 0, 300, 3, false);
 	platform::drawCircle(0, 0, 150, 0, false);
@@ -38,7 +38,7 @@ void frameLogic()
 	platform::drawRectangle(-100, 0, 30, 50, 1, true);
 	platform::drawRectangle(0, 100, 50, 30, 1, false);
 	platform::drawRectangle(0, -100, 50, 30, 1, true, .5f);
-	platform::drawText(-225,0,5,"hello world!");
+	platform::drawText(-45,0,5,"hello world!");
 
 	platform::drawCircle(
 			sin(-rotationPhase) * 100,
@@ -47,8 +47,8 @@ void frameLogic()
 	rotationPhase += .025f;
 
 
-//	drawCache->stop();
-//	drawCache->flush();
+	drawCache->stop();
+	drawCache->flush();
 
 	int color = 3;
 	if(platform::isMouseDown())
@@ -58,6 +58,7 @@ void frameLogic()
 	//cout << platform::getMouseX() << ", " << platform::getMouseY() << endl;
 	platform::drawCircle(
 			platform::getMouseX(), platform::getMouseY(), 50, color, true);
+
 	platform::drawImage(
 			-150,-150,150,150,
 			"media/colorTest.png");

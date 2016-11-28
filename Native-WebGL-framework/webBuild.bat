@@ -1,2 +1,2 @@
 cls
-call em++ -o web/app.js src/main.cpp src/platform/draw.cpp src/platform/DrawCache.cpp src/platform/errorHandling.cpp src/platform/input.cpp src/platform/platform.cpp src/platform/Shader.cpp libs/soil/image_DXT.c libs/soil/image_helper.c libs/soil/SOIL.c libs/soil/stb_image_aug.c -I libs/soil -s USE_GLFW=3 --preload-file media
+call em++ -o web/app.js src/main.cpp src/platform/draw.cpp src/platform/DrawCache.cpp src/platform/errorHandling.cpp src/platform/input.cpp src/platform/platform.cpp src/platform/Shader.cpp libs/soil/image_DXT.c libs/soil/image_helper.c libs/soil/SOIL.c libs/soil/stb_image_aug.c libs/freetype/lib/freetype.bc -I libs/soil -I libs/oglft -I libs/freetype/include -s USE_GLFW=3 -s DEMANGLE_SUPPORT=1 --preload-file media -O2
