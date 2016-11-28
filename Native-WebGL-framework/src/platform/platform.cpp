@@ -13,7 +13,9 @@
 #include "errorHandling.h"
 #include "draw.h"
 #include "input.h"
+#include "text.h"
 #include "Shader.h"
+
 #include <iostream>
 
 using namespace std;
@@ -56,6 +58,7 @@ namespace platform
 		// Load systems and callbacks
 		Shader::setSceneLayout(LEFT, TOP, RIGHT, BOTTOM);
 		draw_init();
+		text_init();
 		input_init(window);
 		glfwSetErrorCallback(handleErrors);
 
@@ -75,6 +78,7 @@ namespace platform
 		// Cleanup
 		input_shutdown();
 		draw_shutdown();
+		text_shutdown();
 	    glfwTerminate();
 		main_cleanup();
 	}

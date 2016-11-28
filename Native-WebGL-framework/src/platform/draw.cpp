@@ -1,6 +1,5 @@
 
 #include "Platform.h"
-#include <iostream>
 #include <map>
 #define _USE_MATH_DEFINES
 #include <math.h>
@@ -9,9 +8,10 @@
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
 #include <SOIL.h>
-//#include <OGLFT.h>
 #include "errorHandling.h"
 #include "Shader.h"
+
+#include <iostream>
 
 using namespace std;
 
@@ -38,7 +38,6 @@ namespace platform
 	GLuint circleBuffer = 0;
 	GLuint rectangleBuffer = 0;
 	map<const char*, int> images;
-//	OGLFT::Monochrome* monochrome;
 	Shader* colorShader = NULL;
 	Shader* textureShader = NULL;
 	Shader* blurShader = NULL;
@@ -52,10 +51,6 @@ namespace platform
 					result, "glewInit:",
 					(const char*)glewGetErrorString(result));
 		}
-
-		// Text rendering setup
-//		monochrome = new OGLFT::Monochrome("media/times.ttf", 12, 100);
-//		glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
 
 		// Setup data for circles
 		{
@@ -105,15 +100,9 @@ namespace platform
 	{
 		glDeleteBuffers(1, &circleBuffer);
 		glDeleteBuffers(1, &rectangleBuffer);
-//		delete monochrome;
 		delete colorShader;
 		delete textureShader;
 		delete blurShader;
-	}
-
-	void setTextSize(float size)
-	{
-//		monochrome->setPointSize(size);
 	}
 
 	void drawCircle(float x, float y, float radius, int colorIndex, bool filled, float opacity)
@@ -164,19 +153,6 @@ namespace platform
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 	}
 
-	void drawText(
-			float x, float y, int colorIndex,
-			const char* toDraw, float opacity, float rotation)
-	{
-//		Color c = COLORS[colorIndex];
-//		Shader::useShader("media/frag_color.txt");
-//		Shader::setParameter_vec2("objectPosition", x, y);
-//		Shader::setParameter_vec2("objectScale", 1, 1);
-//		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
-//		Shader::setParameter_float("objectOpacity", opacity);
-//
-//		monochrome->draw(0, 0, toDraw);
-	}
 
 	int loadImage(const char* filename)
 	{

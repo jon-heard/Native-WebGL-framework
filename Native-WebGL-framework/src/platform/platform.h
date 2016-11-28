@@ -19,10 +19,6 @@ namespace platform
 	unsigned long getTime();
 
 	// Draw
-	void setTextSize(float size);
-	void drawText(
-			float x, float y, int colorIndex,
-			const char* toDraw, float opacity = 1, float rotation = 0);
 	void drawCircle(
 			float x, float y, float radius, int colorIndex, bool filled, float opacity = 1);
 	void drawRectangle(
@@ -35,6 +31,12 @@ namespace platform
 	int  drawImage(
 			float x, float y, float sizeX, float sizeY,
 			int textureId, float opacity = 1, float rotation = 0);
+
+	// Text
+	void setTextSize(unsigned int size);
+	void drawText(
+			float x, float y, int colorIndex,
+			const char* toDraw, float opacity = 1, float rotation = 0);
 
 	// Input
 	bool  isMouseDown();
