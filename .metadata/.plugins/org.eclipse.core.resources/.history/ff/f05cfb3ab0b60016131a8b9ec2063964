@@ -1,0 +1,18 @@
+//precision mediump float;
+
+uniform sampler2D mainTex;\n"
+uniform float blurAmount;\n"
+varying vec2 UVs;\n"
+
+void main()
+{
+	gl_FragColor = texture2D(mainTex, UVs) * 3;
+	for(int y = -5; y < 5; y++)
+	{
+		for(int x = -5; x < 5; x++)
+		{
+			gl_FragColor += texture2D(mainTex, UVs + vec2(x*blurAmount, y*blurAmount));
+		}
+	}
+	gl_FragColor /= 15.0;
+}

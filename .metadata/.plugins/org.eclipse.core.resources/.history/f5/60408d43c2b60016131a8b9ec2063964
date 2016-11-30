@@ -1,0 +1,45 @@
+/*
+precision mediump float;
+
+uniform sampler2D mainTex;
+uniform float objectOpacity;
+varying vec2 UVs;
+
+void main()
+{
+	gl_FragColor = texture2D(mainTex, UVs) * vec4(1.0,1.0,1.0, objectOpacity);
+}
+*/
+
+precision mediump float;
+
+uniform sampler2D mainTex;
+uniform float blurAmount;
+uniform float objectOpacity;
+varying vec2 UVs;
+
+void main()
+{
+	gl_FragColor = texture2D(mainTex, UVs) * vec4(1.0,1.0,1.0, objectOpacity);
+//	gl_FragColor = vec4(1,0,0,1);
+/*
+	for(int y = -5; y < 5; y++)
+	{
+		for(int x = -5; x < 5; x++)
+		{
+			gl_FragColor += texture2D(mainTex, UVs + vec2(x*blurAmount, y*blurAmount));
+		}
+	}
+	gl_FragColor /= 100;
+*/
+
+//	gl_FragColor = texture2D(mainTex, UVs) * 3;
+//	for(int y = -5; y < 5; y++)
+//	{
+//		for(int x = -5; x < 5; x++)
+//		{
+//			gl_FragColor += texture2D(mainTex, UVs + vec2(x*blurAmount, y*blurAmount));
+//		}
+//	}
+//	gl_FragColor /= 15.0;
+}

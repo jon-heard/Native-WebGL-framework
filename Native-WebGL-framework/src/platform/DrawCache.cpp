@@ -23,7 +23,9 @@ namespace platform
 
 		glGenFramebuffers(1, &bufferId);
 		glBindFramebuffer(GL_FRAMEBUFFER, bufferId);
-		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, textureId, 0);
+		glFramebufferTexture2D(
+				GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0,
+				GL_TEXTURE_2D, textureId, 0);
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 		if(glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
@@ -46,6 +48,6 @@ namespace platform
 
 	void DrawCache::flush()
 	{
-		drawImage(0, 0, RIGHT-LEFT, BOTTOM-TOP, textureId, 1.0f, 0.0f);
+		drawImage(0, 0, RIGHT-LEFT, BOTTOM-TOP, textureId);
 	}
 }

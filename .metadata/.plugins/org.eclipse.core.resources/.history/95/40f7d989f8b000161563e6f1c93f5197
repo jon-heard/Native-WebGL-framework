@@ -1,0 +1,17 @@
+/*
+ * Shader.h
+ *
+ *  Created on: Nov 22, 2016
+ *      Author: Jon
+ */
+
+#ifndef PLATFORM_SHADER_H_
+#define PLATFORM_SHADER_H_
+
+class Shader {
+public:
+	Shader();
+	virtual ~Shader();
+};
+
+#endif /* PLATFORM_SHADER_H_ */

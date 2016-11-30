@@ -1,0 +1,81 @@
+
+#define GLEW_STATIC
+
+#include "shaders.h"
+#include <GL/glew.h>
+#include "errorHandling.h"
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+#include <iostream>
+using namespace std;
+
+const GLchar* SHADER_VERTEX_BASE =
+	"uniform mat4 sceneTransform;\n"
+	"uniform mat4 rotationTransform;\n"
+	"uniform vec2 objectPosition;\n"
+	"uniform vec2 objectScale;\n"
+	"attribute vec2 vertexPosition;\n"
+	"attribute vec2 vertexTextureCoordinate;\n"
+	"varying vec2 UVs;\n"
+	"void main()\n"
+	"{\n"
+	//"	rotationTransform = mat4(1.0);\n"
+	"	UVs = vertexTextureCoordinate;\n"
+	"	gl_Position =\n"
+	"			sceneTransform *\n"
+	//"			rotationTransform *\n"
+	"			vec4(vertexPosition*objectScale+objectPosition, 0.0, 1.0);\n"
+	"}\n\0";
+
+const GLchar* SHADER_FRAGMENT_COLOR =
+	"uniform vec3 objectColor;\n"
+	"void main()\n"
+	"{\n"
+	"	gl_FragColor = vec4(objectColor, 1.0);\n"
+	"}\n\0";
+
+const GLchar* SHADER_FRAGMENT_TEXTURE =
+	"varying vec2 UVs;\n"
+	"uniform sampler2D mainTex;\n"
+	"void main()\n"
+	"{\n"
+	"	gl_FragColor = texture2D(mainTex, UVs);\n"
+	"}\n\0";
+	
+const GLchar* SHADER_FRAGMENT_BLUR =
+	"varying vec2 UVs;\n"
+	"uniform sampler2D mainTex;\n"
+	"uniform float blurAmount;\n"
+	"void main()\n"
+	"{\n"
+	"	gl_FragColor = texture2D(mainTex, UVs) * 3;\n"
+	"	for(int y = -5; y < 5; y++)\n"
+	"	{\n"
+	"		for(int x = -5; x < 5; x++)\n"
+	"		{\n"
+	"			gl_FragColor += texture2D(mainTex, UVs + vec2(x*blurAmount, y*blurAmount));"
+	"		}\n"
+	"	}\n"
+	"	gl_FragColor /= 15.0;\n"
+	"}\n\0";
+
+GLuint shaders_color;
+GLuint shaders_color_uniform_sceneTransform;
+GLuint shaders_color_uniform_objectPosition;
+GLuint shaders_color_uniform_objectScale;
+GLuint shaders_color_uniform_objectColor;
+GLuint shaders_color_uniform_rotationTransform;
+GLuint shaders_texture;
+GLuint shaders_texture_uniform_sceneTransform;
+GLuint shaders_texture_uniform_objectPosition;
+GLuint shaders_texture_uniform_objectScale;
+GLuint shaders_texture_uniform_mainTex;
+GLuint shaders_texture_uniform_rotationTransform;
+GLuint shaders_blur;
+GLuint shaders_blur_uniform_sceneTransform;
+GLuint shaders_blur_uniform_objectPosition;
+GLuint shaders_blur_uniform_objectScale;
+GLuint shaders_blur_uniform_mainTex;
+GLuint shaders_blur_uniform_blurAmount;
+GLuint shaders_blur_uniform_rotationTransform;

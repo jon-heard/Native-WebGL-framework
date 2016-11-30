@@ -1,0 +1,12 @@
+precision mediump float;
+
+uniform sampler2D mainTex;
+uniform float objectOpacity;
+uniform vec3 objectColor;
+varying vec2 UVs;
+
+void main()
+{
+	//gl_FragColor = vec4(1,1,1,1);//objectColor, 1);//, texture2D(mainTex, UVs).a * objectOpacity);
+	gl_FragColor = texture2D(mainTex, UVs) * vec4(1.0,1.0,1.0, objectOpacity);
+}

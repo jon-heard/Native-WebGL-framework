@@ -1,0 +1,17 @@
+/*
+ * DrawCache.h
+ *
+ *  Created on: Nov 22, 2016
+ *      Author: Jon
+ */
+
+#ifndef PLATFORM_DRAWCACHE_H_
+#define PLATFORM_DRAWCACHE_H_
+
+class DrawCache {
+public:
+	DrawCache();
+	virtual ~DrawCache();
+};
+
+#endif /* PLATFORM_DRAWCACHE_H_ */

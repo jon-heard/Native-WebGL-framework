@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Native-WebGL-framework/src/platform/Text.cpp&apos; to &apos;text.cpp&apos;" description="Rename resource &apos;Text.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/platform/Text.cpp" name="text.cpp" stamp="1480329214360" updateReferences="true"/>
+</session>

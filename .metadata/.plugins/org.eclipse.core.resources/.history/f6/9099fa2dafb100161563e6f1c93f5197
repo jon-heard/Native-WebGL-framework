@@ -1,0 +1,3 @@
+finish texture shader integration (in draw.cpp, remove shaders from drawImage)
+remove all instances of shaders.cpp and shaders.h (making sure you don't break anything
+adjust DrawCache to allow using a Shader object

@@ -1,0 +1,178 @@
+
+#include "Platform.h"
+#include "errorHandling.h"
+#include <map>
+#include <math.h>
+#define GLEW_STATIC
+#include <GL/glew.h>
+#include <gl/gl.h>
+#include <ft2build.h>
+#include FT_FREETYPE_H
+#include "draw.h"
+#include "shader.h"
+
+#include <iostream>
+
+using namespace std;
+
+// http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
+#define BUFFER_OFFSET(i) ((char *)NULL + (i))
+
+namespace platform
+{
+	struct ivec2
+	{
+		unsigned int x; unsigned int y;
+		ivec2() { x = y = 0; }
+		ivec2(int x, int y)
+		{
+			this->x = x;
+			this->y = y;
+		}
+	};
+	struct Character
+	{
+		unsigned int textureID;
+		ivec2        Size;
+		ivec2        Bearing;
+		FT_Pos       Advance;
+	};
+
+	FT_Library ft;
+	FT_Face face;
+	map<char, Character> chars;
+	unsigned int VAO, VBO;
+	Shader* textShader = NULL;
+
+	void clearGlyphs();
+	void refreshGlyphs();
+
+	void text_init()
+	{
+		if (FT_Init_FreeType(&ft))
+			handleErrors(0, "FREETYPE: Could not init FreeType Library");
+		if (FT_New_Face(ft, "media/times.ttf", 0, &face))
+			handleErrors(0, "FREETYPE: Failed to load font");
+		FT_Set_Pixel_Sizes(face, 0, 12);
+		refreshGlyphs();
+
+		if(textShader == NULL)
+		{
+			textShader = new Shader("media/frag_text.txt");
+		}
+
+		Shader::useShader("media/frag_text.txt");
+		int texturePosition = Shader::getParameterInfo("vertexPosition")->id;
+
+		glGenVertexArrays(1, &VAO);
+		glGenBuffers(1, &VBO);
+		glBindVertexArray(VAO);
+		glBindBuffer(GL_ARRAY_BUFFER, VBO);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(GLfloat)*6*4, NULL, GL_DYNAMIC_DRAW);
+//		glVertexAttribPointer(texturePosition, 4, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), 0);
+//		glEnableVertexAttribArray(texturePosition);
+
+		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
+		glVertexAttribPointer(
+				vertexPosition, 2, GL_FLOAT,
+				GL_FALSE, 16, BUFFER_OFFSET(0));
+		glEnableVertexAttribArray(vertexPosition);
+
+		int vertexTexCoord = Shader::getParameterInfo("vertexTexCoord")->id;
+		glVertexAttribPointer(
+				vertexTexCoord, 2, GL_FLOAT,
+				GL_FALSE, 16, BUFFER_OFFSET(8));
+		glEnableVertexAttribArray(vertexTexCoord);
+
+
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+		glBindVertexArray(0);
+
+	}
+
+	void text_shutdown()
+	{
+		clearGlyphs();
+		FT_Done_Face(face);
+		FT_Done_FreeType(ft);
+		delete textShader;
+	}
+
+	void setTextSize(unsigned int size)
+	{
+		FT_Set_Pixel_Sizes(face, 0, size);
+		refreshGlyphs();
+	}
+
+	void drawText(float x, float y, const char* toDraw)
+	{
+		if(!nextShader) Shader::useShader("media/frag_text.txt");
+		int drawOpacity = nextOpacity;
+		int drawColor = nextColor;
+
+		// Iterate through all characters
+		for (int i = 0; toDraw[i] != '\0'; i++)
+		{
+			Character ch = chars[toDraw[i]];
+			platform::setNextDraw_color(drawColor);
+			platform::setNextDraw_opacity(drawOpacity);
+			platform::setNextDraw_useCustomShader(true);
+			platform::drawImage(ch.Bearing.x + 100(i), -(ch.Size.y - ch.Bearing.y), ch.Size.x, ch.Size.y, ch.textureID);
+		}
+	}
+
+	void refreshGlyphs()
+	{
+		clearGlyphs();
+
+		glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // Disable byte-alignment restriction
+
+		for (GLubyte c = 0; c < 128; c++)
+		{
+		    // Load character glyph
+		    if (FT_Load_Char(face, c, FT_LOAD_RENDER))
+		    {
+		        std::cout << "ERROR::FREETYTPE: Failed to load Glyph" << std::endl;
+		        continue;
+		    }
+		    // Generate texture
+		    GLuint texture;
+		    glGenTextures(1, &texture);
+		    glBindTexture(GL_TEXTURE_2D, texture);
+		    glTexImage2D(
+		        GL_TEXTURE_2D,
+		        0,
+		        GL_RED,
+		        face->glyph->bitmap.width,
+		        face->glyph->bitmap.rows,
+		        0,
+		        GL_RED,
+		        GL_UNSIGNED_BYTE,
+		        face->glyph->bitmap.buffer
+		    );
+		    // Set texture options
+		    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+		    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+		    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		    // Now store character for later use
+		    Character character = {
+		        texture,
+		        ivec2(face->glyph->bitmap.width, face->glyph->bitmap.rows),
+		        ivec2(face->glyph->bitmap_left, face->glyph->bitmap_top),
+		        face->glyph->advance.x
+		    };
+		    chars.insert(std::pair<char, Character>(c, character));
+		}
+	}
+
+	void clearGlyphs()
+	{
+		for(map<char, Character>::iterator i = chars.begin();
+		    i != chars.end(); i++)
+		{
+			glDeleteTextures(1, &(*i).second.textureID);
+		}
+		chars.clear();
+	}
+}

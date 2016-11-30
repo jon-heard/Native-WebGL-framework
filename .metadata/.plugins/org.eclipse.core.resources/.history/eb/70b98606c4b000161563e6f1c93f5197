@@ -1,0 +1,29 @@
+
+#ifndef PLATFORM_DRAWCACHE_H_
+#define PLATFORM_DRAWCACHE_H_
+
+#include "Shader.h"
+
+namespace platform
+{
+	class DrawCache
+	{
+	public:
+		DrawCache();
+		virtual ~DrawCache();
+		static void DrawCache_init();
+
+		void start();
+		void stop();
+		void flush();
+
+		Shader* getShader();
+		void setShader(Shader* value);
+	private:
+		static bool initialized = false;
+		unsigned int buffer;
+		unsigned int texture;
+	};
+}
+
+#endif /* PLATFORM_DRAWCACHE_H_ */

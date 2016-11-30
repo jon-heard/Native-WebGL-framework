@@ -19,24 +19,21 @@ namespace platform
 	unsigned long getTime();
 
 	// Draw
-	void drawCircle(
-			float x, float y, float radius, int colorIndex, bool filled, float opacity = 1);
-	void drawRectangle(
-			float x, float y, float xSize, float ySize,
-			int colorIndex, bool filled, float opacity = 1, float rotation = 0);
+	void drawCircle(float x, float y, float radius, bool filled);
+	void drawRectangle(float x, float y, float xSize, float ySize, bool filled);
 	int  loadImage(const char* filename);
 	int  drawImage(
-			float x, float y, float sizeX, float sizeY,
-			const char* filename, float opacity = 1, float rotation = 0);
-	int  drawImage(
-			float x, float y, float sizeX, float sizeY,
-			int textureId, float opacity = 1, float rotation = 0);
+			float x, float y, float sizeX, float sizeY, const char* filename);
+	int  drawImage(float x, float y, float sizeX, float sizeY, int textureId);
+	void setNextDraw_color(int color);
+	void setNextDraw_opacity(float opacity);
+	void setNextDraw_rotation(float rotation);
+	void setNextDraw_useCustomShader(bool useCustomShader);
+
 
 	// Text
 	void setTextSize(unsigned int size);
-	void drawText(
-			float x, float y, int colorIndex,
-			const char* toDraw, float opacity = 1, float rotation = 0);
+	void drawText(float x, float y, const char* toDraw);
 
 	// Input
 	bool  isMouseDown();

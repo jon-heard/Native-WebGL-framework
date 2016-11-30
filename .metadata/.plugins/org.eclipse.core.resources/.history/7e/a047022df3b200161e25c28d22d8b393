@@ -1,0 +1,232 @@
+
+#include "Platform.h"
+#include <iostream>
+#include <map>
+#define _USE_MATH_DEFINES
+#include <math.h>
+#define GLEW_STATIC
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GLFW/glfw3.h>
+//#include <SOIL.h>
+//#include <OGLFT.h>
+#include "errorHandling.h"
+#include "Shader.h"
+
+using namespace std;
+
+// http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
+#define BUFFER_OFFSET(i) ((char *)NULL + (i))
+
+namespace platform
+{
+	typedef struct
+	{
+		float red; float blue; float green;
+	}
+	Color;
+
+	const Color COLORS[] = {
+		{1, 0, 0},			// Red
+		{0, 1, 0},			// Green
+		{0, 0, 1},			// Blue
+		{.5f, 0, .5f},		// purple
+		{.5f, .5f, .5f},	// gray
+		{0,0,0}
+	};
+
+	GLuint circleBuffer = 0;
+	GLuint rectangleBuffer = 0;
+	map<const char*, int> images;
+//	OGLFT::Monochrome* monochrome;
+	Shader* colorShader = NULL;
+	Shader* textureShader = NULL;
+	Shader* blurShader = NULL;
+
+	void draw_init()
+	{
+		int result = glewInit();
+		if(result != GLEW_OK)
+		{
+			handleErrors(
+					result, "glewInit:",
+					(const char*)glewGetErrorString(result));
+		}
+
+		// Text rendering setup
+//		monochrome = new OGLFT::Monochrome("media/times.ttf", 12, 100);
+//		glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
+
+		// Setup data for circles
+		{
+			GLfloat circleData[(CIRCLE_RESOLUTION) * 2];
+			const double phaseDistance = 2*M_PI/(CIRCLE_RESOLUTION-1);
+			for(int i = 0; i < CIRCLE_RESOLUTION; i++)
+			{
+				circleData[i*2] = sin(i*phaseDistance);
+				circleData[i*2+1] = cos(i*phaseDistance);
+			}
+			glGenBuffers(1, &circleBuffer);
+			glBindBuffer(GL_ARRAY_BUFFER, circleBuffer);
+			glBufferData(
+					GL_ARRAY_BUFFER, sizeof(circleData),
+					circleData, GL_STATIC_DRAW);
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
+		}
+
+		// Setup data for rectangles
+		{
+			GLfloat rectangleData[] =
+			{
+				-.5f,-.5f, 0,1,
+				-.5f,.5f, 0,0,
+				.5f,.5f, 1,0,
+				.5f,-.5f, 1,1,
+				-.5f,-.5f, 0,1
+			};
+			glGenBuffers(1, &rectangleBuffer);
+			glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
+			glBufferData(
+					GL_ARRAY_BUFFER, sizeof(rectangleData),
+					rectangleData, GL_STATIC_DRAW);
+			glBindBuffer(GL_ARRAY_BUFFER, 0);
+		}
+
+		// Setup shaders
+		if(colorShader == NULL)
+		{
+			colorShader = new Shader("media/frag_color.txt");
+			textureShader = new Shader("media/frag_texture.txt");
+			//blurShader = new Shader("media/frag_blur.txt");
+		}
+	}
+
+	void draw_shutdown()
+	{
+		glDeleteBuffers(1, &circleBuffer);
+		glDeleteBuffers(1, &rectangleBuffer);
+//		delete monochrome;
+		delete colorShader;
+		delete textureShader;
+		delete blurShader;
+	}
+
+	void setTextSize(float size)
+	{
+//		monochrome->setPointSize(size);
+	}
+
+	void drawCircle(float x, float y, float radius, int colorIndex, bool filled)
+	{
+		Color c = COLORS[colorIndex];
+		Shader::useShader("media/frag_color.txt");
+		Shader::setParameter_vec2("objectPosition", x, y);
+		Shader::setParameter_vec2("objectScale", radius, radius);
+		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+
+		glBindBuffer(GL_ARRAY_BUFFER, circleBuffer);
+
+		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
+		glVertexAttribPointer(
+				vertexPosition, 2, GL_FLOAT,
+				GL_FALSE, 0, BUFFER_OFFSET(0));
+		glEnableVertexAttribArray(vertexPosition);
+
+		glDrawArrays(
+				filled ? GL_TRIANGLE_FAN : GL_LINE_STRIP,
+				0, CIRCLE_RESOLUTION);
+
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+	}
+
+	void drawRectangle(
+			float x, float y, float sizeX, float sizeY,
+			int colorIndex, bool filled, float rotation)
+	{
+		Color c = COLORS[colorIndex];
+		Shader::useShader("media/frag_color.txt");
+		Shader::setParameter_vec2("objectPosition", x, y);
+		Shader::setParameter_vec2("objectScale", sizeX, sizeY);
+		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+
+		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
+
+		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
+		glVertexAttribPointer(
+				vertexPosition, 2, GL_FLOAT,
+				GL_FALSE, 16, BUFFER_OFFSET(0));
+		glEnableVertexAttribArray(vertexPosition);
+
+		glDrawArrays(filled ? GL_TRIANGLE_FAN : GL_LINE_STRIP, 0, 5);
+
+		glBindBuffer(GL_ARRAY_BUFFER, 0);
+	}
+
+	void drawText(
+			float x, float y, int colorIndex,
+			const char* toDraw, float rotation)
+	{
+//		Color c = COLORS[colorIndex];
+//		Shader::useShader("media/frag_color.txt");
+//		Shader::setParameter_vec2("objectPosition", x, y);
+//		Shader::setParameter_vec2("objectScale", 1, 1);
+//		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+//
+//		monochrome->draw(0, 0, toDraw);
+	}
+
+	int loadImage(const char* filename)
+	{
+		int result = SOIL_load_OGL_texture(
+				filename, SOIL_LOAD_AUTO,
+				SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+		images[filename] = result;
+		return result;
+		return 0;
+	}
+
+	int drawImage(
+			float x, float y, float sizeX, float sizeY,
+			const char* filename, float rotation)
+	{
+		if(images.find(filename) == images.end())
+		{
+			loadImage(filename);
+		}
+		int imageId = images[filename];
+		drawImage(x, y, sizeX, sizeY, imageId, rotation);
+		return imageId;
+	}
+
+	int drawImage(
+			float x, float y, float sizeX, float sizeY,
+			int imageId, float rotation)
+	{
+//		Shader::useShader("media/frag_texture.txt");
+//		Shader::setParameter_vec2("objectPosition", x, y);
+//		Shader::setParameter_vec2("objectScale", sizeX, sizeY);
+//		Shader::setParameter_Texture1("mainTex", imageId);
+//
+//		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
+//
+//		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
+//		glVertexAttribPointer(
+//				vertexPosition, 2, GL_FLOAT,
+//				GL_FALSE, 16, BUFFER_OFFSET(0));
+//		glEnableVertexAttribArray(vertexPosition);
+//
+//		int vertexTexCoords = Shader::getParameterInfo("vertexTexCoord")->id;
+//		glVertexAttribPointer(
+//				vertexTexCoords, 2, GL_FLOAT,
+//				GL_FALSE, 16, BUFFER_OFFSET(8));
+//		glEnableVertexAttribArray(vertexTexCoords);
+//
+//		glDrawArrays(GL_TRIANGLE_FAN, 0, 5);
+//
+//		glBindBuffer(GL_ARRAY_BUFFER, 0);
+//
+//		return imageId;
+		return 0;
+
+	}
+}

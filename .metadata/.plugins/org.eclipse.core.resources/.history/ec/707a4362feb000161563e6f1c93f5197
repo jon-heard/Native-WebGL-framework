@@ -1,0 +1,25 @@
+
+#include<iostream>
+#include<cstdlib>
+#include<stdarg.h>
+
+using namespace std;
+
+void handleErrors(int error, const char* description, ...)
+{
+	cout << "ERROR: " << error << " :: " << description;
+
+	va_list ap;
+    va_start(ap, n_args);
+    int max = va_arg(ap, int);
+
+    for(int i = 1; i <= n_args; i++)
+    {
+        cout << va_arg(ap, const char*);
+        if(a > max) max = a;
+    }
+    va_end(ap);
+    cout << endl;
+
+	exit(0);
+}

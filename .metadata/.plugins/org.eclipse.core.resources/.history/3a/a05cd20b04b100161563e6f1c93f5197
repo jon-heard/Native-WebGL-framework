@@ -1,0 +1,33 @@
+/*
+ * Shader.h
+ *
+ *  Created on: Nov 22, 2016
+ *      Author: Jon
+ */
+
+#ifndef PLATFORM_SHADER_H_
+#define PLATFORM_SHADER_H_
+
+#include <map>
+
+namespace platform
+{
+	class Shader
+	{
+	public:
+		Shader(const char* fragSourceFile);
+		virtual ~Shader();
+		static bool useShader(const char* name);
+		static void setSceneLayout(
+				float left, float top, float right, float bottom);
+	private:
+		unsigned int programId = 0;
+		bool ready = false;
+		std::map<const char*, std::pair<unsigned int, unsigned int>> parameters;
+
+		static std::map<const char*, Shader*> shaderCollection;
+		static Shader* currentShader;
+	};
+}
+
+#endif /* PLATFORM_SHADER_H_ */

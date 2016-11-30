@@ -23,15 +23,19 @@ const GLchar* SHADER_VERTEX_BASE =
 	"uniform mat4 rotationTransform;\n"
 	"uniform vec2 objectPosition;\n"
 	"uniform vec2 objectScale;\n"
+	"uniform vec2 objectRotation;\n"
 	"attribute vec2 vertexPosition;\n"
 	"attribute vec2 vertexTexCoord;\n"
 	"varying vec2 UVs;\n"
 	"void main()\n"
 	"{\n"
 	"	UVs = vertexTexCoord;\n"
+	"	vec2 v = vec2(\n"
+	"		vertexPosition.x * objectRotation.y + vertexPosition.y * objectRotation.x,\n"
+	"		vertexPosition.y * objectRotation.y - vertexPosition.x * objectRotation.x);\n"
 	"	gl_Position = \n"
 	"		sceneTransform *\n"
-	"		vec4( vertexPosition * objectScale + objectPosition, 0, 1);\n"
+	"		vec4(v * objectScale + objectPosition, 0, 1);\n"
 	"}\n\0";
 
 bool Shader::Shader_Init()

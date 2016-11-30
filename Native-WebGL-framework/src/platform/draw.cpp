@@ -1,4 +1,5 @@
 
+#include "draw.h"
 #include "Platform.h"
 #include <map>
 #define _USE_MATH_DEFINES
@@ -20,27 +21,36 @@ using namespace std;
 
 namespace platform
 {
-	typedef struct
-	{
-		float red; float blue; float green;
-	}
-	Color;
+//	typedef struct
+//	{
+//		float red; float green; float blue;
+//	}
+//	Color;
+//
+//	const Color COLORS[] = {
+//		{1, 0, 0},			// 00 - Red
+//		{0, 1, 0},			// 01 - Green
+//		{0, 0, 1},			// 02 - Blue
+//		{.5f, 0, .5f},		// 03 - purple
+//		{.5f, .5f, .5f},	// 04 - gray
+//		{0, 0, 0},			// 05 - black
+//		{1, 1, 1},			// 06 - white
+//	};
 
-	const Color COLORS[] = {
-		{1, 0, 0},			// Red
-		{0, 1, 0},			// Green
-		{0, 0, 1},			// Blue
-		{.5f, 0, .5f},		// purple
-		{.5f, .5f, .5f},	// gray
-		{0,0,0}
-	};
+	unsigned int circleBuffer = 0;
+	unsigned int rectangleBuffer = 0;
 
-	GLuint circleBuffer = 0;
-	GLuint rectangleBuffer = 0;
 	map<const char*, int> images;
+
 	Shader* colorShader = NULL;
 	Shader* textureShader = NULL;
+	Shader* coloredTextureShader = NULL;
 	Shader* blurShader = NULL;
+
+	int nextColor = -1;
+	float nextOpacity = 1;
+	float nextRotation = 0;
+	bool nextShader = false;
 
 	void draw_init()
 	{
@@ -92,7 +102,8 @@ namespace platform
 		{
 			colorShader = new Shader("media/frag_color.txt");
 			textureShader = new Shader("media/frag_texture.txt");
-			//blurShader = new Shader("media/frag_blur.txt");
+			coloredTextureShader = new Shader("media/frag_coloredtexture.txt");
+			blurShader = new Shader("media/frag_blur.txt");
 		}
 	}
 
@@ -102,17 +113,19 @@ namespace platform
 		glDeleteBuffers(1, &rectangleBuffer);
 		delete colorShader;
 		delete textureShader;
+		delete coloredTextureShader;
 		delete blurShader;
 	}
 
-	void drawCircle(float x, float y, float radius, int colorIndex, bool filled, float opacity)
+	void drawCircle(float x, float y, float radius, bool filled)
 	{
-		Color c = COLORS[colorIndex];
-		Shader::useShader("media/frag_color.txt");
+		if(!nextShader) Shader::useShader("media/frag_color.txt");
+		if(nextColor == -1) nextColor = 6;
+		Color c = COLORS[nextColor];
+		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", radius, radius);
-		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
-		Shader::setParameter_float("objectOpacity", opacity);
+		Shader::setParameter_float("objectOpacity", nextOpacity);
 
 		glBindBuffer(GL_ARRAY_BUFFER, circleBuffer);
 
@@ -127,18 +140,24 @@ namespace platform
 				0, CIRCLE_RESOLUTION);
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+		nextColor = -1;
+		nextOpacity = 1;
+		nextRotation = 0;
+		nextShader = false;
 	}
 
-	void drawRectangle(
-			float x, float y, float sizeX, float sizeY,
-			int colorIndex, bool filled, float opacity, float rotation)
+	void drawRectangle(float x, float y, float sizeX, float sizeY, bool filled)
 	{
-		Color c = COLORS[colorIndex];
-		Shader::useShader("media/frag_color.txt");
+		if(!nextShader) Shader::useShader("media/frag_color.txt");
+		if(nextColor == -1) nextColor = 6;
+		Color c = COLORS[nextColor];
+		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", sizeX, sizeY);
-		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
-		Shader::setParameter_float("objectOpacity", opacity);
+		Shader::setParameter_float("objectOpacity", nextOpacity);
+		Shader::setParameter_vec2(
+				"objectRotation",sin(nextRotation),cos(nextRotation));
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
@@ -151,6 +170,11 @@ namespace platform
 		glDrawArrays(filled ? GL_TRIANGLE_FAN : GL_LINE_STRIP, 0, 5);
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+		nextColor = -1;
+		nextOpacity = 1;
+		nextRotation = 0;
+		nextShader = false;
 	}
 
 
@@ -165,27 +189,38 @@ namespace platform
 	}
 
 	int drawImage(
-			float x, float y, float sizeX, float sizeY,
-			const char* filename, float opacity, float rotation)
+			float x, float y, float sizeX, float sizeY, const char* filename)
 	{
 		if(images.find(filename) == images.end())
 		{
 			loadImage(filename);
 		}
 		int imageId = images[filename];
-		drawImage(x, y, sizeX, sizeY, imageId, opacity, rotation);
+		drawImage(x, y, sizeX, sizeY, imageId);
 		return imageId;
 	}
 
-	int drawImage(
-			float x, float y, float sizeX, float sizeY,
-			int imageId, float opacity, float rotation)
+	int drawImage(float x, float y, float sizeX, float sizeY, int imageId)
 	{
-		Shader::useShader("media/frag_texture.txt");
+		if(!nextShader)
+		{
+			if(nextColor == -1)
+			{
+				Shader::useShader("media/frag_texture.txt");
+			}
+			else
+			{
+				Shader::useShader("media/frag_coloredtexture.txt");
+			}
+		}
+		Color c = COLORS[nextColor];
+		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", sizeX, sizeY);
 		Shader::setParameter_Texture1("mainTex", imageId);
-		Shader::setParameter_float("objectOpacity", opacity);
+		Shader::setParameter_float("objectOpacity", nextOpacity);
+		Shader::setParameter_vec2(
+				"objectRotation",sin(nextRotation),cos(nextRotation));
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
 
@@ -209,6 +244,31 @@ namespace platform
 		glBindTexture(GL_TEXTURE_2D, 0);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
+		nextColor = -1;
+		nextOpacity = 1;
+		nextRotation = 0;
+		nextShader = false;
+
 		return imageId;
+	}
+
+	void setNextDraw_color(int color)
+	{
+		nextColor = color;
+	}
+
+	void setNextDraw_opacity(float opacity)
+	{
+		nextOpacity = opacity;
+	}
+
+	void setNextDraw_rotation(float rotation)
+	{
+		nextRotation = rotation;
+	}
+
+	void setNextDraw_useCustomShader(bool useCustomShader)
+	{
+		nextShader = useCustomShader;
 	}
 }

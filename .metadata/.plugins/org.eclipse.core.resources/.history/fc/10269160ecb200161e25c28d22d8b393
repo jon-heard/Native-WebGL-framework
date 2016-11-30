@@ -1,0 +1,114 @@
+
+#include "platform.h"
+#define _USE_MATH_DEFINES
+#include <math.h>
+#define GLEW_STATIC
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GLFW/glfw3.h>
+#include <sstream>
+#ifdef EMSCRIPTEN
+	#include <emscripten/emscripten.h>
+#endif
+#include "errorHandling.h"
+#include "draw.h"
+#include "input.h"
+#include "Shader.h"
+#include <iostream>
+
+using namespace std;
+
+namespace platform
+{
+	void platformFrameLogic();
+
+	void (*main_init)();
+	void (*main_frameLogic)();
+	void (*main_cleanup)();
+
+	GLFWwindow* window;
+
+	void run(void (*init)(), void (*frameLogic)(), void (*cleanup)())
+	{
+		main_init = init;
+		main_frameLogic = frameLogic;
+		main_cleanup = cleanup;
+	
+	    // Init GLFW and opengl
+	    if(!glfwInit())
+		{
+			handleErrors(0, "Unable to initialize GLFW");
+		}
+	    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+	    window = glfwCreateWindow(
+				WIN_WIDTH, WIN_HEIGHT, "<Untitled>", NULL, NULL);
+		if(!window)
+		{
+			handleErrors(0, "Unable to create GLFW window");
+		}
+	    glfwMakeContextCurrent(window);
+	    glViewport(0, 0, WIN_WIDTH, WIN_HEIGHT);
+		platform::setBackgroundColor(.25f, .25f, .25f);
+		//glEnable(GL_TEXTURE_2D);
+		//glEnable(GL_BLEND);
+		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+		// Load systems and callbacks
+		Shader::setSceneLayout(LEFT, TOP, RIGHT, BOTTOM);
+		draw_init();
+		input_init(window);
+		glfwSetErrorCallback(handleErrors);
+
+		// Call application initializer
+		main_init();
+
+	    // Game loop
+		#ifdef EMSCRIPTEN
+			emscripten_set_main_loop(platformFrameLogic, 0, 1);
+		#else
+		    while (!glfwWindowShouldClose(window))
+			{
+		    	platformFrameLogic();
+			}
+		#endif
+
+		// Cleanup
+		input_shutdown();
+		draw_shutdown();
+	    glfwTerminate();
+		main_cleanup();
+	}
+
+	void setTitle(const char* title)
+	{
+		glfwSetWindowTitle(window, title);
+	}
+
+	void setBackgroundColor(float red, float green, float blue)
+	{
+		glClearColor(red, green, blue, 1);
+	}
+
+	void platformFrameLogic()
+	{
+		glfwPollEvents();
+		glClear(GL_COLOR_BUFFER_BIT);
+		
+		main_frameLogic();
+
+		//Shader::useShader("media/frag_color.txt");
+		//Shader::setParameter_vec2("objectPosition", 0, 0);
+		//Shader::setParameter_vec2("objectScale", 1, 1);
+		//Shader::setParameter_vec3("objectColor", 1, 1, 0);
+
+		glUniform3f(0, 1, 0, 1);
+
+		glBegin(GL_TRIANGLES);
+			glVertex3f(0,0,0);
+			glVertex3f(.5,0,0);
+			glVertex3f(0,.5,0);
+		glEnd();
+	
+		glfwSwapBuffers(window);
+	}
+}

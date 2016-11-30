@@ -1,0 +1,18 @@
+/*
+ * DrawCache.cpp
+ *
+ *  Created on: Nov 22, 2016
+ *      Author: Jon
+ */
+
+#include "DrawCache.h"
+
+DrawCache::DrawCache() {
+	// TODO Auto-generated constructor stub
+
+}
+
+DrawCache::~DrawCache() {
+	// TODO Auto-generated destructor stub
+}
+

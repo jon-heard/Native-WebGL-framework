@@ -1,0 +1,9 @@
+#ifndef SHADERS_H
+#define SHADERS_H
+
+#include <GL/glew.h>
+#include "errorHandling.h"
+
+void shaders_init();
+
+#endif // SHADERS_H

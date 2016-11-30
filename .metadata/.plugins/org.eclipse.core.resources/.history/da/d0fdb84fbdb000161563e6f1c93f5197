@@ -1,0 +1,24 @@
+
+#include "DrawCache.h"
+
+namespace platform
+{
+	drawCache_init()
+	{
+
+	}
+
+	drawCache_shutdown()
+	{
+
+	}
+
+	DrawCache::DrawCache() {
+		// TODO Auto-generated constructor stub
+
+	}
+
+	DrawCache::~DrawCache() {
+		// TODO Auto-generated destructor stub
+	}
+}
