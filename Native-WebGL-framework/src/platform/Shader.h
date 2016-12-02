@@ -49,7 +49,16 @@ namespace platform
 		static bool setParameter_vec4(const char* name,
 				float value1, float value2, float value3, float value4);
 		static bool setParameter_mat4(const char* name, float* value1);
-		static bool setParameter_Texture1(const char* name, int textureId1);
+		static bool setParameter_Texture1(
+				const char* name, unsigned int textureId1);
+		static bool setParameter_Texture2(
+				const char* name1, unsigned int textureId1,
+				const char* name2, unsigned int textureId2);
+
+		static bool bindAttribute(
+				const char* name, unsigned int attributeSize,
+				unsigned int fragmentSize, unsigned int offset);
+		static bool enableAttribute(const char* name);
 
 		static void setSceneLayout(
 				float left, float top, float right, float bottom);

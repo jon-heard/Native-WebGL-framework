@@ -16,9 +16,6 @@
 
 using namespace std;
 
-// http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
-#define BUFFER_OFFSET(i) ((char *)NULL + (i))
-
 namespace platform
 {
 //	typedef struct
@@ -45,7 +42,6 @@ namespace platform
 	Shader* colorShader = NULL;
 	Shader* textureShader = NULL;
 	Shader* coloredTextureShader = NULL;
-	Shader* blurShader = NULL;
 
 	int nextColor = -1;
 	float nextOpacity = 1;
@@ -64,7 +60,7 @@ namespace platform
 
 		// Setup data for circles
 		{
-			GLfloat circleData[(CIRCLE_RESOLUTION) * 2];
+			GLfloat circleData[CIRCLE_RESOLUTION * 2];
 			const double phaseDistance = 2*M_PI/(CIRCLE_RESOLUTION-1);
 			for(int i = 0; i < CIRCLE_RESOLUTION; i++)
 			{
@@ -103,7 +99,6 @@ namespace platform
 			colorShader = new Shader("media/frag_color.txt");
 			textureShader = new Shader("media/frag_texture.txt");
 			coloredTextureShader = new Shader("media/frag_coloredtexture.txt");
-			blurShader = new Shader("media/frag_blur.txt");
 		}
 	}
 
@@ -114,7 +109,6 @@ namespace platform
 		delete colorShader;
 		delete textureShader;
 		delete coloredTextureShader;
-		delete blurShader;
 	}
 
 	void drawCircle(float x, float y, float radius, bool filled)
@@ -128,16 +122,12 @@ namespace platform
 		Shader::setParameter_float("objectOpacity", nextOpacity);
 
 		glBindBuffer(GL_ARRAY_BUFFER, circleBuffer);
-
-		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
-		glVertexAttribPointer(
-				vertexPosition, 2, GL_FLOAT,
-				GL_FALSE, 0, BUFFER_OFFSET(0));
-		glEnableVertexAttribArray(vertexPosition);
+		Shader::bindAttribute("vertexPosition", 2, 4, 0);
+		Shader::bindAttribute("vertexTexCoord", 2, 4, 0);
 
 		glDrawArrays(
-				filled ? GL_TRIANGLE_FAN : GL_LINE_STRIP,
-				0, CIRCLE_RESOLUTION);
+				filled ? GL_TRIANGLE_FAN : GL_LINE_LOOP,
+				0, CIRCLE_RESOLUTION/2);
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -160,12 +150,8 @@ namespace platform
 				"objectRotation",sin(nextRotation),cos(nextRotation));
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
-
-		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
-		glVertexAttribPointer(
-				vertexPosition, 2, GL_FLOAT,
-				GL_FALSE, 16, BUFFER_OFFSET(0));
-		glEnableVertexAttribArray(vertexPosition);
+		Shader::bindAttribute("vertexPosition", 2, 4, 0);
+		Shader::bindAttribute("vertexTexCoord", 2, 4, 2);
 
 		glDrawArrays(filled ? GL_TRIANGLE_FAN : GL_LINE_STRIP, 0, 5);
 
@@ -223,23 +209,11 @@ namespace platform
 				"objectRotation",sin(nextRotation),cos(nextRotation));
 
 		glBindBuffer(GL_ARRAY_BUFFER, rectangleBuffer);
-
-		int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
-		glVertexAttribPointer(
-				vertexPosition, 2, GL_FLOAT,
-				GL_FALSE, 16, BUFFER_OFFSET(0));
-		glEnableVertexAttribArray(vertexPosition);
-
-		int vertexTexCoord = Shader::getParameterInfo("vertexTexCoord")->id;
-		glVertexAttribPointer(
-				vertexTexCoord, 2, GL_FLOAT,
-				GL_FALSE, 16, BUFFER_OFFSET(8));
-		glEnableVertexAttribArray(vertexTexCoord);
+		Shader::bindAttribute("vertexPosition", 2, 4, 0);
+		Shader::bindAttribute("vertexTexCoord", 2, 4, 2);
 
 		glDrawArrays(GL_TRIANGLE_FAN, 0, 5);
 
-		glDisableVertexAttribArray(vertexPosition);
-		glDisableVertexAttribArray(vertexTexCoord);
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_2D, 0);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);

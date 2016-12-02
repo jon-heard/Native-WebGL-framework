@@ -1,0 +1,22 @@
+/*
+ * DrawCache_Glow.h
+ *
+ *  Created on: Dec 1, 2016
+ *      Author: Jon
+ */
+
+#ifndef PLATFORM_DRAWCACHE_GLOW_H_
+#define PLATFORM_DRAWCACHE_GLOW_H_
+
+#include "DrawCache.h"
+
+namespace platform
+{
+	class DrawCache_Glow : public DrawCache
+	{
+	public:
+		virtual void flush();
+	};
+}
+
+#endif /* PLATFORM_DRAWCACHE_GLOW_H_ */

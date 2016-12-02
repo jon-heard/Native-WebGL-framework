@@ -1,0 +1,13 @@
+/*
+ * DrawCache_Glow.cpp
+ *
+ *  Created on: Dec 1, 2016
+ *      Author: Jon
+ */
+
+#include "DrawCache_Glow.h"
+
+void DrawCache_Glow::flush()
+{
+	drawImage(0, 0, RIGHT-LEFT, BOTTOM-TOP, textureId);
+}

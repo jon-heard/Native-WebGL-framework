@@ -8,6 +8,10 @@
 
 namespace platform
 {
+	extern float background_red;
+	extern float background_green;
+	extern float background_blue;
+
 	DrawCache::DrawCache()
 	{
 		glGenTextures(1, &textureId);
@@ -38,6 +42,7 @@ namespace platform
 	{
 		glBindFramebuffer(GL_FRAMEBUFFER, bufferId);
 		glViewport(0, 0, WIN_WIDTH, WIN_HEIGHT);
+		glClearColor(background_red, background_green, background_blue, 0);
 		glClear(GL_COLOR_BUFFER_BIT);
 	}
 

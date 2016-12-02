@@ -1,0 +1,13 @@
+precision mediump float;
+
+uniform sampler2D texture1;
+uniform sampler2D texture2;
+uniform float balance;
+varying vec2 UVs;
+
+void main()
+{
+	gl_FragColor =
+		texture2D(texture1, UVs) * balance +
+		texture2D(texture2, UVs) * (1-balance);
+}

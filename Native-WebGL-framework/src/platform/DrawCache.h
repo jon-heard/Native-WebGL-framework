@@ -14,11 +14,11 @@ namespace platform
 
 		void start();
 		void stop();
-		void flush();
+		virtual void flush();
 
 		Shader* getShader();
 		void setShader(Shader* value);
-	private:
+	public:
 		unsigned int bufferId;
 		unsigned int textureId;
 	};

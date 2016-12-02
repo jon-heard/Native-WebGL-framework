@@ -28,6 +28,11 @@ namespace platform
 	void (*main_frameLogic)();
 	void (*main_cleanup)();
 
+	float background_red = 0;
+	float background_green = 0;
+	float background_blue = 0;
+
+
 	GLFWwindow* window;
 
 	void run(void (*init)(), void (*frameLogic)(), void (*cleanup)())
@@ -90,6 +95,9 @@ namespace platform
 
 	void setBackgroundColor(float red, float green, float blue)
 	{
+		background_red = red;
+		background_green = green;
+		background_blue = blue;
 		glClearColor(red, green, blue, 1);
 	}
 

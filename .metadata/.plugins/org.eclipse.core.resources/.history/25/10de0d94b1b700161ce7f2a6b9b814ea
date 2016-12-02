@@ -1,0 +1,16 @@
+#include "DrawCache_Glow.h"
+#define GLEW_STATIC
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GLFW/glfw3.h>
+#include "Platform.h"
+
+#include <iostream>
+
+using namespace std;
+using namespace platform;
+
+void DrawCache_Glow::flush()
+{
+	drawImage(0, 0, RIGHT-LEFT, BOTTOM-TOP, textureId);
+}

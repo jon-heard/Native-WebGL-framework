@@ -1,0 +1,31 @@
+#include "DrawCache_Glow.h"
+#define GLEW_STATIC
+#include <GL/glew.h>
+#include <GL/gl.h>
+#include <GLFW/glfw3.h>
+#include "Platform.h"
+#include "Shader.h"
+
+#include <iostream>
+
+using namespace std;
+using namespace platform;
+
+static Shader* DrawCache_Glow::blurShader;
+
+DrawCache_Glow::DrawCache_Glow()
+{
+
+}
+DrawCache_Glow::~DrawCache_Glow()
+{
+
+}
+
+void DrawCache_Glow::flush()
+{
+	Shader::useShader("media/frag_blur.txt");
+	Shader::setParameter_float("blurAmount", 0.005f);
+	setNextDraw_useCustomShader(true);
+	drawImage(0, 0, RIGHT-LEFT, BOTTOM-TOP, textureId);
+}

@@ -12,6 +12,9 @@
 using namespace std;
 using namespace platform;
 
+// http://stackoverflow.com/questions/23177229/how-to-cast-int-to-const-glvoid
+#define BUFFER_OFFSET(i) ((char *)NULL + (i))
+
 bool Shader::inited = false;
 std::map<string, Shader*> Shader::shaderCollection;
 Shader* Shader::currentShader = NULL;
@@ -173,6 +176,19 @@ bool Shader::useShader(const char* name)
 	}
 	currentShader = shaderCollection[name];
 	glUseProgram(currentShader->programId);
+
+	map<string, ShaderParamInfo>* params =
+			&(currentShader->parameters);
+	map<string, ShaderParamInfo>::iterator i = params->begin();
+	while(i != params->end())
+	{
+		if(!(*i).second.isUniform)
+		{
+			glDisableVertexAttribArray((*i).second.id);
+		}
+		i++;
+	}
+
 	return true;
 }
 
@@ -244,7 +260,7 @@ bool Shader::setParameter_mat4(const char* name, float* value1)
 	glUniformMatrix4fv(info->id, 1, false, value1);
 	return true;
 }
-bool Shader::setParameter_Texture1(const char* name, int textureId1)
+bool Shader::setParameter_Texture1(const char* name, unsigned int textureId1)
 {
 	const ShaderParamInfo* info = getParameterInfo(name);
 	if(info == NULL || info->type != GL_SAMPLER_2D || !info->isUniform)
@@ -256,7 +272,48 @@ bool Shader::setParameter_Texture1(const char* name, int textureId1)
 	glUniform1i(info->id, 0);
 	return true;
 }
+bool Shader::setParameter_Texture2(
+		const char* name1, unsigned int textureId1,
+		const char* name2, unsigned int textureId2)
+{
+	const ShaderParamInfo* info1 = getParameterInfo(name1);
+	if(info1 == NULL || info1->type != GL_SAMPLER_2D || !info1->isUniform)
+	{
+		return false;
+	}
+	const ShaderParamInfo* info2 = getParameterInfo(name2);
+	if(info2 == NULL || info2->type != GL_SAMPLER_2D || !info2->isUniform)
+	{
+		return false;
+	}
 
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, textureId1);
+	glUniform1i(info1->id, 0);
+
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, textureId2);
+	glUniform1i(info2->id, 1);
+
+	return true;
+}
+
+bool Shader::bindAttribute(
+		const char* name, unsigned int attributeSize,
+		unsigned int fragmentSize, unsigned int offset)
+{
+	const ShaderParamInfo* info = getParameterInfo(name);
+	if(info == NULL || info->isUniform)
+	{
+		return false;
+	}
+	int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
+	glVertexAttribPointer(
+			info->id, attributeSize, GL_FLOAT,
+			GL_FALSE, fragmentSize*4, BUFFER_OFFSET(offset*4));
+	glEnableVertexAttribArray(info->id);
+	return true;
+}
 
 
 void Shader::setSceneLayout(

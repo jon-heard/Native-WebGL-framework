@@ -1,1 +1,7 @@
-Info: Nothing to build for Native-WebGL-framework
+01:00:51 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache_Glow.o" "..\\src\\platform\\DrawCache_Glow.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\platform\\DrawCache.o" "src\\platform\\DrawCache_Glow.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+
+01:00:52 Build Finished (took 1s.25ms)
+

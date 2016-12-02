@@ -1,0 +1,18 @@
+/*
+ * DrawCache_Glow.cpp
+ *
+ *  Created on: Dec 1, 2016
+ *      Author: Jon
+ */
+
+#include "DrawCache_Glow.h"
+
+DrawCache_Glow::DrawCache_Glow() {
+	// TODO Auto-generated constructor stub
+
+}
+
+DrawCache_Glow::~DrawCache_Glow() {
+	// TODO Auto-generated destructor stub
+}
+
