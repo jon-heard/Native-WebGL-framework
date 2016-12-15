@@ -5,6 +5,8 @@
 #include "platform/platform.h"
 #include "platform/DrawCache_Glow.h"
 #include "platform/Shader.h"
+#include "platform/Slider.h"
+#include "sstream"
 
 using namespace std;
 
@@ -13,6 +15,7 @@ void frameLogic();
 void cleanup();
 
 platform::DrawCache_Glow* glow = NULL;
+Slider* slider1 = NULL;
 
 int main()
 {
@@ -23,8 +26,11 @@ void init()
 {
 	platform::setTitle("Base app");
 	platform::setBackgroundColor(.25f, .25f, .25f);
-	platform::setTextSize(40);
+	platform::setTextSize(20);
 	glow = new platform::DrawCache_Glow();
+	slider1 = new Slider();
+	slider1->setPosition(-150, -280);
+	slider1->setWidth(250);
 }
 
 float rotationPhase = 0;
@@ -77,10 +83,20 @@ void frameLogic()
 	glow->stop();
 	glow->flush();
 
-	platform::drawText(0,0,"hello world!");
+	platform::setNextDraw_color(1);
+	platform::drawText(-200,100,"abcdefghijklmnopqrstuvwxyz");
+	platform::drawText(-200,150,"abcABCDEFGHIJKLMNOPQRSTUVWXYZabc");
+	platform::drawText(-200,200,"a.b.g.j.p.q.y.A.N.Q.a");
+
+	slider1->frameLogic();
+	stringstream s;
+	s << slider1->getValue();
+	platform::setNextDraw_color(1,1,1);
+	platform::drawText(slider1->getX() + 140, slider1->getY() + 5, s.str().c_str());
 }
 
 void cleanup()
 {
 	delete glow;
+	delete slider1;
 }

@@ -1,0 +1,107 @@
+
+#include "Slider.h"
+
+#include <string>
+#include "draw.h"
+#include "platform.h"
+#include <iostream>
+
+using namespace std;
+using namespace platform;
+
+const Color SLIDER_BAR_COLOR_1 = Color(100, 0, 0);
+const Color SLIDER_BAR_COLOR_2 = Color(255, 255, 255);
+const Color SLIDER_KNOB_COLOR_1 = Color(200, 200, 0);
+const Color SLIDER_KNOB_COLOR_2 = Color(255, 255, 255);
+const Color SLIDER_LABEL_COLOR = Color(255, 255, 255);
+const char* SLIDER_DEFAULT_TEXT = "Nameless";
+
+Slider::Slider(int minimumValue, int maximumValue, int initialValue)
+{
+	this->minimumValue = minimumValue;
+	this->maximumValue = maximumValue;
+	this->value = initialValue;
+	text = SLIDER_DEFAULT_TEXT;
+	isDragging = false;
+	value = 0;
+	mouseOffset = 0;
+}
+
+Slider::~Slider() {}
+
+void Slider::draw() const
+{
+	platform::setNextDraw_color(SLIDER_BAR_COLOR_1);
+	platform::drawRectangle(0, 0, 100, 20, true);
+	platform::setNextDraw_color(SLIDER_BAR_COLOR_2);
+	platform::drawRectangle(0, 0, 100, 20, false);
+
+	platform::setNextDraw_color(SLIDER_KNOB_COLOR_1);
+	platform::drawCircle(50, 10, 25, true);
+	platform::setNextDraw_color(SLIDER_KNOB_COLOR_2);
+	platform::drawCircle(50, 10, 25, false);
+}
+
+//void SfmlSlider::update()
+//{
+//	for (set<SfmlSlider*>::iterator i = instances.begin();
+//		i != instances.end(); ++i)
+//	{
+//		Vector2i mousePosition =
+//			Mouse::getPosition() - window->getPosition();
+//
+//		if ((*i)->isDragging)
+//		{
+//			if (!Mouse::isButtonPressed(sf::Mouse::Left))
+//			{
+//				(*i)->isDragging = false;
+//				int newVal = (*i)->knob->getPosition().x / SLIDER_SIZE.x * 100;
+//				(*i)->setValue(newVal);
+//			}
+//			else
+//			{
+//				Vector2f position = (*i)->knob->getPosition();
+//				position.x = mousePosition.x - (*i)->mouseOffset;
+//				if (position.x < 0) position.x = 0;
+//				if (position.x > SLIDER_SIZE.x) position.x = SLIDER_SIZE.x;
+//				(*i)->knob->setPosition(position);
+//			}
+//		}
+//		else
+//		{
+//			Vector2f knobPosition =
+//				(*i)->getPosition() + (*i)->knob->getPosition();
+//			if (mousePosition.x > knobPosition.x + 3 &&
+//				mousePosition.y > knobPosition.y + 25 &&
+//				mousePosition.x <
+//					knobPosition.x + 3 + SLIDER_KNOB_RADIUS * 2 &&
+//				mousePosition.y <
+//					knobPosition.y + 25 + SLIDER_KNOB_RADIUS * 2)
+//			{
+//				if (Mouse::isButtonPressed(sf::Mouse::Left))
+//				{
+//					(*i)->isDragging = true;
+//					(*i)->mouseOffset =
+//						mousePosition.x - (*i)->knob->getPosition().x;
+//				}
+//			}
+//		}
+//	}
+//}
+
+string Slider::getText() const
+{
+	return text;
+}
+void Slider::setText(string value)
+{
+	text = value;
+}
+int Slider::getValue() const
+{
+	return value;
+}
+void Slider::setValue(int value)
+{
+	this->value = value;
+}

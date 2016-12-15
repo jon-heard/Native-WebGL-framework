@@ -1,0 +1,45 @@
+
+#ifndef SFMLSLIDER_H
+#define SFMLSLIDER_H
+
+#include <SFML/Graphics.hpp>
+#include <set>
+
+class SfmlSlider : public sf::Drawable, public sf::Transformable
+{
+public:
+	SfmlSlider();
+	virtual ~SfmlSlider();
+
+	/// Called once for each slider to draw
+	virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+
+	/// Called once during application initialization
+	static void init(sf::RenderWindow* window);
+	/// Called once each frame for logic
+	static void update();
+	/// Called once each frame to draw all sliders
+	static void drawAll();
+
+	/// Text - The text in the label
+	std::string getText() const;
+	void setText(std::string value);
+	/// Value - The numeric value of the slider (0-100)
+	int getValue() const;
+	void setValue(int value);
+private:
+	int value;
+
+	sf::RectangleShape* back;
+	sf::CircleShape* knob;
+	sf::Text* label;
+
+	bool isDragging;
+	int mouseOffset;
+
+	static sf::RenderWindow* window;
+	static sf::Font* font;
+	static std::set<SfmlSlider*> instances;
+};
+
+#endif

@@ -9,11 +9,17 @@ namespace platform
 	void draw_init();
 	void draw_shutdown();
 
-	typedef struct
+	typedef struct Color
 	{
 		float red; float green; float blue;
-	}
-	Color;
+
+		Color(float red, float green, float blue)
+		{
+			this->red = red;
+			this->green = green;
+			this->blue = blue;
+		}
+	} Color;
 
 	const Color COLORS[] = {
 		{1, 0, 0},			// 00 - Red
@@ -25,12 +31,14 @@ namespace platform
 		{1, 1, 1},			// 06 - white
 	};
 
-	extern int nextColor;
+	extern Color nextColor;
 	extern float nextOpacity;
 	extern float nextRotation;
 	extern bool nextShader;
 
 	extern unsigned int rectangleBuffer;
+
+	void setNextDraw_color(Color color);
 }
 
 #endif /* DRAW_H_ */

@@ -18,22 +18,6 @@ using namespace std;
 
 namespace platform
 {
-//	typedef struct
-//	{
-//		float red; float green; float blue;
-//	}
-//	Color;
-//
-//	const Color COLORS[] = {
-//		{1, 0, 0},			// 00 - Red
-//		{0, 1, 0},			// 01 - Green
-//		{0, 0, 1},			// 02 - Blue
-//		{.5f, 0, .5f},		// 03 - purple
-//		{.5f, .5f, .5f},	// 04 - gray
-//		{0, 0, 0},			// 05 - black
-//		{1, 1, 1},			// 06 - white
-//	};
-
 	unsigned int circleBuffer = 0;
 	unsigned int rectangleBuffer = 0;
 
@@ -43,7 +27,7 @@ namespace platform
 	Shader* textureShader = NULL;
 	Shader* coloredTextureShader = NULL;
 
-	int nextColor = -1;
+	Color nextColor = {-1, -1, -1};
 	float nextOpacity = 1;
 	float nextRotation = 0;
 	bool nextShader = false;
@@ -114,9 +98,9 @@ namespace platform
 	void drawCircle(float x, float y, float radius, bool filled)
 	{
 		if(!nextShader) Shader::useShader("media/frag_color.txt");
-		if(nextColor == -1) nextColor = 6;
-		Color c = COLORS[nextColor];
-		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+		if(nextColor.red == -1) nextColor = COLORS[6];
+		Shader::setParameter_vec3(
+				"objectColor", nextColor.red, nextColor.green, nextColor.blue);
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", radius, radius);
 		Shader::setParameter_float("objectOpacity", nextOpacity);
@@ -131,7 +115,7 @@ namespace platform
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		nextColor = -1;
+		nextColor = Color(-1.0f, -1.0f, -1.0f);
 		nextOpacity = 1;
 		nextRotation = 0;
 		nextShader = false;
@@ -140,9 +124,9 @@ namespace platform
 	void drawRectangle(float x, float y, float sizeX, float sizeY, bool filled)
 	{
 		if(!nextShader) Shader::useShader("media/frag_color.txt");
-		if(nextColor == -1) nextColor = 6;
-		Color c = COLORS[nextColor];
-		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+		if(nextColor.red == -1) nextColor = COLORS[6];
+		Shader::setParameter_vec3(
+				"objectColor", nextColor.red, nextColor.green, nextColor.blue);
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", sizeX, sizeY);
 		Shader::setParameter_float("objectOpacity", nextOpacity);
@@ -157,7 +141,7 @@ namespace platform
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		nextColor = -1;
+		nextColor = Color(-1.0, -1.0, -1.0);
 		nextOpacity = 1;
 		nextRotation = 0;
 		nextShader = false;
@@ -190,7 +174,7 @@ namespace platform
 	{
 		if(!nextShader)
 		{
-			if(nextColor == -1)
+			if(nextColor.red == -1)
 			{
 				Shader::useShader("media/frag_texture.txt");
 			}
@@ -199,8 +183,8 @@ namespace platform
 				Shader::useShader("media/frag_coloredtexture.txt");
 			}
 		}
-		Color c = COLORS[nextColor];
-		Shader::setParameter_vec3("objectColor", c.red, c.green, c.blue);
+		Shader::setParameter_vec3(
+				"objectColor", nextColor.red, nextColor.green, nextColor.blue);
 		Shader::setParameter_vec2("objectPosition", x, y);
 		Shader::setParameter_vec2("objectScale", sizeX, sizeY);
 		Shader::setParameter_Texture1("mainTex", imageId);
@@ -218,7 +202,7 @@ namespace platform
 		glBindTexture(GL_TEXTURE_2D, 0);
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-		nextColor = -1;
+		nextColor = Color(-1.0, -1.0, -1.0);
 		nextOpacity = 1;
 		nextRotation = 0;
 		nextShader = false;
@@ -227,6 +211,16 @@ namespace platform
 	}
 
 	void setNextDraw_color(int color)
+	{
+		nextColor = COLORS[color];
+	}
+
+	void setNextDraw_color(float red, float green, float blue)
+	{
+		nextColor = Color(red, green, blue);
+	}
+
+	void setNextDraw_color(Color color)
 	{
 		nextColor = color;
 	}

@@ -26,6 +26,7 @@ namespace platform
 			float x, float y, float sizeX, float sizeY, const char* filename);
 	int  drawImage(float x, float y, float sizeX, float sizeY, int textureId);
 	void setNextDraw_color(int color);
+	void setNextDraw_color(float red, float green, float blue);
 	void setNextDraw_opacity(float opacity);
 	void setNextDraw_rotation(float rotation);
 	void setNextDraw_useCustomShader(bool useCustomShader);
