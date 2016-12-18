@@ -63,7 +63,7 @@ namespace platform
 		// Load systems and callbacks
 		Shader::setSceneLayout(LEFT, TOP, RIGHT, BOTTOM);
 		draw_init();
-		text_init();
+		text_init(12);
 		input_init(window);
 		glfwSetErrorCallback(handleErrors);
 

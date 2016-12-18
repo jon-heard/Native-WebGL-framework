@@ -40,37 +40,38 @@ namespace platform
 
 	FT_Library ft;
 	FT_Face face;
-	map<char, Character> chars;
-	unsigned int fontSize = 0;
+	map<unsigned int, map<char, Character>*> glyphSets;
+	unsigned int nextSize, defaultSize;
 
-	void clearGlyphs();
-	void refreshGlyphs();
+	void setupGlyphSet(unsigned int size);
+	void clearGlyphSets();
+	void clearGlyphSet(map<char, Character>* set);
 
-	void text_init()
+	void text_init(unsigned int pDefaultSize)
 	{
+		nextSize = defaultSize = pDefaultSize;
 		if (FT_Init_FreeType(&ft))
 			handleErrors(0, "FREETYPE: Could not init FreeType Library");
 		if (FT_New_Face(ft, "media/times.ttf", 0, &face))
 			handleErrors(0, "FREETYPE: Failed to load font");
-		FT_Set_Pixel_Sizes(face, 0, 12);
-		refreshGlyphs();
+		FT_Set_Pixel_Sizes(face, 0, defaultSize);
+		setupGlyphSet(defaultSize);
 	}
 
 	void text_shutdown()
 	{
-		clearGlyphs();
+		clearGlyphSets();
 		FT_Done_Face(face);
 		FT_Done_FreeType(ft);
 	}
 
-	void setTextSize(unsigned int size)
+	void setNextDraw_fontSize(unsigned int size)
 	{
-		if(size != fontSize)
+		if(glyphSets.find(size) == glyphSets.end())
 		{
-			fontSize = size;
-			FT_Set_Pixel_Sizes(face, 0, size);
-			refreshGlyphs();
+			setupGlyphSet(size);
 		}
+		nextSize = size;
 	}
 
 	void drawText(float x, float y, const char* toDraw)
@@ -78,12 +79,13 @@ namespace platform
 		if(!nextShader) Shader::useShader("media/frag_coloredtexture.txt");
 		int drawOpacity = nextOpacity;
 		Color drawColor = (nextColor.red==-1) ? COLORS[5] : nextColor;
+		map<char, Character>* glyphSet = glyphSets[nextSize];
 
 		int xOffset = 0;
 		// Iterate through all characters
 		for (int i = 0; toDraw[i] != '\0'; i++)
 		{
-			Character ch = chars[toDraw[i]];
+			Character ch = (*glyphSet)[toDraw[i]];
 			platform::setNextDraw_color(drawColor);
 			platform::setNextDraw_opacity(drawOpacity);
 			platform::setNextDraw_useCustomShader(true);
@@ -95,14 +97,22 @@ namespace platform
 					ch.textureId);
 			xOffset += (ch.advance >> 6);
 		}
-		cout << endl;
+
+		nextSize = defaultSize;
 	}
 
-	void refreshGlyphs()
+	void setupGlyphSet(unsigned int size)
 	{
-		clearGlyphs();
+		if(glyphSets.find(size) != glyphSets.end())
+		{
+			return;
+		}
 
 		glPixelStorei(GL_UNPACK_ALIGNMENT, 1); // Disable byte-alignment restriction
+		FT_Set_Pixel_Sizes(face, 0, size);
+
+		map<char, Character>* newSet = new map<char, Character>();
+		glyphSets[size] = newSet;
 
 		for (GLubyte c = 0; c < 128; c++)
 		{
@@ -157,20 +167,27 @@ namespace platform
 		    // Hack to adjust characters beneath the line
 		    if(c == 'g' || c == 'j' || c == 'p' || c == 'q' || c == 'y' || c == 'Q')
 		    {
-		    	character.bearing.y += fontSize / 2.5;
-		    	cout << endl;
+		    	character.bearing.y += size / 2.5;
 		    }
-		    chars.insert(std::pair<char, Character>(c, character));
+		    newSet->insert(std::pair<char, Character>(c, character));
 		}
 	}
 
-	void clearGlyphs()
+	void clearGlyphSets()
 	{
-		for(map<char, Character>::iterator i = chars.begin();
-		    i != chars.end(); i++)
+		for(map<unsigned int, map<char, Character>*>::iterator i = glyphSets.begin();
+			i != glyphSets.end(); i++)
+		{
+			clearGlyphSet(i->second);
+			delete i->second;
+		}
+	}
+	void clearGlyphSet(map<char, Character>* set)
+	{
+		for(map<char, Character>::iterator i = set->begin();
+			i != set->end(); i++)
 		{
 			glDeleteTextures(1, &(*i).second.textureId);
 		}
-		chars.clear();
 	}
 }

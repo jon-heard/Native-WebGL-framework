@@ -33,7 +33,7 @@ namespace platform
 
 
 	// Text
-	void setTextSize(unsigned int size);
+	void setNextDraw_fontSize(unsigned int size);
 	void drawText(float x, float y, const char* toDraw);
 
 	// Input

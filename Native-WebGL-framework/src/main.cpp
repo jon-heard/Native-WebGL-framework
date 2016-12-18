@@ -26,7 +26,6 @@ void init()
 {
 	platform::setTitle("Base app");
 	platform::setBackgroundColor(.25f, .25f, .25f);
-	platform::setTextSize(20);
 	glow = new platform::DrawCache_Glow();
 	slider1 = new Slider();
 	slider1->setPosition(-150, -280);
@@ -84,9 +83,12 @@ void frameLogic()
 	glow->flush();
 
 	platform::setNextDraw_color(1);
+	//platform::setNextDraw_fontSize(24);
 	platform::drawText(-200,100,"abcdefghijklmnopqrstuvwxyz");
-	platform::drawText(-200,150,"abcABCDEFGHIJKLMNOPQRSTUVWXYZabc");
-	platform::drawText(-200,200,"a.b.g.j.p.q.y.A.N.Q.a");
+	platform::setNextDraw_fontSize(24);
+	platform::drawText(-200,150,"abcdefghijklmnopqrstuvwxyz");
+	platform::drawText(-200,200,"abcABCDEFGHIJKLMNOPQRSTUVWXYZabc");
+	platform::drawText(-200,250,"a.b.g.j.p.q.y.A.N.Q.a");
 
 	slider1->frameLogic();
 	stringstream s;

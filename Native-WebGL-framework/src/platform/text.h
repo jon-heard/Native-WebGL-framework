@@ -3,7 +3,7 @@
 
 namespace platform
 {
-	void text_init();
+	void text_init(unsigned int pDefaultSize);
 	void text_shutdown();
 }
 
