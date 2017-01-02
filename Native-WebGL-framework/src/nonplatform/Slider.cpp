@@ -1,10 +1,9 @@
 
 #include "Slider.h"
-#include "platform.h"
+#include "../platform/platform.h"
 
 #include <string>
-#include "draw.h"
-#include "platform.h"
+#include "../platform/draw.h"
 #include <iostream>
 #include <math.h>
 

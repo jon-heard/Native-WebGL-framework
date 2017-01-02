@@ -3,8 +3,8 @@
 #include <GL/glew.h>
 #include <GL/gl.h>
 #include <GLFW/glfw3.h>
-#include "Platform.h"
-#include "Shader.h"
+#include "../platform/Platform.h"
+#include "../platform/Shader.h"
 
 #include <iostream>
 

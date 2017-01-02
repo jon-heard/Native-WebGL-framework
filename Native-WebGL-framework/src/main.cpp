@@ -3,9 +3,10 @@
 #include <math.h>
 #include <iostream>
 #include "platform/platform.h"
-#include "platform/DrawCache_Glow.h"
+#include "nonplatform/DrawCache_Glow.h"
 #include "platform/Shader.h"
-#include "platform/Slider.h"
+#include "nonplatform/Slider.h"
+#include "nonplatform/ButtonSet.h"
 #include "sstream"
 
 using namespace std;
@@ -16,11 +17,22 @@ void cleanup();
 
 platform::DrawCache_Glow* glow = NULL;
 Slider* slider1 = NULL;
+ButtonSet buttons;
 
 int main()
 {
 	platform::run(init, frameLogic, cleanup);
 }
+
+void button1() { cout << "Button 1 clicked" << endl; }
+void button2() { cout << "Button 2 clicked" << endl; }
+void button3() { cout << "Button 3 clicked" << endl; }
+void button4() { cout << "Button 4 clicked" << endl; }
+void button5() { cout << "Button 5 clicked" << endl; }
+void button6() { cout << "Button 6 clicked" << endl; }
+void button7() { cout << "Button 7 clicked" << endl; }
+void button8() { cout << "Button 8 clicked" << endl; }
+void button9() { cout << "Button 9 clicked" << endl; }
 
 void init()
 {
@@ -30,6 +42,30 @@ void init()
 	slider1 = new Slider();
 	slider1->setPosition(-150, -280);
 	slider1->setWidth(250);
+	for(int y = 0; y < 3; y++)
+	{
+		for(int x = 0; x < 3; x++)
+		{
+			Button* button = buttons.addButton(x*50+100, y*50-50, 40, 40);
+			if(y != 1 || (x != 1 && x != 2))
+			{
+				button->setImage_normal("media/button_normal.png");
+				button->setImage_hover("media/button_hover.png");
+				button->setImage_down("media/button_down.png");
+			}
+			fncButtonEvent event = NULL;
+			if(x==0 && y==0) { event = button1; }
+			if(x==1 && y==0) { event = button2; }
+			if(x==2 && y==0) { event = button3; }
+			if(x==0 && y==1) { event = button4; }
+			if(x==1 && y==1) { event = button5; }
+			if(x==2 && y==1) { event = button6; }
+			if(x==0 && y==2) { event = button7; }
+			//if(x==1 && y==2) { event = button8; }
+			if(x==2 && y==2) { event = button9; }
+			button->setOnClick(event);
+		}
+	}
 }
 
 float rotationPhase = 0;
@@ -95,6 +131,8 @@ void frameLogic()
 	s << slider1->getValue();
 	platform::setNextDraw_color(1,1,1);
 	platform::drawText(slider1->getX() + 140, slider1->getY() + 5, s.str().c_str());
+
+	buttons.doEachTime();
 }
 
 void cleanup()

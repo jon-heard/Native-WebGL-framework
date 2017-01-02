@@ -8,7 +8,7 @@
 #ifndef PLATFORM_DRAWCACHE_GLOW_H_
 #define PLATFORM_DRAWCACHE_GLOW_H_
 
-#include "DrawCache.h"
+#include "../platform/DrawCache.h"
 
 namespace platform
 {
