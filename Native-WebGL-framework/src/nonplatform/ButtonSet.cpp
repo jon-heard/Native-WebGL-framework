@@ -130,6 +130,10 @@ void ButtonSet::doEachTime()
 				else
 				{
 					image_current = (*i)->getImage_hover();
+					if(image_current == "")
+					{
+						image_current = (*i)->getImage_normal();
+					}
 					fncButtonEvent fnc = (*i)->getOnClick();
 					if(fnc)
 					{

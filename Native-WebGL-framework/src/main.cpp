@@ -7,7 +7,8 @@
 #include "platform/Shader.h"
 #include "nonplatform/Slider.h"
 #include "nonplatform/ButtonSet.h"
-#include "sstream"
+#include "nonplatform/linesAndArrows.h"
+#include <sstream>
 
 using namespace std;
 
@@ -50,7 +51,10 @@ void init()
 			if(y != 1 || (x != 1 && x != 2))
 			{
 				button->setImage_normal("media/button_normal.png");
-				button->setImage_hover("media/button_hover.png");
+				if(y != 0 || x == 0)
+				{
+					button->setImage_hover("media/button_hover.png");
+				}
 				button->setImage_down("media/button_down.png");
 			}
 			fncButtonEvent event = NULL;
@@ -131,6 +135,9 @@ void frameLogic()
 	s << slider1->getValue();
 	platform::setNextDraw_color(1,1,1);
 	platform::drawText(slider1->getX() + 140, slider1->getY() + 5, s.str().c_str());
+
+	platform::setNextDraw_color(1,1,1);
+	drawLine(0, 0, platform::getMouseX(), platform::getMouseY(), 10);
 
 	buttons.doEachTime();
 }
