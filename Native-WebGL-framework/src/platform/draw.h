@@ -12,13 +12,13 @@ namespace platform
 	void draw_shutdown();
 
 	const Color COLORS[] = {
-		{1, 0, 0},			// 00 - Red
-		{0, 1, 0},			// 01 - Green
-		{0, 0, 1},			// 02 - Blue
-		{.5f, 0, .5f},		// 03 - purple
-		{.5f, .5f, .5f},	// 04 - gray
-		{0, 0, 0},			// 05 - black
-		{1, 1, 1},			// 06 - white
+		Color(1, 0, 0),			// 00 - Red
+		Color(0, 1, 0),			// 01 - Green
+		Color(0, 0, 1),			// 02 - Blue
+		Color(.5f, 0, .5f),		// 03 - purple
+		Color(.5f, .5f, .5f),	// 04 - gray
+		Color(0, 0, 0),			// 05 - black
+		Color(1, 1, 1),			// 06 - white
 	};
 
 	extern Color nextColor;

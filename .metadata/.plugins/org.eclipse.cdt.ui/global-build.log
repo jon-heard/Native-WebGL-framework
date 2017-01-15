@@ -21624,3 +21624,312 @@ g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew
 g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\ButtonSet.o" "..\\src\\nonplatform\\ButtonSet.cpp" 
 g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
 g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\FadeSystem.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Info: Nothing to build for Native-WebGL-framework
+13:03:43 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\ButtonSet.o" "..\\src\\nonplatform\\ButtonSet.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\FadeSystem.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+13:04:55 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\ButtonSet.o" "..\\src\\nonplatform\\ButtonSet.cpp" 
+..\src\nonplatform\ButtonSet.cpp:108:1: error: redefinition of 'ButtonSet::~ButtonSet()'
+ ButtonSet::~ButtonSet() {}
+ ^~~~~~~~~
+..\src\nonplatform\ButtonSet.cpp:55:1: note: 'virtual ButtonSet::~ButtonSet()' previously defined here
+ ButtonSet::~ButtonSet()
+ ^~~~~~~~~
+13:05:28 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\ButtonSet.o" "..\\src\\nonplatform\\ButtonSet.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\FadeSystem.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+13:06:25 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\text.o" "..\\src\\platform\\text.cpp" 
+In file included from ..\src\platform\text.cpp:11:0:
+..\src\platform\draw.h:16:8: error: expected primary-expression before '(' token
+   Color(0, 1, 0},   // 01 - Green
+        ^
+..\src\platform\draw.h:16:16: error: expected ')' before '}' token
+   Color(0, 1, 0},   // 01 - Green
+                ^
+..\src\platform\draw.h:17:8: error: 'const Color platform::Color' redeclared as different kind of symbol
+   Color(0, 0, 1},   // 02 - Blue
+        ^
+In file included from ..\src\platform\text.cpp:2:0:
+..\src\platform\Platform.h:16:4: note: previous declaration 'typedef struct platform::Color platform::Color'
+  } Color;
+    ^~~~~
+In file included from ..\src\platform\text.cpp:11:0:
+..\src\platform\draw.h:17:16: error: expected ')' before '}' token
+   Color(0, 0, 1},   // 02 - Blue
+                ^
+..\src\platform\draw.h:17:17: error: expected unqualified-id before ',' token
+   Color(0, 0, 1},   // 02 - Blue
+                 ^
+..\src\platform\draw.h:18:8: error: expected constructor, destructor, or type conversion before '(' token
+   Color(.5f, 0, .5f),  // 03 - purple
+        ^
+..\src\platform\draw.h:22:2: error: expected declaration before '}' token
+  };
+  ^
+..\src\platform\draw.h:14:14: warning: 'platform::COLORS' defined but not used [-Wunused-variable]
+  const Color COLORS[] = {
+              ^~~~~~
+13:06:29 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\text.o" "..\\src\\platform\\text.cpp" 
+In file included from ..\src\platform\text.cpp:11:0:
+..\src\platform\draw.h:16:8: error: expected primary-expression before '(' token
+   Color(0, 1, 0},   // 01 - Green
+        ^
+..\src\platform\draw.h:16:16: error: expected ')' before '}' token
+   Color(0, 1, 0},   // 01 - Green
+                ^
+..\src\platform\draw.h:17:8: error: 'const Color platform::Color' redeclared as different kind of symbol
+   Color(0, 0, 1},   // 02 - Blue
+        ^
+In file included from ..\src\platform\text.cpp:2:0:
+..\src\platform\Platform.h:16:4: note: previous declaration 'typedef struct platform::Color platform::Color'
+  } Color;
+    ^~~~~
+In file included from ..\src\platform\text.cpp:11:0:
+..\src\platform\draw.h:17:16: error: expected ')' before '}' token
+   Color(0, 0, 1},   // 02 - Blue
+                ^
+..\src\platform\draw.h:17:17: error: expected unqualified-id before ',' token
+   Color(0, 0, 1},   // 02 - Blue
+                 ^
+..\src\platform\draw.h:18:8: error: expected constructor, destructor, or type conversion before '(' token
+   Color(.5f, 0, .5f),  // 03 - purple
+        ^
+..\src\platform\draw.h:22:2: error: expected declaration before '}' token
+  };
+  ^
+..\src\platform\draw.h:14:14: warning: 'platform::COLORS' defined but not used [-Wunused-variable]
+  const Color COLORS[] = {
+              ^~~~~~
+13:06:42 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\text.o" "..\\src\\platform\\text.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\Slider.o" "..\\src\\nonplatform\\Slider.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\FadeSystem.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Info: Nothing to build for Native-WebGL-framework
+13:09:15 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\FadeSystem.o" "..\\src\\nonplatform\\FadeSystem.cpp" 
+..\src\nonplatform\FadeSystem.cpp: In constructor 'FadeSystemItem::FadeSystemItem()':
+..\src\nonplatform\FadeSystem.cpp:68:31: error: no matching function for call to 'platform::Color::Color()'
+  startTime(platform::getTime())
+                               ^
+In file included from ..\src\nonplatform\FadeSystem.h:12:0,
+                 from ..\src\nonplatform\FadeSystem.cpp:9:
+..\src\nonplatform\../platform/platform.h:10:3: note: candidate: platform::Color::Color(float, float, float)
+   Color(float red, float green, float blue)
+   ^~~~~
+..\src\nonplatform\../platform/platform.h:10:3: note:   candidate expects 3 arguments, 0 provided
+..\src\nonplatform\../platform/platform.h:6:17: note: candidate: constexpr platform::Color::Color(const platform::Color&)
+  typedef struct Color
+                 ^~~~~
+..\src\nonplatform\../platform/platform.h:6:17: note:   candidate expects 1 argument, 0 provided
+..\src\nonplatform\../platform/platform.h:6:17: note: candidate: constexpr platform::Color::Color(platform::Color&&)
+..\src\nonplatform\../platform/platform.h:6:17: note:   candidate expects 1 argument, 0 provided
+..\src\nonplatform\FadeSystem.cpp:69:2: error: expected '{' before 'image'
+  image(""), x(0), y(0), sizeX(1), sizeY(1),
+  ^~~~~
+..\src\nonplatform\FadeSystem.cpp: At global scope:
+..\src\nonplatform\FadeSystem.cpp:69:7: error: expected constructor, destructor, or type conversion before '(' token
+  image(""), x(0), y(0), sizeX(1), sizeY(1),
+       ^
+13:09:28 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\FadeSystem.o" "..\\src\\nonplatform\\FadeSystem.cpp" 
+..\src\nonplatform\FadeSystem.cpp: In constructor 'FadeSystemItem::FadeSystemItem()':
+..\src\nonplatform\FadeSystem.cpp:68:31: error: no matching function for call to 'platform::Color::Color()'
+  startTime(platform::getTime())
+                               ^
+In file included from ..\src\nonplatform\FadeSystem.h:12:0,
+                 from ..\src\nonplatform\FadeSystem.cpp:9:
+..\src\nonplatform\../platform/platform.h:10:3: note: candidate: platform::Color::Color(float, float, float)
+   Color(float red, float green, float blue)
+   ^~~~~
+..\src\nonplatform\../platform/platform.h:10:3: note:   candidate expects 3 arguments, 0 provided
+..\src\nonplatform\../platform/platform.h:6:17: note: candidate: constexpr platform::Color::Color(const platform::Color&)
+  typedef struct Color
+                 ^~~~~
+..\src\nonplatform\../platform/platform.h:6:17: note:   candidate expects 1 argument, 0 provided
+..\src\nonplatform\../platform/platform.h:6:17: note: candidate: constexpr platform::Color::Color(platform::Color&&)
+..\src\nonplatform\../platform/platform.h:6:17: note:   candidate expects 1 argument, 0 provided
+..\src\nonplatform\FadeSystem.cpp:69:2: error: expected '{' before 'image'
+  image(""), x(0), y(0), sizeX(1), sizeY(1),
+  ^~~~~
+..\src\nonplatform\FadeSystem.cpp: At global scope:
+..\src\nonplatform\FadeSystem.cpp:69:7: error: expected constructor, destructor, or type conversion before '(' token
+  image(""), x(0), y(0), sizeX(1), sizeY(1),
+       ^
+13:09:46 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\FadeSystem.o" "..\\src\\nonplatform\\FadeSystem.cpp" 
+..\src\nonplatform\FadeSystem.cpp: In constructor 'FadeSystemItem::FadeSystemItem()':
+..\src\nonplatform\FadeSystem.cpp:72:14: error: class 'FadeSystemItem' does not have any field named 'fadeIn'
+  opacity(1), fadeIn(false)
+              ^~~~~~
+In file included from ..\src\nonplatform\FadeSystem.cpp:9:0:
+..\src\nonplatform\FadeSystem.h:63:16: warning: 'FadeSystemItem::startTime' will be initialized after [-Wreorder]
+  unsigned long startTime, fadeTime;
+                ^~~~~~~~~
+..\src\nonplatform\FadeSystem.h:61:14: warning:   'const char* FadeSystemItem::image' [-Wreorder]
+  const char* image;
+              ^~~~~
+..\src\nonplatform\FadeSystem.cpp:67:1: warning:   when initialized here [-Wreorder]
+ FadeSystemItem::FadeSystemItem() :
+ ^~~~~~~~~~~~~~
+..\src\nonplatform\FadeSystem.cpp:67:1: error: multiple initializations given for 'FadeSystemItem::startTime'
+13:10:00 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\FadeSystem.o" "..\\src\\nonplatform\\FadeSystem.cpp" 
+In file included from ..\src\nonplatform\FadeSystem.cpp:9:0:
+..\src\nonplatform\FadeSystem.h: In constructor 'FadeSystemItem::FadeSystemItem()':
+..\src\nonplatform\FadeSystem.h:63:16: warning: 'FadeSystemItem::startTime' will be initialized after [-Wreorder]
+  unsigned long startTime, fadeTime;
+                ^~~~~~~~~
+..\src\nonplatform\FadeSystem.h:61:14: warning:   'const char* FadeSystemItem::image' [-Wreorder]
+  const char* image;
+              ^~~~~
+..\src\nonplatform\FadeSystem.cpp:67:1: warning:   when initialized here [-Wreorder]
+ FadeSystemItem::FadeSystemItem() :
+ ^~~~~~~~~~~~~~
+..\src\nonplatform\FadeSystem.cpp:67:1: error: multiple initializations given for 'FadeSystemItem::startTime'
+13:10:14 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\FadeSystem.o" "..\\src\\nonplatform\\FadeSystem.cpp" 
+In file included from ..\src\nonplatform\FadeSystem.cpp:9:0:
+..\src\nonplatform\FadeSystem.h: In constructor 'FadeSystemItem::FadeSystemItem()':
+..\src\nonplatform\FadeSystem.h:63:16: warning: 'FadeSystemItem::startTime' will be initialized after [-Wreorder]
+  unsigned long startTime, fadeTime;
+                ^~~~~~~~~
+..\src\nonplatform\FadeSystem.h:61:14: warning:   'const char* FadeSystemItem::image' [-Wreorder]
+  const char* image;
+              ^~~~~
+..\src\nonplatform\FadeSystem.cpp:67:1: warning:   when initialized here [-Wreorder]
+ FadeSystemItem::FadeSystemItem() :
+ ^~~~~~~~~~~~~~
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\FadeSystem.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+13:10:41 **** Clean-only build of configuration Debug for project Native-WebGL-framework ****
+rm -rf src/platform/text.d src/nonplatform/FadeSystem.o src/nonplatform/FadeSystem.d libs/soil/image_helper.o libs/soil/image_helper.d libs/soil/stb_image_aug.o src/platform/errorHandling.o libs/soil/stb_image_aug.d src/platform/errorHandling.d libs/soil/image_DXT.o src/platform/Shader.o src/platform/Shader.d Native-WebGL-framework.exe libs/soil/image_DXT.d libs/soil/SOIL.o src/platform/platform.o src/nonplatform/Slider.d src/nonplatform/Slider.o libs/soil/SOIL.d src/platform/platform.d src/nonplatform/linesAndArrows.d src/platform/DrawCache.o src/platform/DrawCache.d src/nonplatform/linesAndArrows.o src/main.o src/main.d src/platform/input.d src/platform/input.o src/platform/draw.d src/platform/draw.o src/nonplatform/ButtonSet.o src/nonplatform/ButtonSet.d src/nonplatform/DrawCache_Glow.o src/platform/text.o src/nonplatform/DrawCache_Glow.d 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Program Files\mingw-w64\x86_64-6.1.0-posix-seh-rt_v5-rev0\mingw64\bin;\bin;\usr\bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/lib/amd64;C:\Windows\SYSTEM32;C:\Windows;C:\Windows\SYSTEM32\WBEM;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES (X86)\GTKSHARP\2.12\BIN;C:\PROGRAM FILES\GIT\CMD;C:\PROGRAM FILES (X86)\WINDOWS KITS\8.1\WINDOWS PERFORMANCE TOOLKIT\;C:\PYTHON34;C:\PROGRAM FILES (X86)\CMAKE\BIN;C:\PROGRAM FILES (X86)\VAGRANT\BIN;;E:\Program Files\WIDCOMM\Bluetooth Software\;E:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Skype\Phone\;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Modules\TShell\TShell\;C:\Program Files\mingw-w64\x86_64-6.1.0-posix-seh-rt_v5-rev0\mingw64\bin;C:\Program Files\Java\jdk1.8.0_51\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\Eclipse\eclipse]
+
+13:10:41 **** Clean-only build of configuration Debug for project Native-WebGL-framework ****
+13:10:44 **** Rebuild of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\errorHandling.o" "..\\src\\platform\\errorHandling.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\Shader.o" "..\\src\\platform\\Shader.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\ButtonSet.o" "..\\src\\nonplatform\\ButtonSet.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\Slider.o" "..\\src\\nonplatform\\Slider.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\linesAndArrows.o" "..\\src\\nonplatform\\linesAndArrows.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_DXT.o" "..\\libs\\soil\\image_DXT.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\DrawCache_Glow.o" "..\\src\\nonplatform\\DrawCache_Glow.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\FadeSystem.o" "..\\src\\nonplatform\\FadeSystem.cpp" 
+In file included from ..\src\nonplatform\FadeSystem.cpp:9:0:
+..\src\nonplatform\FadeSystem.h: In constructor 'FadeSystemItem::FadeSystemItem()':
+..\src\nonplatform\FadeSystem.h:63:16: warning: 'FadeSystemItem::startTime' will be initialized after [-Wreorder]
+  unsigned long startTime, fadeTime;
+                ^~~~~~~~~
+..\src\nonplatform\FadeSystem.h:61:14: warning:   'const char* FadeSystemItem::image' [-Wreorder]
+  const char* image;
+              ^~~~~
+..\src\nonplatform\FadeSystem.cpp:67:1: warning:   when initialized here [-Wreorder]
+ FadeSystemItem::FadeSystemItem() :
+ ^~~~~~~~~~~~~~
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\input.o" "..\\src\\platform\\input.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\text.o" "..\\src\\platform\\text.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\stb_image_aug.o" "..\\libs\\soil\\stb_image_aug.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_helper.o" "..\\libs\\soil\\image_helper.c" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\SOIL.o" "..\\libs\\soil\\SOIL.c" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\FadeSystem.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+13:11:34 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\FadeSystem.o" "..\\src\\nonplatform\\FadeSystem.cpp" 
+In file included from ..\src\nonplatform\FadeSystem.cpp:9:0:
+..\src\nonplatform\FadeSystem.h: In constructor 'FadeSystemItem::FadeSystemItem()':
+..\src\nonplatform\FadeSystem.h:67:7: warning: 'FadeSystemItem::fadingIn' will be initialized after [-Wreorder]
+  bool fadingIn;
+       ^~~~~~~~
+..\src\nonplatform\FadeSystem.h:63:16: warning:   'long unsigned int FadeSystemItem::startTime' [-Wreorder]
+  unsigned long startTime, fadeTime;
+                ^~~~~~~~~
+..\src\nonplatform\FadeSystem.cpp:67:1: warning:   when initialized here [-Wreorder]
+ FadeSystemItem::FadeSystemItem() :
+ ^~~~~~~~~~~~~~
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\FadeSystem.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+13:13:59 **** Clean-only build of configuration Debug for project Native-WebGL-framework ****
+rm -rf src/platform/text.d src/nonplatform/FadeSystem.o src/nonplatform/FadeSystem.d libs/soil/image_helper.o libs/soil/image_helper.d libs/soil/stb_image_aug.o src/platform/errorHandling.o libs/soil/stb_image_aug.d src/platform/errorHandling.d libs/soil/image_DXT.o src/platform/Shader.o src/platform/Shader.d Native-WebGL-framework.exe libs/soil/image_DXT.d libs/soil/SOIL.o src/platform/platform.o src/nonplatform/Slider.d src/nonplatform/Slider.o libs/soil/SOIL.d src/platform/platform.d src/nonplatform/linesAndArrows.d src/platform/DrawCache.o src/platform/DrawCache.d src/nonplatform/linesAndArrows.o src/main.o src/main.d src/platform/input.d src/platform/input.o src/platform/draw.d src/platform/draw.o src/nonplatform/ButtonSet.o src/nonplatform/ButtonSet.d src/nonplatform/DrawCache_Glow.o src/platform/text.o src/nonplatform/DrawCache_Glow.d 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Program Files\mingw-w64\x86_64-6.1.0-posix-seh-rt_v5-rev0\mingw64\bin;\bin;\usr\bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/lib/amd64;C:\Windows\SYSTEM32;C:\Windows;C:\Windows\SYSTEM32\WBEM;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES (X86)\GTKSHARP\2.12\BIN;C:\PROGRAM FILES\GIT\CMD;C:\PROGRAM FILES (X86)\WINDOWS KITS\8.1\WINDOWS PERFORMANCE TOOLKIT\;C:\PYTHON34;C:\PROGRAM FILES (X86)\CMAKE\BIN;C:\PROGRAM FILES (X86)\VAGRANT\BIN;;E:\Program Files\WIDCOMM\Bluetooth Software\;E:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Skype\Phone\;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Modules\TShell\TShell\;C:\Program Files\mingw-w64\x86_64-6.1.0-posix-seh-rt_v5-rev0\mingw64\bin;C:\Program Files\Java\jdk1.8.0_51\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\Eclipse\eclipse]
+
+13:13:59 **** Clean-only build of configuration Debug for project Native-WebGL-framework ****
+13:14:02 **** Rebuild of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\text.o" "..\\src\\platform\\text.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\DrawCache_Glow.o" "..\\src\\nonplatform\\DrawCache_Glow.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\Shader.o" "..\\src\\platform\\Shader.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\linesAndArrows.o" "..\\src\\nonplatform\\linesAndArrows.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\FadeSystem.o" "..\\src\\nonplatform\\FadeSystem.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\ButtonSet.o" "..\\src\\nonplatform\\ButtonSet.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_helper.o" "..\\libs\\soil\\image_helper.c" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\stb_image_aug.o" "..\\libs\\soil\\stb_image_aug.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\Slider.o" "..\\src\\nonplatform\\Slider.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\SOIL.o" "..\\libs\\soil\\SOIL.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_DXT.o" "..\\libs\\soil\\image_DXT.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\input.o" "..\\src\\platform\\input.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\errorHandling.o" "..\\src\\platform\\errorHandling.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\FadeSystem.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Info: Nothing to build for Native-WebGL-framework
+13:28:17 **** Clean-only build of configuration Debug for project Native-WebGL-framework ****
+rm -rf src/platform/text.d src/nonplatform/FadeSystem.o src/nonplatform/FadeSystem.d libs/soil/image_helper.o libs/soil/image_helper.d libs/soil/stb_image_aug.o src/platform/errorHandling.o libs/soil/stb_image_aug.d src/platform/errorHandling.d libs/soil/image_DXT.o src/platform/Shader.o src/platform/Shader.d Native-WebGL-framework.exe libs/soil/image_DXT.d libs/soil/SOIL.o src/platform/platform.o src/nonplatform/Slider.d src/nonplatform/Slider.o libs/soil/SOIL.d src/platform/platform.d src/nonplatform/linesAndArrows.d src/platform/DrawCache.o src/platform/DrawCache.d src/nonplatform/linesAndArrows.o src/main.o src/main.d src/platform/input.d src/platform/input.o src/platform/draw.d src/platform/draw.o src/nonplatform/ButtonSet.o src/nonplatform/ButtonSet.d src/nonplatform/DrawCache_Glow.o src/platform/text.o src/nonplatform/DrawCache_Glow.d 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\Program Files\mingw-w64\x86_64-6.1.0-posix-seh-rt_v5-rev0\mingw64\bin;\bin;\usr\bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin/server;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/bin;C:/Program Files/Java/jdk1.8.0_51/bin/../jre/lib/amd64;C:\Windows\SYSTEM32;C:\Windows;C:\Windows\SYSTEM32\WBEM;C:\Windows\SYSTEM32\WINDOWSPOWERSHELL\V1.0\;C:\PROGRAM FILES (X86)\GTKSHARP\2.12\BIN;C:\PROGRAM FILES\GIT\CMD;C:\PROGRAM FILES (X86)\WINDOWS KITS\8.1\WINDOWS PERFORMANCE TOOLKIT\;C:\PYTHON34;C:\PROGRAM FILES (X86)\CMAKE\BIN;C:\PROGRAM FILES (X86)\VAGRANT\BIN;;E:\Program Files\WIDCOMM\Bluetooth Software\;E:\Program Files\WIDCOMM\Bluetooth Software\syswow64;C:\Program Files (x86)\Skype\Phone\;C:\Windows\SysWOW64\WindowsPowerShell\v1.0\Modules\TShell\TShell\;C:\Program Files\mingw-w64\x86_64-6.1.0-posix-seh-rt_v5-rev0\mingw64\bin;C:\Program Files\Java\jdk1.8.0_51\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files\Eclipse\eclipse]
+
+13:28:17 **** Clean-only build of configuration Debug for project Native-WebGL-framework ****
+13:28:25 **** Rebuild of configuration Debug for project Native-WebGL-framework ****
+Info: Internal Builder is used for build
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\DrawCache.o" "..\\src\\platform\\DrawCache.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\errorHandling.o" "..\\src\\platform\\errorHandling.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\text.o" "..\\src\\platform\\text.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\linesAndArrows.o" "..\\src\\nonplatform\\linesAndArrows.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_helper.o" "..\\libs\\soil\\image_helper.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\draw.o" "..\\src\\platform\\draw.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\ButtonSet.o" "..\\src\\nonplatform\\ButtonSet.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\image_DXT.o" "..\\libs\\soil\\image_DXT.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\Slider.o" "..\\src\\nonplatform\\Slider.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\stb_image_aug.o" "..\\libs\\soil\\stb_image_aug.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\DrawCache_Glow.o" "..\\src\\nonplatform\\DrawCache_Glow.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\platform.o" "..\\src\\platform\\platform.cpp" 
+gcc "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "libs\\soil\\SOIL.o" "..\\libs\\soil\\SOIL.c" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\input.o" "..\\src\\platform\\input.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\FadeSystem.o" "..\\src\\nonplatform\\FadeSystem.cpp" 
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\platform\\Shader.o" "..\\src\\platform\\Shader.cpp" 
+g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\FadeSystem.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
+Info: Nothing to build for Native-WebGL-framework
+Info: Nothing to build for Native-WebGL-framework

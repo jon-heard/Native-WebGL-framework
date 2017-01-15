@@ -28,7 +28,7 @@ namespace platform
 	Shader* textureShader = NULL;
 	Shader* coloredTextureShader = NULL;
 
-	Color nextColor = {-1, -1, -1};
+	Color nextColor(-1, -1, -1);
 	float nextOpacity = 1;
 	float nextRotation = 0;
 	bool nextShader = false;

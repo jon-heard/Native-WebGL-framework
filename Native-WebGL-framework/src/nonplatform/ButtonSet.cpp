@@ -14,7 +14,9 @@
 using namespace std;
 
 Button::Button(float x, float y, float sizeX, float sizeY) :
-	x(x), y(y), sizeX(sizeX), sizeY(sizeY) {}
+	x(x), y(y), sizeX(sizeX), sizeY(sizeY),
+	onClick(0),
+	image_current(""), image_normal(""), image_hover(""), image_down("") {}
 
 Button::~Button() {}
 
@@ -47,16 +49,6 @@ fncButtonEvent Button::getOnClick() const
 void Button::setOnClick(fncButtonEvent value)
 {
 	this->onClick = value;
-}
-
-
-ButtonSet::~ButtonSet()
-{
-	for(vector<Button*>::iterator i= buttons.begin();
-		i != buttons.end(); ++i)
-	{
-		delete (*i);
-	}
 }
 
 const char* Button::getImage() const
@@ -100,6 +92,17 @@ const char* Button::getImage_down() const
 void Button::setImage_down(const char* name)
 {
 	image_down = name;
+}
+
+ButtonSet::ButtonSet() : clickingButton(0) {}
+
+ButtonSet::~ButtonSet()
+{
+	for(vector<Button*>::iterator i= buttons.begin();
+		i != buttons.end(); ++i)
+	{
+		delete (*i);
+	}
 }
 
 Button* ButtonSet::addButton(float x, float y, float sizeX, float sizeY)

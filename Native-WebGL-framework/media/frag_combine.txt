@@ -9,5 +9,5 @@ void main()
 {
 	gl_FragColor =
 		texture2D(texture1, UVs) * balance +
-		texture2D(texture2, UVs) * (1-balance);
+		texture2D(texture2, UVs) * (1.0-balance);
 }

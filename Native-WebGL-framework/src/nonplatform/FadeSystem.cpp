@@ -65,7 +65,9 @@ void FadeSystem::doEachTime()
 
 
 FadeSystemItem::FadeSystemItem() :
-	startTime(platform::getTime())
+	image(""), x(0), y(0), sizeX(1), sizeY(1),
+	startTime(platform::getTime()), fadeTime(500), doneCallback(0),
+	color(platform::Color(-1,-1,-1)), rotation(0), opacity(1), fadingIn(false)
 {}
 
 void FadeSystemItem::draw(float fade)

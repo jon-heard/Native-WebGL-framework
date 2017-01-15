@@ -36,23 +36,24 @@ public:
 private:
 	float x,y;
 	float sizeX,sizeY;
-	fncButtonEvent onClick = 0;
-	const char* image_current = "";
-	const char* image_normal = "";
-	const char* image_hover = "";
-	const char* image_down = "";
+	fncButtonEvent onClick;
+	const char* image_current;
+	const char* image_normal;
+	const char* image_hover;
+	const char* image_down;
 };
 
 class ButtonSet
 {
 public:
+	ButtonSet();
 	virtual ~ButtonSet();
 	Button* addButton(float x, float y, float sizeX, float sizeY);
 	void doEachTime();
 private:
 	std::vector<Button*> buttons;
 	bool isDown;
-	Button* clickingButton = 0;
+	Button* clickingButton;
 };
 
 #endif /* NONPLATFORM_BUTTONSET_H_ */

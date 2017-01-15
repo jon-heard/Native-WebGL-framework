@@ -58,13 +58,13 @@ public:
 	bool getIsFadingIn();
 	void setIsFadingIn(bool value);
 private:
-	const char* image = "";
-	float x = 0, y = 0, sizeX = 1, sizeY = 1;
-	unsigned long startTime, fadeTime = 500;
-	FadeDoneCallback doneCallback = 0;
-	platform::Color color = platform::Color(-1,-1,-1);
-	float rotation = 0, opacity = 1;
-	bool fadingIn = false;
+	const char* image;
+	float x, y, sizeX, sizeY;
+	unsigned long startTime, fadeTime;
+	FadeDoneCallback doneCallback;
+	platform::Color color;
+	float rotation, opacity;
+	bool fadingIn;
 };
 
 #endif /* NONPLATFORM_FADESYSTEM_H_ */
