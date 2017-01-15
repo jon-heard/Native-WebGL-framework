@@ -1,11 +1,7 @@
-05:08:41 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
+06:23:44 **** Incremental Build of configuration Debug for project Native-WebGL-framework ****
 Info: Internal Builder is used for build
-g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\nonplatform\\linesAndArrows.o" "..\\src\\nonplatform\\linesAndArrows.cpp" 
-..\src\nonplatform\linesAndArrows.cpp: In function 'void drawLine(int, int, int, int, int)':
-..\src\nonplatform\linesAndArrows.cpp:14:32: warning: suggest parentheses around arithmetic in operand of '^' [-Wparentheses]
-  float length = sqrt((x1-x2)^2 + (y1-y2)^2);
-                              ~~^~~~~~~~~
+g++ "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\soil" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\include" "-ID:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.cpp" 
 g++ "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\freetype\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glfw\\lib" "-LD:\\_projects\\Native-WebGL-framework\\Native-WebGL-framework\\libs\\glew\\lib" -o Native-WebGL-framework.exe "libs\\soil\\SOIL.o" "libs\\soil\\image_DXT.o" "libs\\soil\\image_helper.o" "libs\\soil\\stb_image_aug.o" "src\\main.o" "src\\nonplatform\\ButtonSet.o" "src\\nonplatform\\DrawCache_Glow.o" "src\\nonplatform\\Slider.o" "src\\nonplatform\\linesAndArrows.o" "src\\platform\\DrawCache.o" "src\\platform\\Shader.o" "src\\platform\\draw.o" "src\\platform\\errorHandling.o" "src\\platform\\input.o" "src\\platform\\platform.o" "src\\platform\\text.o" -lfreetype -lglew32s -lglfw3 -lopengl32 -lgdi32 -lglu32 
 
-05:08:42 Build Finished (took 924ms)
+06:23:45 Build Finished (took 1s.41ms)
 

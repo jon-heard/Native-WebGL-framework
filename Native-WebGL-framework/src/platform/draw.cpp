@@ -210,6 +210,16 @@ namespace platform
 		return imageId;
 	}
 
+	Color getNextDraw_color()
+	{
+		return nextColor;
+	}
+
+	void setNextDraw_color(Color color)
+	{
+		nextColor = color;
+	}
+
 	void setNextDraw_color(int color)
 	{
 		nextColor = COLORS[color];
@@ -218,11 +228,6 @@ namespace platform
 	void setNextDraw_color(float red, float green, float blue)
 	{
 		nextColor = Color(red, green, blue);
-	}
-
-	void setNextDraw_color(Color color)
-	{
-		nextColor = color;
 	}
 
 	void setNextDraw_opacity(float opacity)

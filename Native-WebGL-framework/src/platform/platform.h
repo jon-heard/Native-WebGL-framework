@@ -3,6 +3,18 @@
 
 namespace platform
 {
+	typedef struct Color
+	{
+		float red; float green; float blue;
+
+		Color(float red, float green, float blue)
+		{
+			this->red = red;
+			this->green = green;
+			this->blue = blue;
+		}
+	} Color;
+
 	// Application settings
 	const int CIRCLE_RESOLUTION = 50;
    #ifdef EMSCRIPTEN
@@ -25,11 +37,13 @@ namespace platform
 	int  drawImage(
 			float x, float y, float sizeX, float sizeY, const char* filename);
 	int  drawImage(float x, float y, float sizeX, float sizeY, int textureId);
-	void setNextDraw_color(int color);
+	void setNextDraw_color(Color color);
 	void setNextDraw_color(float red, float green, float blue);
+	void setNextDraw_color(int color);
 	void setNextDraw_opacity(float opacity);
 	void setNextDraw_rotation(float rotation);
 	void setNextDraw_useCustomShader(bool useCustomShader);
+	Color getNextDraw_color();
 
 
 	// Text

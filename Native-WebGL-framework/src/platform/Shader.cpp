@@ -33,12 +33,13 @@ const GLchar* SHADER_VERTEX_BASE =
 	"void main()\n"
 	"{\n"
 	"	UVs = vertexTexCoord;\n"
-	"	vec2 v = vec2(\n"
-	"		vertexPosition.x * objectRotation.y + vertexPosition.y * objectRotation.x,\n"
-	"		vertexPosition.y * objectRotation.y - vertexPosition.x * objectRotation.x);\n"
+	"   vec2 v = vertexPosition * objectScale;"
+	"	v = vec2(\n"
+	"		v.x * objectRotation.y + v.y * objectRotation.x,\n"
+	"		v.y * objectRotation.y - v.x * objectRotation.x);\n"
 	"	gl_Position = \n"
 	"		sceneTransform *\n"
-	"		vec4(v * objectScale + objectPosition, 0, 1);\n"
+	"		vec4(v + objectPosition, 0, 1);\n"
 	"}\n\0";
 
 bool Shader::Shader_Init()
@@ -307,7 +308,6 @@ bool Shader::bindAttribute(
 	{
 		return false;
 	}
-	int vertexPosition = Shader::getParameterInfo("vertexPosition")->id;
 	glVertexAttribPointer(
 			info->id, attributeSize, GL_FLOAT,
 			GL_FALSE, fragmentSize*4, BUFFER_OFFSET(offset*4));

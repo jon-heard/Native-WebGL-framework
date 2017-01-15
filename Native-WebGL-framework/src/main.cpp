@@ -137,7 +137,7 @@ void frameLogic()
 	platform::drawText(slider1->getX() + 140, slider1->getY() + 5, s.str().c_str());
 
 	platform::setNextDraw_color(1,1,1);
-	drawLine(0, 0, platform::getMouseX(), platform::getMouseY(), 10);
+	drawArrow(0, 0, platform::getMouseX(), platform::getMouseY(), 5, 5);
 
 	buttons.doEachTime();
 }

@@ -5,6 +5,7 @@
  *      Author: Jon
  */
 
+#include <string.h>
 #include "ButtonSet.h"
 #include "../platform/platform.h"
 
@@ -130,7 +131,7 @@ void ButtonSet::doEachTime()
 				else
 				{
 					image_current = (*i)->getImage_hover();
-					if(image_current == "")
+					if(strcmp(image_current,"") == 0)
 					{
 						image_current = (*i)->getImage_normal();
 					}
