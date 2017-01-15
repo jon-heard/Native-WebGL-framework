@@ -131,7 +131,7 @@ void ButtonSet::doEachTime()
 				else
 				{
 					image_current = (*i)->getImage_hover();
-					if(strcmp(image_current,"") == 0)
+					if(!strcmp(image_current,""))
 					{
 						image_current = (*i)->getImage_normal();
 					}

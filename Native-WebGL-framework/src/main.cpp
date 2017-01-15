@@ -8,6 +8,7 @@
 #include "nonplatform/Slider.h"
 #include "nonplatform/ButtonSet.h"
 #include "nonplatform/linesAndArrows.h"
+#include "nonplatform/FadeSystem.h"
 #include <sstream>
 
 using namespace std;
@@ -19,21 +20,39 @@ void cleanup();
 platform::DrawCache_Glow* glow = NULL;
 Slider* slider1 = NULL;
 ButtonSet buttons;
+const char* currentSmiley = "media/smiley1.png";
+const char* otherSmiley = "media/smiley2.png";
+const char* smileyBuf = "media/smiley1.png";
 
 int main()
 {
 	platform::run(init, frameLogic, cleanup);
 }
 
-void button1() { cout << "Button 1 clicked" << endl; }
-void button2() { cout << "Button 2 clicked" << endl; }
-void button3() { cout << "Button 3 clicked" << endl; }
-void button4() { cout << "Button 4 clicked" << endl; }
-void button5() { cout << "Button 5 clicked" << endl; }
-void button6() { cout << "Button 6 clicked" << endl; }
-void button7() { cout << "Button 7 clicked" << endl; }
-void button8() { cout << "Button 8 clicked" << endl; }
-void button9() { cout << "Button 9 clicked" << endl; }
+
+
+void smileyCallback(FadeSystemItem* item)
+{
+	currentSmiley = smileyBuf;
+}
+void swapSmileys()
+{
+	smileyBuf = otherSmiley;
+	otherSmiley = currentSmiley;
+	currentSmiley = "";
+	FadeSystemItem* i = FadeSystem::getInstance()->addFade(-200, 0, 128, 128, otherSmiley);
+	FadeSystem::getInstance()->addFade(-200, 0, 128, 128, smileyBuf, true);
+	i->setDoneCallback(smileyCallback);
+}
+void button1() { cout << "Button 1 clicked" << endl; swapSmileys(); }
+void button2() { cout << "Button 2 clicked" << endl; swapSmileys(); }
+void button3() { cout << "Button 3 clicked" << endl; swapSmileys(); }
+void button4() { cout << "Button 4 clicked" << endl; swapSmileys(); }
+void button5() { cout << "Button 5 clicked" << endl; swapSmileys(); }
+void button6() { cout << "Button 6 clicked" << endl; swapSmileys(); }
+void button7() { cout << "Button 7 clicked" << endl; swapSmileys(); }
+void button8() { cout << "Button 8 clicked" << endl; swapSmileys(); }
+void button9() { cout << "Button 9 clicked" << endl; swapSmileys(); }
 
 void init()
 {
@@ -140,6 +159,9 @@ void frameLogic()
 	drawArrow(0, 0, platform::getMouseX(), platform::getMouseY(), 5, 5);
 
 	buttons.doEachTime();
+	FadeSystem::getInstance()->doEachTime();
+
+	platform::drawImage(-200, 0, 128, 128, currentSmiley);
 }
 
 void cleanup()

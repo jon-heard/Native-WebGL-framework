@@ -4,6 +4,7 @@
 #include <map>
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include <string.h>
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include <GL/gl.h>
@@ -161,6 +162,10 @@ namespace platform
 	int drawImage(
 			float x, float y, float sizeX, float sizeY, const char* filename)
 	{
+		if(!strcmp(filename, ""))
+		{
+			return 0;
+		}
 		if(images.find(filename) == images.end())
 		{
 			loadImage(filename);
