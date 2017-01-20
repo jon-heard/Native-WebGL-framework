@@ -9,6 +9,7 @@
 #include "nonplatform/ButtonSet.h"
 #include "nonplatform/linesAndArrows.h"
 #include "nonplatform/FadeSystem.h"
+#include "nonplatform/Menu.h"
 #include <sstream>
 
 using namespace std;
@@ -23,6 +24,9 @@ ButtonSet buttons;
 const char* currentSmiley = "media/smiley1.png";
 const char* otherSmiley = "media/smiley2.png";
 const char* smileyBuf = "media/smiley1.png";
+
+const char* LONG_TEXT = "\"I must leave!\"  Said Duncan.\n\nNo!  \"You mustn't.  I shant allow it\", replied Betty.\n\n\"It is not for you to stopy me, Betty.  If we are to survive, I must face the beast head on.\"\n\n\"Fine.  If you are so determined then at least take this with you.\"";
+
 
 int main()
 {
@@ -44,15 +48,21 @@ void swapSmileys()
 	FadeSystem::getInstance()->addFade(-200, 0, 128, 128, smileyBuf, true);
 	i->setDoneCallback(smileyCallback);
 }
-void button1() { cout << "Button 1 clicked" << endl; swapSmileys(); }
-void button2() { cout << "Button 2 clicked" << endl; swapSmileys(); }
-void button3() { cout << "Button 3 clicked" << endl; swapSmileys(); }
-void button4() { cout << "Button 4 clicked" << endl; swapSmileys(); }
-void button5() { cout << "Button 5 clicked" << endl; swapSmileys(); }
-void button6() { cout << "Button 6 clicked" << endl; swapSmileys(); }
-void button7() { cout << "Button 7 clicked" << endl; swapSmileys(); }
-void button8() { cout << "Button 8 clicked" << endl; swapSmileys(); }
-void button9() { cout << "Button 9 clicked" << endl; swapSmileys(); }
+void menuEvent(MenuItem* menu)
+{
+	swapSmileys();
+}
+void button1(Button* btn) { cout << "Button 1 clicked" << endl; swapSmileys(); }
+void button2(Button* btn) { cout << "Button 2 clicked" << endl; swapSmileys(); }
+void button3(Button* btn) { cout << "Button 3 clicked" << endl; swapSmileys(); }
+void button4(Button* btn) { cout << "Button 4 clicked" << endl; swapSmileys(); }
+void button5(Button* btn) { cout << "Button 5 clicked" << endl; swapSmileys(); }
+void button6(Button* btn) { cout << "Button 6 clicked" << endl; swapSmileys(); }
+void button7(Button* btn) { cout << "Button 7 clicked" << endl; swapSmileys(); }
+void button8(Button* btn) { cout << "Button 8 clicked" << endl; swapSmileys(); }
+void button9(Button* btn) { cout << "Button 9 clicked" << endl; swapSmileys(); }
+
+Menu myMenu;
 
 void init()
 {
@@ -89,6 +99,21 @@ void init()
 			button->setOnClick(event);
 		}
 	}
+
+	myMenu.setPosition(-25, -225);
+	myMenu.setColors(platform::Color(1,1,1), platform::Color(.5,.5,1));
+	myMenu.setMenuItemSpacing(0);
+	myMenu.setFontSize(20);
+	myMenu.setWidth(250);
+	myMenu.getRoot()->addChild(new MenuItem("First"));
+	MenuItem* node1 = myMenu.getRoot()->addChild(new MenuItem("Second"));
+		node1->addChild(new MenuItem("subItem1"));
+		MenuItem* node2 = node1->addChild(new MenuItem("subItem2"));
+			node2->addChild(new MenuItem(LONG_TEXT));
+			node2->setFontSize(15);
+		node2 = node1->addChild(new MenuItem("Change smiley"));
+		node2->setEvent(menuEvent);
+	myMenu.getRoot()->addChild(new MenuItem("Third"));
 }
 
 float rotationPhase = 0;
@@ -162,6 +187,8 @@ void frameLogic()
 	FadeSystem::getInstance()->doEachTime();
 
 	platform::drawImage(-200, 0, 128, 128, currentSmiley);
+
+	myMenu.doEachTime();
 }
 
 void cleanup()

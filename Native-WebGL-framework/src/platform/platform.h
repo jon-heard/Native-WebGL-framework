@@ -47,7 +47,10 @@ namespace platform
 
 
 	// Text
+	unsigned int getTextWidth(const char* text);
+	unsigned int getDefaultFontSize();
 	void setNextDraw_fontSize(unsigned int size);
+	void setNextDraw_textWidth(unsigned int value);
 	void drawText(float x, float y, const char* toDraw);
 
 	// Input

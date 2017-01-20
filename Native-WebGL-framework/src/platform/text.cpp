@@ -41,7 +41,7 @@ namespace platform
 	FT_Library ft;
 	FT_Face face;
 	map<unsigned int, map<char, Character>*> glyphSets;
-	unsigned int nextSize, defaultSize;
+	unsigned int nextSize, maxWidth, defaultFontSize;
 
 	void setupGlyphSet(unsigned int size);
 	void clearGlyphSets();
@@ -49,13 +49,14 @@ namespace platform
 
 	void text_init(unsigned int pDefaultSize)
 	{
-		nextSize = defaultSize = pDefaultSize;
+		nextSize = defaultFontSize = pDefaultSize;
+		maxWidth = 0;
 		if (FT_Init_FreeType(&ft))
 			handleErrors(0, "FREETYPE: Could not init FreeType Library");
 		if (FT_New_Face(ft, "media/times.ttf", 0, &face))
 			handleErrors(0, "FREETYPE: Failed to load font");
-		FT_Set_Pixel_Sizes(face, 0, defaultSize);
-		setupGlyphSet(defaultSize);
+		FT_Set_Pixel_Sizes(face, 0, defaultFontSize);
+		setupGlyphSet(defaultFontSize);
 	}
 
 	void text_shutdown()
@@ -63,6 +64,11 @@ namespace platform
 		clearGlyphSets();
 		FT_Done_Face(face);
 		FT_Done_FreeType(ft);
+	}
+
+	unsigned int getDefaultFontSize()
+	{
+		return defaultFontSize;
 	}
 
 	void setNextDraw_fontSize(unsigned int size)
@@ -74,6 +80,28 @@ namespace platform
 		nextSize = size;
 	}
 
+	unsigned int getTextWidth(const char* text)
+	{
+		map<char, Character>* glyphSet = glyphSets[nextSize];
+
+		unsigned int result = 0;
+		// Iterate through all characters
+		for (int i = 0; text[i] != '\0'; i++)
+		{
+			Character ch = (*glyphSet)[text[i]];
+			result += (ch.advance >> 6);
+		}
+
+		nextSize = defaultFontSize;
+
+		return result;
+	}
+
+	void setNextDraw_textWidth(unsigned int value)
+	{
+		maxWidth = value;
+	}
+
 	void drawText(float x, float y, const char* toDraw)
 	{
 		if(!nextShader) Shader::useShader("media/frag_coloredtexture.txt");
@@ -81,24 +109,48 @@ namespace platform
 		Color drawColor = (nextColor.red==-1) ? COLORS[5] : nextColor;
 		map<char, Character>* glyphSet = glyphSets[nextSize];
 
-		int xOffset = 0;
+		int xOffset = 0, yOffset = 0;
 		// Iterate through all characters
 		for (int i = 0; toDraw[i] != '\0'; i++)
 		{
+			if(toDraw[i] == '\n')
+			{
+				xOffset = 0;
+				yOffset += nextSize;
+				continue;
+			}
 			Character ch = (*glyphSet)[toDraw[i]];
 			platform::setNextDraw_color(drawColor);
 			platform::setNextDraw_opacity(drawOpacity);
 			platform::setNextDraw_useCustomShader(true);
 			platform::drawImage(
 					x + ch.bearing.x + xOffset + 16,//ch.size.x/2,
-					y - ch.size.y + ch.bearing.y - 16,//ch.size.y/2,
+					y - ch.size.y + ch.bearing.y + yOffset - 16,//ch.size.y/2,
 					32,//ch.size.x,
 					32,//ch.size.y,
 					ch.textureId);
 			xOffset += (ch.advance >> 6);
+			if(maxWidth > 0 && toDraw[i] == ' ')
+			{
+				int j = i+1;
+				while(toDraw[j] != ' ' && toDraw[j] != '\0')
+				{
+					j++;
+				}
+				int size = j-i-1;
+				char* word = new char[size];
+				strcpy_s(word, size, &toDraw[i+1]);
+				if(xOffset + getTextWidth(word) > maxWidth)
+				{
+					xOffset = 0;
+					yOffset += nextSize;
+				}
+				delete[] word;
+			}
 		}
 
-		nextSize = defaultSize;
+		nextSize = defaultFontSize;
+		maxWidth = 0;
 	}
 
 	void setupGlyphSet(unsigned int size)

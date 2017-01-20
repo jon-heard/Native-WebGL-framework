@@ -10,7 +10,9 @@
 
 #include <vector>
 
-typedef void (*fncButtonEvent)();
+class Button;
+
+typedef void (*fncButtonEvent)(Button* btn);
 
 class Button
 {

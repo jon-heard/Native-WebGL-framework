@@ -2,17 +2,23 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="cout" key="selection"/>
+		<item value=";" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value=";"/>
+			<item value="public "/>
+			<item value="CASE_CLOSE "/>
+			<item value="case_close"/>
 			<item value="cout"/>
 			<item value="#ifndef "/>
 			<item value="OGLFT_NO_QT"/>
 		</list>
 		<list key="replacehistory">
+			<item value="{}"/>
+			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

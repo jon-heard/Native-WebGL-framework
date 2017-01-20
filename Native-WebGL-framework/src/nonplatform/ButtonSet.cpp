@@ -141,7 +141,7 @@ void ButtonSet::doEachTime()
 					fncButtonEvent fnc = (*i)->getOnClick();
 					if(fnc)
 					{
-						fnc();
+						fnc(*i);
 					}
 					clickingButton = 0;
 				}
